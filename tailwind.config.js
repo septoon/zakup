@@ -57,7 +57,7 @@ module.exports = {
       }
     },
     colors: {
-      'dark': "#1d1d1d",
+      'dark': "#131922",
       'transparent': 'transparent',
       'white': '#ffffff',
       'purple': '#3f3cbb',
@@ -71,7 +71,7 @@ module.exports = {
       'light-gray': '#D3D3D3',
       'lightSlate-gray': '#778899',
       'DimGray': '#696969',
-      'darkGray': '#161516',
+      'darkGray': '#141616',
     }
   },
   plugins: [],
