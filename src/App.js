@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="flex flex-col justify-center items-center w-screen h-screen pl-2">
+    <div className="flex flex-col justify-start items-center pt-20 w-screen h-screen pl-2">
       <Link to='/kitchen' className='w-[80%] h-20 flex justify-start pl-5 items-center mb-5 bg-silver dark:bg-darkGray rounded-lg'>
         <img src={Chef} className='h-5 mr-3' alt='kitchen'/>
         <span className='dark:text-white'>Кухня</span>
