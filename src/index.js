@@ -7,6 +7,10 @@ import Bar from './components/Bar';
 import Mangal from './components/Mangal';
 import House from './components/House';
 
+import { PrimeReactProvider } from 'primereact/api';
+
+import 'primereact/resources/themes/lara-light-cyan/theme.css';
+
 import NotFound from './components/NotFound';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -40,7 +44,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <PrimeReactProvider>
         <RouterProvider router={router} />
+    </PrimeReactProvider>
   </React.StrictMode>
 );
 
