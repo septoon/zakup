@@ -24,6 +24,7 @@ const KitchenGoods = () => {
         className={`mx-2 cursor-pointer ${item.items && 'font-semibold'}`}>
         {item.label}
       </span>
+      <span>{item.count > 0 && item.count}</span>
     </div>
   );
 
