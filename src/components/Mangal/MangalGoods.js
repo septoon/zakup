@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { mangalData } from '../../common/data/mangal/mangalData';
+
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Dialog } from 'primereact/dialog';
-import { vegetablesData } from '../../common/data/kitchen/vegetablesData';
 import { Button } from 'primereact/button';
-import { duzinaData } from '../../common/data/kitchen/duzinaData';
 
 const MangalGoods = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,7 @@ const MangalGoods = () => {
   const items = [
     {
       header: 'Мясо',
-      content: vegetablesData.map((vegetable) => itemRenderer({ label: vegetable.name })),
+      content: mangalData.map((vegetable) => itemRenderer({ label: vegetable.name })),
     }
   ];
 
