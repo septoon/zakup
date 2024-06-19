@@ -10,8 +10,8 @@ const Bar = () => {
         <Link to="/zakup">Назад</Link>
       </div>
       <BarGoods />
-      <div className='w-full px-5 fixed bottom-20'>
-        <Button label="Отправить" className="bg-blue w-full text-white py-2 rounded-lg" />
+      <div className='w-full px-5 fixed bottom-3'>
+        <Button label="Отправить" className="bg-blue w-full text-white py-3 rounded-lg" />
       </div>
     </div>
   );
