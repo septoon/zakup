@@ -2,14 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Kitchen from './components/Kitchen';
-import Bar from './components/Bar';
-import Mangal from './components/Mangal';
-import House from './components/House';
+import Kitchen from './components/Kitchen/Kitchen';
+import Bar from './components/Bar/Bar';
+import Mangal from './components/Mangal/Mangal';
+import House from './components/House/House';
 
 import { PrimeReactProvider } from 'primereact/api';
 
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
+import 'primeicons/primeicons.css';
+        
 
 import NotFound from './components/NotFound';
 

@@ -1,27 +1,23 @@
-export const vegetablesData = [
+export const vegetablesDataBar = [
   {
     name: 'Апельсины',
-    count: 0
+    type: 'шт.'
   },
   {
     name: 'Лимоны',
-    count: 0
+    type: 'шт.'
   },
   {
     name: 'Лайм',
-    count: 0
+    type: 'шт.'
   },
   {
     name: 'Мята',
-    count: 0
+    type: 'пуч.'
   },
   {
     name: 'Груша',
-    count: 0
+    type: 'шт.'
   },
-  {
-    name: 'Киви',
-    count: 0
-  }
 
 ]
