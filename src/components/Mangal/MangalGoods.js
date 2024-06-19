@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Dialog } from 'primereact/dialog';
-import { vegetablesDataBar } from '../../common/data/bar/vegetablesDataBar';
-import { duzinaDataBar } from '../../common/data/bar/duzinaDataBar';
-
+import { vegetablesData } from '../../common/data/kitchen/vegetablesData';
 import { Button } from 'primereact/button';
+import { duzinaData } from '../../common/data/kitchen/duzinaData';
 
-const BarGoods = () => {
+const MangalGoods = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [item, setItem] = useState('');
   const [activeIndexes, setActiveIndexes] = useState([0, 1]);
@@ -30,13 +29,9 @@ const BarGoods = () => {
 
   const items = [
     {
-      header: 'Овощи',
-      content: vegetablesDataBar.map((vegetable) => itemRenderer({ label: vegetable.name })),
-    },
-    {
-      header: 'Дюжина',
-      content: duzinaDataBar.map((vegetable) => itemRenderer({ label: vegetable.name })),
-    },
+      header: 'Мясо',
+      content: vegetablesData.map((vegetable) => itemRenderer({ label: vegetable.name })),
+    }
   ];
 
   const footerContent = (
@@ -69,4 +64,4 @@ const BarGoods = () => {
   );
 };
 
-export default BarGoods;
+export default MangalGoods;

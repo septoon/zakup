@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Vegetables from '../Kitchen/KitchenGoods';
+import BarGoods from './BarGoods';
 
 const Bar = () => {
   return (
@@ -8,7 +8,7 @@ const Bar = () => {
       <div className="flex justify-start items-center pl-5 h-16 text-blue font-medium">
         <Link to="/zakup">Назад</Link>
       </div>
-      <Vegetables />
+      <BarGoods />
     </div>
   );
 };
