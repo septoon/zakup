@@ -1,33 +1,17 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { vegetablesDataBar } from '../../common/data/bar/vegetablesDataBar';
-import { duzinaDataBar } from '../../common/data/bar/duzinaDataBar';
-import { addVegetablesToItems } from '../../Redux/vegetSlice';
-
-import { Dialog } from 'primereact/dialog';
 import { Accordion, AccordionTab } from 'primereact/accordion';
+import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 
-const BarGoods = ({vegetItems}) => {
-  const dispatch = useDispatch()
-
+const Template = ({vegetablesData, duzinaData}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [item, setItem] = useState('');
+  const [itemType, setItemType] = useState('');
   const [activeIndexes, setActiveIndexes] = useState([0, 1]);
-
 
   const onTabChange = (e) => {
     setActiveIndexes(e.index);
   };
-
-  const addVegetables = (name, count, type) => {
-    const obj = {
-      name,
-      count,
-      type,
-    };
-    dispatch(addVegetablesToItems(obj));
-  }
 
   const itemRenderer = (item) => (
     <div className="flex items-center px-3 py-2">
@@ -35,22 +19,23 @@ const BarGoods = ({vegetItems}) => {
         onClick={(e) => {
           setIsOpen(true);
           setItem(item.label);
-          addVegetables(item.name, item.count, item.type)
+          setItemType(item.type);
         }}
         className={`mx-2 cursor-pointer ${item.items && 'font-semibold'}`}>
         {item.label}
       </span>
+      <span>{item.count > 0 && item.count}</span>
     </div>
   );
 
   const items = [
     {
       header: 'Овощи',
-      content: vegetablesDataBar.map((vegetable) => itemRenderer({ label: vegetable.name, count: vegetable.count, type: vegetable.type })),
+      content: vegetablesData.map((vegetable) => itemRenderer({ label: vegetable.name, type: vegetable.type })),
     },
     {
       header: 'Дюжина',
-      content: duzinaDataBar.map((vegetable) => itemRenderer({ label: vegetable.name })),
+      content: duzinaData.map((goods) => itemRenderer({ label: goods.name, type: goods.type })),
     },
   ];
 
@@ -76,18 +61,15 @@ const BarGoods = ({vegetItems}) => {
         footer={footerContent}
         onHide={() => setIsOpen(false)}>
         <div className="w-full flex justify-between">
-          {
-            vegetItems.map((i) => {
-              return(
-                <span>{`${i.name} - ${i.count} ${i.type}`}</span>
-              )
-            })
-          }
-          <input type="number" className="border-1 bg-silver rounded-md w-12" />
+          <span>{item}</span>
+          <div>
+            <input type="number" className="border-1 bg-silver rounded-md w-12 mr-2" />
+            <span>{itemType}</span>
+          </div>
         </div>
       </Dialog>
     </div>
   );
 };
 
-export default BarGoods;
+export default Template;

@@ -8,6 +8,7 @@ import { duzinaData } from '../../common/data/kitchen/duzinaData';
 const KitchenGoods = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [item, setItem] = useState('');
+  const [itemType, setItemType] = useState('');
   const [activeIndexes, setActiveIndexes] = useState([0, 1]);
 
   const onTabChange = (e) => {
@@ -20,6 +21,7 @@ const KitchenGoods = () => {
         onClick={(e) => {
           setIsOpen(true);
           setItem(item.label);
+          setItemType(item.type);
         }}
         className={`mx-2 cursor-pointer ${item.items && 'font-semibold'}`}>
         {item.label}
@@ -31,11 +33,11 @@ const KitchenGoods = () => {
   const items = [
     {
       header: 'Овощи',
-      content: vegetablesData.map((vegetable) => itemRenderer({ label: vegetable.name })),
+      content: vegetablesData.map((vegetable) => itemRenderer({ label: vegetable.name, type: vegetable.type })),
     },
     {
       header: 'Дюжина',
-      content: duzinaData.map((vegetable) => itemRenderer({ label: vegetable.name })),
+      content: duzinaData.map((goods) => itemRenderer({ label: goods.name, type: goods.type })),
     },
   ];
 
@@ -62,7 +64,10 @@ const KitchenGoods = () => {
         onHide={() => setIsOpen(false)}>
         <div className="w-full flex justify-between">
           <span>{item}</span>
-          <input type="number" className="border-1 bg-silver rounded-md w-12" />
+          <div>
+            <input type="number" className="border-1 bg-silver rounded-md w-12 mr-2" />
+            <span>{itemType}</span>
+          </div>
         </div>
       </Dialog>
     </div>

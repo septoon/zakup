@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+
 import './index.css';
 import App from './App';
 import Kitchen from './components/Kitchen/Kitchen';
@@ -16,6 +18,7 @@ import 'primeicons/primeicons.css';
 import NotFound from './components/NotFound';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import store from './store';
 
 const router = createBrowserRouter([
   {
@@ -46,9 +49,11 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <PrimeReactProvider>
-        <RouterProvider router={router} />
-    </PrimeReactProvider>
+    <Provider store={store}>
+      <PrimeReactProvider>
+          <RouterProvider router={router} />
+      </PrimeReactProvider>
+    </Provider>
   </React.StrictMode>
 );
 

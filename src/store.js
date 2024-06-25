@@ -1,3 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-export const store = configureStore()
+import vegetSlice from "./Redux/vegetSlice";
+
+const store = configureStore({
+  reducer: {
+    vegetables: vegetSlice
+  }
+})
+
+export default store
+
