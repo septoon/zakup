@@ -21,7 +21,6 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     const savedItems = localStorage.getItem('selectedItems');
     return savedItems ? JSON.parse(savedItems) : [];
   });
-  const inputRef = useRef(null);
 
   useEffect(() => {
     localStorage.setItem('selectedItem', JSON.stringify(item));
@@ -31,13 +30,6 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
   }, [selectedItems]);
 
-  useEffect(() => {
-    if (isOpen && inputRef.current) {
-      setTimeout(() => {
-        inputRef.current.focus();
-      }, 100);
-    }
-  }, [isOpen]);
 
   const addVegets = (obj) => {
     setIsOpen(false);
@@ -58,19 +50,17 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
   const itemRenderer = (item) => {
     const selectedItem = selectedItems.find(i => i.name === item.label);
     return (
-      <div className="flex items-center px-3 py-2">
-        <span
-          onClick={() => {
-            setIsOpen(true);
-            setItem({
-              name: item.label,
-              count: selectedItem ? selectedItem.count : 0,
-              type: item.type,
-              category: item.category
-            });
-            setCount(selectedItem ? selectedItem.count : 0);
-          }}
-          className={`mx-2 cursor-pointer ${item.items && 'font-semibold'}`}
+      <div className="flex items-center px-3 py-2" onClick={() => {
+        setIsOpen(true);
+        setItem({
+          name: item.label,
+          count: selectedItem ? selectedItem.count : 0,
+          type: item.type,
+          category: item.category
+        });
+        setCount(selectedItem ? selectedItem.count : 0);
+      }}>
+        <span className={`mx-2 cursor-pointer ${item.items && 'font-semibold'}`}
         >
           {item.label}
         </span>
@@ -138,7 +128,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
           <span>{item.name}</span>
           <div>
             <input
-              ref={inputRef}
+              autoFocus="true"
               type="number"
               value={count > 0 ? count : ''}
               onChange={(e) => {
