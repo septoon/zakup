@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import MangalGoods from './MangalGoods'
 import { Button } from 'primereact/button'
 import Template from '../Template'
 import { mangalData } from '../../common/data/mangal/mangalData'

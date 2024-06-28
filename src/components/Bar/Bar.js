@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BarGoods from './BarGoods';
 import { Button } from 'primereact/button';
 import { useSelector } from 'react-redux';
 import Template from '../Template';
