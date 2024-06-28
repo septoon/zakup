@@ -4,6 +4,9 @@ import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 import { useDispatch } from 'react-redux';
 import { addVegetablesToItems } from '../Redux/vegetSlice';
+// import { addDuzinaToItems } from '../Redux/duzinaSlice';
+// import { addMangalToItems } from '../Redux/mangalSlice';
+// import { addHouseToItems } from '../Redux/houseSlice';
 
 const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
   const dispatch = useDispatch();
@@ -63,6 +66,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
               name: item.label,
               count: selectedItem ? selectedItem.count : 0,
               type: item.type,
+              category: item.category
             });
             setCount(selectedItem ? selectedItem.count : 0);
           }}
@@ -81,7 +85,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         {
           header: 'Хоз товары',
           content: houseData.map((house) =>
-            itemRenderer({ label: house.name, type: house.type })
+            itemRenderer({ label: house.name, type: house.type, category: house.category })
           ),
         },
       ]
@@ -90,7 +94,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         {
           header: 'Мясо',
           content: mangalData.map((meat) =>
-            itemRenderer({ label: meat.name, type: meat.type })
+            itemRenderer({ label: meat.name, type: meat.type, category: meat.category })
           ),
         },
       ]
@@ -98,13 +102,13 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         {
           header: 'Овощи',
           content: vegetablesData.map((vegetable) =>
-            itemRenderer({ label: vegetable.name, type: vegetable.type })
+            itemRenderer({ label: vegetable.name, type: vegetable.type, category: vegetable.category })
           ),
         },
         {
           header: 'Дюжина',
-          content: duzinaData.map((goods) =>
-            itemRenderer({ label: goods.name, type: goods.type }))
+          content: duzinaData.map((duzina) =>
+            itemRenderer({ label: duzina.name, type: duzina.type, category: duzina.category }))
         },
       ];
 

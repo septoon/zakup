@@ -1,23 +1,33 @@
 export const duzinaDataBar = [
   {
     name: 'Молоко',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'duzina'
   },
   {
     name: 'Сахар стик',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'duzina'
   },
   {
     name: 'Сахар кубики',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'duzina'
   },
   {
     name: 'Парварда',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'duzina'
   },
   {
     name: 'Мёд',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'duzina'
   },
 
 ]

@@ -1,35 +1,52 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Button } from 'primereact/button'
-import Template from '../Template'
-import { houseData } from '../../common/data/house/houseData'
-import { useDispatch, useSelector } from 'react-redux'
-import { clearItems } from '../../Redux/vegetSlice'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { Button } from 'primereact/button';
 
-const House = () => {
+import { houseData } from '../../common/data/house/houseData';
+import Template from '../Template';
+import { clearItems } from '../../Redux/vegetSlice';
+import Order from '../Order';
+
+const Kitchen = () => {
   const dispatch = useDispatch();
+  const [visible, setVisible] = useState(false);
+
+  const show = () => {
+      setVisible(true);
+  };
+
   const { items } = useSelector(({ vegetables }) => ({
     items: vegetables.items
   }));
 
   const handleSend = () => {
-    console.log(items);
-    dispatch(clearItems());
-    localStorage.removeItem('selectedItem');
-    localStorage.removeItem('selectedItems');
+    if(items.length > 0) {
+      console.log(items);
+      dispatch(clearItems());
+      localStorage.removeItem('selectedItem');
+      localStorage.removeItem('selectedItems');
+      setVisible(false)
+    }
   };
+  const footerContent = (
+    <div>
+      <Button label="Отправить" onClick={handleSend} className="bg-blue w-full text-white py-3 rounded-lg" />
+    </div>
+  );
 
   return (
-    <div className='flex flex-col relative'>
-      <div className='flex justify-start items-center pl-5 h-16 text-blue font-medium'>
-        <Link to='/zakup'>Назад</Link>
+    <div className="flex flex-col relative">
+      <div className="flex justify-start items-center pl-5 h-16 text-blue font-medium">
+        <Link to="/zakup">Назад</Link>
       </div>
       <Template houseData={houseData} />
+      <Order visible={visible} setVisible={setVisible} footerContent={footerContent} items={items} />
       <div className='w-full px-5 fixed bottom-3'>
-        <Button label="Отправить" onClick={handleSend} className="bg-blue w-full text-white py-3 rounded-lg" />
+        <Button label="Итог" onClick={() => show('bottom')} className="bg-blue w-full text-white py-3 rounded-lg" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default House
+export default Kitchen;

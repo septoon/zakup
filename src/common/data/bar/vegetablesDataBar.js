@@ -1,23 +1,33 @@
 export const vegetablesDataBar = [
   {
     name: 'Апельсины',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'vegetables'
   },
   {
     name: 'Лимоны',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'vegetables'
   },
   {
     name: 'Лайм',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'vegetables'
   },
   {
     name: 'Мята',
-    type: 'пуч.'
+    count: 0,
+    type: 'пуч.',
+    category: 'vegetables'
   },
   {
     name: 'Груша',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'vegetables'
   },
 
 ]

@@ -1,46 +1,68 @@
 export const mangalData = [
   {
     name: 'Шея',
-    type: 'кг.'
+    count: 0,
+    type: 'кг.',
+    category: 'mangal'
   },
   {
     name: 'Ребра',
-    type: 'кг.'
+    count: 0,
+    type: 'кг.',
+    category: 'mangal'
   },
   {
     name: 'Индейка',
-    type: 'кг.'
+    count: 0,
+    type: 'кг.',
+    category: 'mangal'
   },
   {
     name: 'Каре',
-    type: 'кг.'
+    count: 0,
+    type: 'кг.',
+    category: 'mangal'
   },
   {
     name: 'Телятина',
-    type: 'кг.'
+    count: 0,
+    type: 'кг.',
+    category: 'mangal'
   },
   {
     name: 'Дорадо',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'mangal'
   },
   {
     name: 'Скумбрия',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'mangal'
   },
   {
     name: 'Сибас',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'mangal'
   },
   {
     name: 'Форель речная',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'mangal'
   },
   {
     name: 'Семга',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'mangal'
   },
   {
     name: 'Для люли',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'mangal'
   },
 ]

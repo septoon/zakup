@@ -1,23 +1,33 @@
 export const houseData = [
   {
     name: 'Слфетки барные',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'house'
   },
   {
     name: 'Тряпки для столов',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'house'
   },
   {
     name: 'Боксы',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'house'
   },
   {
     name: 'Соусницы',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'house'
   },
   {
     name: 'Бумаж. полотенца в туалет',
-    type: 'шт.'
+    count: 0,
+    type: 'шт.',
+    category: 'house'
   },
 
 ]
