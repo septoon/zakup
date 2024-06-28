@@ -61,7 +61,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         >
           {item.label}
         </span>
-        {selectedItem && <span className="ml-2">({selectedItem.count})</span>}
+        {selectedItem && <span className="ml-2">{selectedItem.count > 0 && `(${selectedItem.count})`}</span>}
         <span>{item.count > 0 && item.count}</span>
       </div>
     );
@@ -101,7 +101,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
 
   const footerContent = (
     <div>
-      <Button label="Добавить" icon="pi pi-check" onClick={() => addVegets({ ...item, count })} autoFocus />
+      <Button label="Добавить" icon="pi pi-check" onClick={() => count > 0 && addVegets({ ...item, count })} autoFocus />
     </div>
   );
 
