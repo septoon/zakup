@@ -30,7 +30,9 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
 
   useEffect(() => {
     if (isOpen && inputRef.current) {
-      inputRef.current.focus();
+      setTimeout(() => {
+        inputRef.current.focus();
+      }, 100);
     }
   }, [isOpen]);
 
@@ -128,22 +130,22 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         footer={footerContent}
         onHide={() => setIsOpen(false)}
       >
-        <div className="w-full flex justify-between items-center h-8">
+        <div className="w-full flex justify-between">
           <span>{item.name}</span>
           <div>
-          <input
-            ref={inputRef}
-            type="number"
-            value={count > 0 ? count : ''}
-            onChange={(e) => {
-              const newCount = parseInt(e.target.value, 10);
-              setCount(newCount);
-              setItem((prevItem) => ({ ...prevItem, count: newCount }));
-            }}
-            inputMode="numeric"
-            pattern="[0-9]*"
-            className="border-1 bg-silver rounded-md w-12 mr-2"
-          />
+            <input
+              ref={inputRef}
+              type="number"
+              value={count > 0 ? count : ''}
+              onChange={(e) => {
+                const newCount = parseInt(e.target.value, 10);
+                setCount(newCount);
+                setItem((prevItem) => ({ ...prevItem, count: newCount }));
+              }}
+              inputMode="numeric"
+              pattern="[0-9]*"
+              className="border-1 bg-silver rounded-md w-12 mr-2"
+            />
             <span>{item.type}</span>
           </div>
         </div>
