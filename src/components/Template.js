@@ -61,7 +61,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         >
           {item.label}
         </span>
-        {selectedItem && <span className="ml-2">{selectedItem.count > 0 && `(${selectedItem.count})`}</span>}
+        {selectedItem && <span className="ml-2">{selectedItem.count > 0 && `(${selectedItem.count} ${selectedItem.type})`}</span>}
         <span>{item.count > 0 && item.count}</span>
       </div>
     );
