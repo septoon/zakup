@@ -3,7 +3,7 @@ import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 
-const Template = ({vegetablesData, duzinaData}) => {
+const Template = ({mangalData, vegetablesData, duzinaData, houseData}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [item, setItem] = useState('');
   const [itemType, setItemType] = useState('');
@@ -28,7 +28,17 @@ const Template = ({vegetablesData, duzinaData}) => {
     </div>
   );
 
-  const items = [
+  const items = houseData ? [
+    {
+      header: 'Хоз товары',
+      content: houseData.map((house) => itemRenderer({ label: house.name, type: house.type })),
+    },
+  ] : mangalData ? [
+    {
+      header: 'Мясо',
+      content: mangalData.map((meat) => itemRenderer({ label: meat.name, type: meat.type })),
+    },
+  ] : [
     {
       header: 'Овощи',
       content: vegetablesData.map((vegetable) => itemRenderer({ label: vegetable.name, type: vegetable.type })),

@@ -13,7 +13,7 @@ export const houseData = [
   },
   {
     name: 'Соусницы',
-    type: 'пуч.'
+    type: 'шт.'
   },
   {
     name: 'Бумаж. полотенца в туалет',

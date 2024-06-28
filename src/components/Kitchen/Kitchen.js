@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import KitchenGoods from './KitchenGoods';
+
 import { vegetablesData } from '../../common/data/kitchen/vegetablesData';
 import { duzinaData } from '../../common/data/kitchen/duzinaData';
 import { Button } from 'primereact/button';
