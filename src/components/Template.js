@@ -29,15 +29,14 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
   }, [selectedItems]);
 
-  useEffect(() => {
-    if (isOpen) {
-      setTimeout(() => {
-        if (inputRef.current) {
-          inputRef.current.focus();
-        }
-      }, 0);
-    }
-  }, [isOpen]);
+  const handleOpenDialog = () => {
+    setIsOpen(true);
+    setTimeout(() => {
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+    }, 100); // Попробуем увеличить таймаут
+  };
 
   const addVegets = (obj) => {
     setIsOpen(false);
@@ -65,7 +64,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     const selectedItem = selectedItems.find(i => i.name === item.label);
     return (
       <div className="flex items-center px-3 py-2" onClick={() => {
-        setIsOpen(true);
+        handleOpenDialog();
         setItem({
           name: item.label,
           count: selectedItem ? selectedItem.count : 0,
@@ -118,7 +117,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
 
   const footerContent = (
     <div className="flex justify-between">
-      <Button label={item.count > 0 && "Удалить"} icon={item.count > 0 && "pi pi-times"} className="p-button-danger" onClick={() => removeVegets(item.name)} />
+      <Button label="Удалить" icon="pi pi-times" className="p-button-danger" onClick={() => removeVegets(item.name)} />
       <Button label="Добавить" icon="pi pi-check" onClick={() => count > 0 && addVegets({ ...item, count })} autoFocus />
     </div>
   );
