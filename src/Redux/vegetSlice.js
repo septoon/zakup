@@ -13,11 +13,20 @@ const vegetSlice = createSlice({
   },
   reducers: {
     addVegetablesToItems: (state, action) => {
-      state.items.push({ ...action.payload, quantity: 1 });
+      const index = state.items.findIndex(item => item.name === action.payload.name);
+      if (index !== -1) {
+        state.items[index] = { ...action.payload, quantity: state.items[index].quantity + 1 };
+      } else {
+        state.items.push({ ...action.payload, quantity: 1 });
+      }
       setItemFunc(state.items);
     },
     clearItems: (state) => {
       state.items = [];
+      setItemFunc(state.items);
+    },
+    removeVegetableByName: (state, action) => {
+      state.items = state.items.filter(item => item.name !== action.payload);
       setItemFunc(state.items);
     },
   },
@@ -25,7 +34,8 @@ const vegetSlice = createSlice({
 
 export const {
   addVegetablesToItems,
-  clearItems
+  clearItems,
+  removeVegetableByName
 } = vegetSlice.actions;
 
 export default vegetSlice.reducer;

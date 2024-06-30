@@ -15,7 +15,6 @@ const Order = ({ visible, setVisible, footerContent, items }) => {
       </div>
     ) : null
   );
-
   return (
     <div className="card">
       <Dialog

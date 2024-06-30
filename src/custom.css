@@ -1,0 +1,4 @@
+/* customStyles.css */
+#pr_id_9_header_0, #pr_id_9_header_1, #pr_id_9_header_2 { /* Добавьте здесь все возможные id */
+  @apply bg-darkGray text-white;
+}

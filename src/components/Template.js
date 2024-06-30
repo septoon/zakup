@@ -1,12 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 import { useDispatch } from 'react-redux';
-import { addVegetablesToItems } from '../Redux/vegetSlice';
-// import { addDuzinaToItems } from '../Redux/duzinaSlice';
-// import { addMangalToItems } from '../Redux/mangalSlice';
-// import { addHouseToItems } from '../Redux/houseSlice';
+import { addVegetablesToItems, removeVegetableByName } from '../Redux/vegetSlice';
 
 const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
   const dispatch = useDispatch();
@@ -30,7 +27,6 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
   }, [selectedItems]);
 
-
   const addVegets = (obj) => {
     setIsOpen(false);
     dispatch(addVegetablesToItems(obj));
@@ -41,6 +37,12 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
       }
       return [...prevSelectedItems, obj];
     });
+  };
+
+  const removeVegets = (name) => {
+    setIsOpen(false);
+    dispatch(removeVegetableByName(name));
+    setSelectedItems((prevSelectedItems) => prevSelectedItems.filter(i => i.name !== name));
   };
 
   const onTabChange = (e) => {
@@ -103,7 +105,8 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
       ];
 
   const footerContent = (
-    <div>
+    <div className="flex justify-between">
+      <Button label={item.count > 0 && "Удалить"} icon={item.count > 0 && "pi pi-times"} className="p-button-danger" onClick={() => removeVegets(item.name)} />
       <Button label="Добавить" icon="pi pi-check" onClick={() => count > 0 && addVegets({ ...item, count })} autoFocus />
     </div>
   );
@@ -112,7 +115,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     <div className="card flex w-full justify-center">
       <Accordion activeIndex={activeIndexes} className="w-full" onTabChange={onTabChange}>
         {items.map((item, index) => (
-          <AccordionTab key={index} header={item.header}>
+          <AccordionTab headerClassName='' key={index} header={item.header}>
             {item.content}
           </AccordionTab>
         ))}
