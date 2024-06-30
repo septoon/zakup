@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
@@ -19,6 +19,8 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     return savedItems ? JSON.parse(savedItems) : [];
   });
 
+  const inputRef = useRef(null);
+
   useEffect(() => {
     localStorage.setItem('selectedItem', JSON.stringify(item));
   }, [item]);
@@ -26,6 +28,16 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
   useEffect(() => {
     localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
   }, [selectedItems]);
+
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => {
+        if (inputRef.current) {
+          inputRef.current.focus();
+        }
+      }, 0);
+    }
+  }, [isOpen]);
 
   const addVegets = (obj) => {
     setIsOpen(false);
@@ -131,7 +143,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
           <span>{item.name}</span>
           <div>
             <input
-              autoFocus="true"
+              ref={inputRef}
               type="number"
               value={count > 0 ? count : ''}
               onChange={(e) => {
