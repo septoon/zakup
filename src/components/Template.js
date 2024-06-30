@@ -35,7 +35,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
       if (inputRef.current) {
         inputRef.current.focus();
       }
-    }, 100); // Попробуем увеличить таймаут
+    }, 300); // Попробуем увеличить таймаут
   };
 
   const addVegets = (obj) => {
@@ -73,8 +73,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         });
         setCount(selectedItem ? selectedItem.count : 0);
       }}>
-        <span className={`mx-2 cursor-pointer ${item.items && 'font-semibold'}`}
-        >
+        <span className={`mx-2 cursor-pointer ${item.items && 'font-semibold'}`}>
           {item.label}
         </span>
         {selectedItem && <span className="ml-2">{selectedItem.count > 0 && `(${selectedItem.count} ${selectedItem.type})`}</span>}
