@@ -7,7 +7,7 @@ const Order = ({ visible, setVisible, footerContent, items }) => {
   const mangal = items.filter((item) => item.category === 'mangal');
   const house = items.filter((item) => item.category === 'house');
 
-  const renderSection = (title, data) => (
+  const renderSection = (title, data, sendOrder) => (
     data.length > 0 ? (
       <div className="flex flex-col mt-4">
         <h1 className="text-xl font-medium mb-2">{title}:</h1>
@@ -15,6 +15,12 @@ const Order = ({ visible, setVisible, footerContent, items }) => {
       </div>
     ) : null
   );
+
+  const goodsList = items.map((i) => {
+    const value = `${i.name} - ${i.count}${i.type}`;
+    return value;
+  });
+
   return (
     <div className="card">
       <Dialog

@@ -117,7 +117,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
 
   const footerContent = (
     <div className="flex justify-between">
-      <Button label="Удалить" icon="pi pi-times" className="p-button-danger" onClick={() => removeVegets(item.name)} />
+      <Button label={item.count > 0 && "Удалить"} icon={item.count > 0 && "pi pi-times"} className="p-button-danger" onClick={() => removeVegets(item.name)} />
       <Button label="Добавить" icon="pi pi-check" onClick={() => count > 0 && addVegets({ ...item, count })} autoFocus />
     </div>
   );
