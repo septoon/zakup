@@ -31,11 +31,12 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
 
   const handleOpenDialog = () => {
     setIsOpen(true);
-    setTimeout(() => {
-      if (inputRef.current) {
-        inputRef.current.focus();
-      }
-    }, 300); // Попробуем увеличить таймаут
+  };
+
+  const handleDialogOpened = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   };
 
   const addVegets = (obj) => {
@@ -136,6 +137,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         visible={isOpen}
         footer={footerContent}
         onHide={() => setIsOpen(false)}
+        onShow={handleDialogOpened}
       >
         <div className="w-full flex justify-between">
           <span>{item.name}</span>
