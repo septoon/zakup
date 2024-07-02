@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const sendOrder = async (type, goods, dispatch, clearItems, setVisible) => {
+export const sendOrder = async (type, goods) => {
   let message = `
   Ленина
 
@@ -19,10 +19,7 @@ export const sendOrder = async (type, goods, dispatch, clearItems, setVisible) =
       },
     )
     .then((res) => {
-      dispatch(clearItems());
-      localStorage.removeItem('selectedItem');
-      localStorage.removeItem('selectedItems');
-      setVisible(false)
+      console.log(res)
     })  
     .catch((err) => {
       console.warn(err);

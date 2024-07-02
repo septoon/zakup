@@ -40,10 +40,14 @@ const Order = ({ visible, setVisible }) => {
   }).join('\n');
 
   const Load = () => {
-    sendOrder('Овощи', vegetsList.toString(), dispatch, clearItems, setVisible)
-    sendOrder('Дюжина', duzinaList.toString(), dispatch, clearItems, setVisible)
-    sendOrder('Мангал', mangalList.toString(), dispatch, clearItems, setVisible)
-    sendOrder('Хоз товары', houseList.toString(), dispatch, clearItems, setVisible)
+    setVisible(false)
+    sendOrder('Овощи', vegetsList.toString())
+    sendOrder('Дюжина', duzinaList.toString())
+    sendOrder('Мангал', mangalList.toString())
+    sendOrder('Хоз товары', houseList.toString())
+    dispatch(clearItems());
+    localStorage.removeItem('selectedItem');
+    localStorage.removeItem('selectedItems');
   }
 
   const footerContent = (
