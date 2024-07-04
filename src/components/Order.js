@@ -8,8 +8,9 @@ import { clearItems } from "../Redux/vegetSlice";
 const Order = ({ visible, setVisible }) => {
   const dispatch = useDispatch()
 
-  const { items } = useSelector(({ vegetables }) => ({
-    items: vegetables.items
+  const { items, address } = useSelector(({ vegetables, addressSelection }) => ({
+    items: vegetables.items,
+    address: addressSelection.address
   }));
 
   const vegets = items.filter((item) => item.category === 'vegetables');
@@ -41,10 +42,10 @@ const Order = ({ visible, setVisible }) => {
 
   const Load = () => {
     setVisible(false)
-    sendOrder('Овощи', vegetsList.toString())
-    sendOrder('Дюжина', duzinaList.toString())
-    sendOrder('Мангал', mangalList.toString())
-    sendOrder('Хоз товары', houseList.toString())
+    sendOrder('Овощи', vegetsList.toString(), address)
+    sendOrder('Дюжина', duzinaList.toString(), address)
+    sendOrder('Мангал', mangalList.toString(), address)
+    sendOrder('Хоз товары', houseList.toString(), address)
     dispatch(clearItems());
     localStorage.removeItem('selectedItem');
     localStorage.removeItem('selectedItems');

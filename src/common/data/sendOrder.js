@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const sendOrder = async (type, goods) => {
+export const sendOrder = async (type, goods, address) => {
   let message = `
-  Ленина
+  ${address}
 
   ${type}
 
@@ -14,7 +14,7 @@ export const sendOrder = async (type, goods) => {
     .post(
       'https://api.telegram.org/bot7275423419:AAGDxY6uqtmMxO3xFzKbMKRhxyfr9W9RjHY/sendMessage',
       {
-        chat_id: '-1002160395531',
+        chat_id:  address === 'Ленина' ? '-1002160395531' : address === 'Парковая' ? '-1002176676370' : '',
         text: message,
       },
     )
