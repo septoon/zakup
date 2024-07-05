@@ -3,6 +3,7 @@ import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 import { useDispatch } from 'react-redux';
+import '../custom.css'
 import { addVegetablesToItems, removeVegetableByName } from '../Redux/vegetSlice';
 
 const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
@@ -126,7 +127,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     <div className="card flex w-full justify-center">
       <Accordion activeIndex={activeIndexes} className="w-full" onTabChange={onTabChange}>
         {items.map((item, index) => (
-          <AccordionTab headerClassName='' key={index} header={item.header}>
+          <AccordionTab contentClassName='accord' headerClassName='accord' key={index} header={item.header}>
             {item.content}
           </AccordionTab>
         ))}

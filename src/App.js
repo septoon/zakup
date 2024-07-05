@@ -27,7 +27,7 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col justify-start items-center pt-20 w-screen h-screen pl-2">
+    <div className="flex flex-col justify-start items-center pt-10 w-screen h-screen pl-2">
       <div onClick={() => setVisible(true)} className='w-[80%] h-20 flex justify-between px-5 items-center mb-5 bg-silver dark:bg-darkGray rounded-lg'>
         <span className='dark:text-white'>Закуп для кафе: </span>
         <span className='dark:text-white font-bold underline cursor-pointer'>{address}</span>

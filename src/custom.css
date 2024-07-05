@@ -1,4 +1,7 @@
-/* customStyles.css */
-#pr_id_9_header_0, #pr_id_9_header_1, #pr_id_9_header_2 { /* Добавьте здесь все возможные id */
-  @apply bg-darkGray text-white;
+@media (prefers-color-scheme: dark) {
+  .accord a,  /* Header */
+  .accord .p-accordion-content { /* Content */
+    color: #f9fafb  !important;
+    background-color: #141616  !important;
+  }
 }
