@@ -41,19 +41,21 @@ const Order = ({ visible, setVisible }) => {
   }).join('\n');
 
   const Load = () => {
-    setVisible(false)
-    sendOrder('Овощи', vegetsList.toString(), address)
-    sendOrder('Дюжина', duzinaList.toString(), address)
-    sendOrder('Мангал', mangalList.toString(), address)
-    sendOrder('Хоз товары', houseList.toString(), address)
-    dispatch(clearItems());
-    localStorage.removeItem('selectedItem');
-    localStorage.removeItem('selectedItems');
+    if (address !== '') {
+      setVisible(false)
+      sendOrder('Овощи', vegetsList.toString(), address)
+      sendOrder('Дюжина', duzinaList.toString(), address)
+      sendOrder('Мангал', mangalList.toString(), address)
+      sendOrder('Хоз товары', houseList.toString(), address)
+      dispatch(clearItems());
+      localStorage.removeItem('selectedItem');
+      localStorage.removeItem('selectedItems');
+    }
   }
 
   const footerContent = (
     <div>
-      <Button label="Отправить" onClick={Load} className="bg-blue w-full text-white py-3 rounded-lg" />
+      <Button label={address === '' ? "Выберите адрес кафе" : "Отправить"} onClick={Load} className="bg-blue w-full text-white py-3 rounded-lg" />
     </div>
   );
   return (

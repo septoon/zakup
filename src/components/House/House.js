@@ -20,7 +20,7 @@ const House = () => {
       </div>
       <Template houseData={houseData}  />
       <Order visible={visible} setVisible={setVisible} />
-      <div className='w-full px-5 fixed bottom-3'>
+      <div className='w-full px-5 fixed bottom-5'>
         <Button label="Итог" onClick={() => show('bottom')} className="bg-blue w-full text-white py-3 rounded-lg" />
       </div>
     </div>

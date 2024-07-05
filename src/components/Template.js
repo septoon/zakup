@@ -134,7 +134,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
       </Accordion>
       <Dialog
         header="Количество"
-        className="w-full"
+        className="w-full dark:bg-dark dark:text-white"
         visible={isOpen}
         footer={footerContent}
         onHide={() => setIsOpen(false)}
