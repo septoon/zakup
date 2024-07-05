@@ -2,61 +2,71 @@ export const vegetablesDataBar = [
   {
     name: 'Апельсины',
     count: 0,
+    counted: true,
     type: 'шт.',
-    category: 'vegetables'
+    category: 'vegetables',
   },
   {
     name: 'Лимоны',
     count: 0,
+    counted: true,
     type: 'шт.',
-    category: 'vegetables'
+    category: 'vegetables',
   },
   {
     name: 'Лайм',
     count: 0,
+    counted: true,
     type: 'шт.',
-    category: 'vegetables'
+    category: 'vegetables',
   },
   {
     name: 'Мята',
     count: 0,
+    counted: true,
     type: 'пуч.',
-    category: 'vegetables'
+    category: 'vegetables',
   },
   {
     name: 'Грейпфрут',
     count: 0,
+    counted: true,
     type: 'шт.',
-    category: 'vegetables'
+    category: 'vegetables',
   },
   {
     name: 'Имбирь',
     count: 0,
+    counted: true,
     type: 'шт.',
-    category: 'vegetables'
+    category: 'vegetables',
   },
   {
     name: 'Яблоки',
     count: 0,
+    counted: true,
     type: 'шт.',
-    category: 'vegetables'
+    category: 'vegetables',
   },
   {
     name: 'Груша',
     count: 0,
+    counted: true,
     type: 'шт.',
-    category: 'vegetables'
+    category: 'vegetables',
   },
   {
     name: 'Персик',
     count: 0,
+    counted: true,
     type: 'шт.',
-    category: 'vegetables'
+    category: 'vegetables',
   },
   {
     name: 'Киви',
     count: 0,
+    counted: true,
     type: 'шт.',
-    category: 'vegetables'
+    category: 'vegetables',
   },
-]
+];

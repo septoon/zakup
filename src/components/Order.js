@@ -22,22 +22,22 @@ const Order = ({ visible, setVisible }) => {
     data.length > 0 ? (
       <div className="flex flex-col mt-4">
         <h1 className="text-xl font-medium mb-2">{title}:</h1>
-        {data.map((i, index) => (<span key={index}>{`${i.name} - ${i.count}${i.type}`}</span>))}
+        {data.map((i, index) => (<span key={index}>{i.counted ? `${i.name} - ${i.count}${i.type},` : `${i.name},`}</span>))}
       </div>
     ) : null
   );
 
   const vegetsList = vegets.map((i) => {
-    return `${i.name} - ${i.count}${i.type}`;
+    return i.counted ? `${i.name} - ${i.count}${i.type},` : `${i.name},`;
   }).join('\n');
   const duzinaList = duzina.map((i) => {
-    return `${i.name} - ${i.count}${i.type}`;
+    return i.counted ? `${i.name} - ${i.count}${i.type},` : `${i.name},`;
   }).join('\n');
   const mangalList =  mangal.map((i) => {
-    return `${i.name} - ${i.count}${i.type}`;
+    return i.counted ? `${i.name} - ${i.count}${i.type},` : `${i.name},`;
   }).join('\n');
   const houseList = house.map((i) => {
-    return `${i.name} - ${i.count}${i.type}`;
+    return i.counted ? `${i.name} - ${i.count}${i.type},` : `${i.name},`;
   }).join('\n');
 
   const Load = () => {

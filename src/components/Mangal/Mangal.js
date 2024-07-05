@@ -14,7 +14,7 @@ const Mangal = () => {
   };
 
   return (
-    <div className="flex flex-col relative">
+    <div className="flex flex-col relative overflow-y-hidden">
       <div className="flex justify-start items-center pl-5 h-16 text-blue font-medium">
         <Link to="/zakup">Назад</Link>
       </div>
