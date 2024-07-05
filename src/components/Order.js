@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 import { Dialog } from 'primereact/dialog';
-import { sendOrder } from "../common/data/sendOrder";
-import { Button } from "primereact/button";
-import { useDispatch, useSelector } from "react-redux";
-import { clearItems } from "../Redux/vegetSlice";
+import { sendOrder } from '../common/data/sendOrder';
+import { Button } from 'primereact/button';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearItems } from '../Redux/vegetSlice';
 
 const Order = ({ visible, setVisible }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const { items, address } = useSelector(({ vegetables, addressSelection }) => ({
     items: vegetables.items,
-    address: addressSelection.address
+    address: addressSelection.address,
   }));
 
   const vegets = items.filter((item) => item.category === 'vegetables');
@@ -18,44 +18,69 @@ const Order = ({ visible, setVisible }) => {
   const mangal = items.filter((item) => item.category === 'mangal');
   const house = items.filter((item) => item.category === 'house');
 
-  const renderSection = (title, data) => (
+  const renderSection = (title, data) =>
     data.length > 0 ? (
       <div className="flex flex-col mt-4">
         <h1 className="text-xl font-medium mb-2">{title}:</h1>
-        {data.map((i, index) => (<span key={index}>{i.counted ? `${i.name} - ${i.count}${i.type},` : `${i.name},`}</span>))}
+        {data.map((i, index) => (
+          <span key={index}>
+            {i.counted
+              ? `${i.name} ${i.comment ? `(${i.comment})` : ''} - ${i.count}${i.type},`
+              : `${i.name} ${i.comment ? `(${i.comment})` : ''},`}
+          </span>
+        ))}
       </div>
-    ) : null
-  );
+    ) : null;
 
-  const vegetsList = vegets.map((i) => {
-    return i.counted ? `${i.name} - ${i.count}${i.type},` : `${i.name},`;
-  }).join('\n');
-  const duzinaList = duzina.map((i) => {
-    return i.counted ? `${i.name} - ${i.count}${i.type},` : `${i.name},`;
-  }).join('\n');
-  const mangalList =  mangal.map((i) => {
-    return i.counted ? `${i.name} - ${i.count}${i.type},` : `${i.name},`;
-  }).join('\n');
-  const houseList = house.map((i) => {
-    return i.counted ? `${i.name} - ${i.count}${i.type},` : `${i.name},`;
-  }).join('\n');
+  const vegetsList = vegets
+    .map((i) => {
+      return i.counted
+        ? `${i.name} ${i.comment ? `(${i.comment})` : ''} - ${i.count}${i.type},`
+        : `${i.name},`;
+    })
+    .join('\n');
+  const duzinaList = duzina
+    .map((i) => {
+      return i.counted
+        ? `${i.name} ${i.comment ? `(${i.comment})` : ''} - ${i.count}${i.type},`
+        : `${i.name},`;
+    })
+    .join('\n');
+  const mangalList = mangal
+    .map((i) => {
+      return i.counted
+        ? `${i.name} ${i.comment ? `(${i.comment})` : ''} - ${i.count}${i.type},`
+        : `${i.name},`;
+    })
+    .join('\n');
+  const houseList = house
+    .map((i) => {
+      return i.counted
+        ? `${i.name} ${i.comment ? `(${i.comment})` : ''} - ${i.count}${i.type},`
+        : `${i.name},`;
+    })
+    .join('\n');
 
   const Load = () => {
     if (address !== '') {
-      setVisible(false)
-      sendOrder('Овощи', vegetsList.toString(), address)
-      sendOrder('Дюжина', duzinaList.toString(), address)
-      sendOrder('Мангал', mangalList.toString(), address)
-      sendOrder('Хоз товары', houseList.toString(), address)
+      setVisible(false);
+      sendOrder('Овощи', vegetsList.toString(), address);
+      sendOrder('Дюжина', duzinaList.toString(), address);
+      sendOrder('Мангал', mangalList.toString(), address);
+      sendOrder('Хоз товары', houseList.toString(), address);
       dispatch(clearItems());
       localStorage.removeItem('selectedItem');
       localStorage.removeItem('selectedItems');
     }
-  }
+  };
 
   const footerContent = (
     <div>
-      <Button label={address === '' ? "Выберите адрес кафе" : "Отправить"} onClick={Load} className="bg-blue w-full text-white py-3 rounded-lg" />
+      <Button
+        label={address === '' ? 'Выберите адрес кафе' : 'Отправить'}
+        onClick={Load}
+        className="bg-blue w-full text-white py-3 rounded-lg"
+      />
     </div>
   );
   return (
@@ -65,11 +90,13 @@ const Order = ({ visible, setVisible }) => {
         visible={visible}
         position={'bottom'}
         style={{ width: '95vw' }}
-        onHide={() => { if (!visible) return; setVisible(false); }}
+        onHide={() => {
+          if (!visible) return;
+          setVisible(false);
+        }}
         footer={footerContent}
         draggable={false}
-        resizable={false}
-      >
+        resizable={false}>
         <div className="w-full h-full">
           {renderSection('Овощи', vegets)}
           {renderSection('Дюжина', duzina)}

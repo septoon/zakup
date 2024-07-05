@@ -3,7 +3,7 @@ import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 import { useDispatch } from 'react-redux';
-import '../custom.css'
+import '../custom.css';
 import { addVegetablesToItems, removeVegetableByName } from '../Redux/vegetSlice';
 
 const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
@@ -14,6 +14,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     return savedItem ? JSON.parse(savedItem) : {};
   });
   const [count, setCount] = useState(0);
+  const [comment, setComment] = useState('');
   const [activeIndexes, setActiveIndexes] = useState([0, 1]);
   const [selectedItems, setSelectedItems] = useState(() => {
     const savedItems = localStorage.getItem('selectedItems');
@@ -64,7 +65,6 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
 
   const itemRenderer = (item) => {
     const selectedItem = selectedItems.find(i => i.name === item.label);
-    console.log(item.counted)
     return (
       <div className="flex items-center px-3 py-2" onClick={() => {
         handleOpenDialog();
@@ -72,10 +72,12 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
           name: item.label,
           count: selectedItem ? selectedItem.count : 0 && item.counted ? selectedItem.count : 1,
           counted: item.counted,
+          comment: selectedItem ? selectedItem.comment : '',
           type: item.type,
           category: item.category
         });
         setCount(selectedItem ? selectedItem.count : 0 && item.counted ? selectedItem.count : 1);
+        setComment(selectedItem ? selectedItem.comment : '');
       }}>
         <span className={`mx-2 cursor-pointer ${item.items && 'font-semibold'}`}>
           {item.label}
@@ -91,7 +93,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         {
           header: 'Хоз товары',
           content: houseData.map((house) =>
-            itemRenderer({ label: house.name, counted: house.counted, type: house.type, category: house.category })
+            itemRenderer({ label: house.name, comment: house.comment || '', counted: house.counted, type: house.type, category: house.category })
           ),
         },
       ]
@@ -100,7 +102,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         {
           header: 'Мясо',
           content: mangalData.map((meat) =>
-            itemRenderer({ label: meat.name, counted: meat.counted, type: meat.type, category: meat.category })
+            itemRenderer({ label: meat.name, comment: meat.comment || '', counted: meat.counted, type: meat.type, category: meat.category })
           ),
         },
       ]
@@ -108,20 +110,20 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         {
           header: 'Овощи',
           content: vegetablesData.map((vegetable) =>
-            itemRenderer({ label: vegetable.name, counted: vegetable.counted, type: vegetable.type, category: vegetable.category })
+            itemRenderer({ label: vegetable.name, comment: vegetable.comment || '', counted: vegetable.counted, type: vegetable.type, category: vegetable.category })
           ),
         },
         {
           header: 'Дюжина',
           content: duzinaData.map((duzina) =>
-            itemRenderer({ label: duzina.name, counted: duzina.counted, type: duzina.type, category: duzina.category }))
+            itemRenderer({ label: duzina.name, comment: duzina.comment || '', counted: duzina.counted, type: duzina.type, category: duzina.category }))
         },
       ];
 
   const footerContent = (
     <div className="flex justify-between">
       <Button label={item.count > 0 && "Удалить"} icon={item.count > 0 && "pi pi-times"} className="p-button-danger" onClick={() => removeVegets(item.name)} />
-      <Button label="Добавить" icon="pi pi-check" onClick={() => count > 0 && addVegets({ ...item, count })} autoFocus />
+      <Button label="Добавить" icon="pi pi-check" onClick={() => count > 0 && addVegets({ ...item, count, comment })} autoFocus />
     </div>
   );
 
@@ -143,27 +145,39 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         onShow={handleDialogOpened}
       >
         <div className="w-full flex justify-between">
-          <span>{item.name}</span>
           <div>
-            {
-              item.counted ? (
-                <input
-              ref={inputRef}
-              type="number"
-              value={count > 0 ? count : ''}
-              onChange={(e) => {
-                const newCount = parseInt(e.target.value, 10);
-                setCount(newCount);
-                setItem((prevItem) => ({ ...prevItem, count: newCount }));
-              }}
-              inputMode="numeric"
-              pattern="[0-9]*"
-              className="border-1 bg-silver rounded-md w-12 mr-2"
-            />
-              ) : (
-                <span>1</span>
-              )
-            }
+            <span>{item.name}</span>
+            {item.comment !== undefined && (
+              <input 
+                placeholder='вкус сока, сиропа и т.д..' 
+                value={comment}
+                className="border-1 bg-silver rounded-md w-auto ml-2"
+                onChange={(e) => {
+                  const newComment = e.target.value;
+                  setComment(newComment);
+                  setItem((prevItem) => ({ ...prevItem, comment: newComment }));
+                }}
+              />
+            )}
+          </div>
+          <div>
+            {item.counted ? (
+              <input
+                ref={inputRef}
+                type="number"
+                value={count > 0 ? count : ''}
+                onChange={(e) => {
+                  const newCount = parseInt(e.target.value, 10);
+                  setCount(newCount);
+                  setItem((prevItem) => ({ ...prevItem, count: newCount }));
+                }}
+                inputMode="numeric"
+                pattern="[0-9]*"
+                className="border-1 bg-silver rounded-md w-12 mr-2"
+              />
+            ) : (
+              <span>1</span>
+            )}
             <span>{item.type}</span>
           </div>
         </div>
