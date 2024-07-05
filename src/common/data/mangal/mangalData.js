@@ -2,6 +2,7 @@ export const mangalData = [
   {
     name: 'Шея',
     count: 0,
+    commented: false,
     counted: false,
     type: 'кг.',
     category: 'mangal',
@@ -9,6 +10,7 @@ export const mangalData = [
   {
     name: 'Ребра',
     count: 0,
+    commented: false,
     counted: false,
     type: 'кг.',
     category: 'mangal',
@@ -16,6 +18,7 @@ export const mangalData = [
   {
     name: 'Индейка',
     count: 0,
+    commented: false,
     counted: false,
     type: 'кг.',
     category: 'mangal',
@@ -23,6 +26,7 @@ export const mangalData = [
   {
     name: 'Каре',
     count: 0,
+    commented: false,
     counted: false,
     type: 'кг.',
     category: 'mangal',
@@ -30,6 +34,7 @@ export const mangalData = [
   {
     name: 'Телятина',
     count: 0,
+    commented: false,
     counted: false,
     type: 'кг.',
     category: 'mangal',
@@ -37,6 +42,7 @@ export const mangalData = [
   {
     name: 'Дорадо',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'mangal',
@@ -44,6 +50,7 @@ export const mangalData = [
   {
     name: 'Скумбрия',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'mangal',
@@ -51,6 +58,7 @@ export const mangalData = [
   {
     name: 'Сибас',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'mangal',
@@ -58,6 +66,7 @@ export const mangalData = [
   {
     name: 'Форель речная',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'mangal',
@@ -65,6 +74,7 @@ export const mangalData = [
   {
     name: 'Семга',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'mangal',
@@ -72,6 +82,7 @@ export const mangalData = [
   {
     name: 'Для люли',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'mangal',

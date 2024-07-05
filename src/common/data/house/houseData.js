@@ -2,6 +2,7 @@ export const houseData = [
   {
     name: 'Корм для рыбок',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -9,6 +10,7 @@ export const houseData = [
   {
     name: 'Тряпки для столов',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -16,6 +18,7 @@ export const houseData = [
   {
     name: 'Туфта тряпки',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -23,6 +26,7 @@ export const houseData = [
   {
     name: 'Стканчики кофе (180мл)',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -30,6 +34,7 @@ export const houseData = [
   {
     name: 'Стканчики кофе (330мл)',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -37,6 +42,7 @@ export const houseData = [
   {
     name: 'Стканчики пивные (0.5)',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -44,6 +50,7 @@ export const houseData = [
   {
     name: 'Купольные стаканы (0.5)',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -51,6 +58,7 @@ export const houseData = [
   {
     name: 'Купольные стаканы (0.3)',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -58,6 +66,7 @@ export const houseData = [
   {
     name: 'Приборы одноразовые',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -65,6 +74,7 @@ export const houseData = [
   {
     name: 'Салфетки барные',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -72,6 +82,7 @@ export const houseData = [
   {
     name: 'Салфетки для хлеба',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -79,6 +90,7 @@ export const houseData = [
   {
     name: 'Влажные салфетки',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -86,6 +98,7 @@ export const houseData = [
   {
     name: 'Зубочистки',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -93,6 +106,7 @@ export const houseData = [
   {
     name: 'Блокноты для официантов',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -100,6 +114,7 @@ export const houseData = [
   {
     name: 'Освежитель воздуха',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -107,6 +122,7 @@ export const houseData = [
   {
     name: 'Жтдкое мыло в туалет',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -114,6 +130,7 @@ export const houseData = [
   {
     name: 'Бумаж. полотенца в туалет',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -121,6 +138,7 @@ export const houseData = [
   {
     name: 'Тулетная бумага (гостевая)',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -128,6 +146,7 @@ export const houseData = [
   {
     name: 'Тулетная бумага (для персонала)',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -135,6 +154,7 @@ export const houseData = [
   {
     name: 'Лента на кипер (широкая)',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -142,6 +162,7 @@ export const houseData = [
   {
     name: 'Лента на терминал (маленькая)',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -149,6 +170,7 @@ export const houseData = [
   {
     name: 'Черные пакеты',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -156,6 +178,7 @@ export const houseData = [
   {
     name: 'Пакеты майка',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -163,6 +186,7 @@ export const houseData = [
   {
     name: 'Фасовочные пакеты',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -170,6 +194,7 @@ export const houseData = [
   {
     name: 'Перчатки (S)',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -177,6 +202,7 @@ export const houseData = [
   {
     name: 'Перчатки (M)',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -184,6 +210,7 @@ export const houseData = [
   {
     name: 'Перчатки (L)',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -191,6 +218,7 @@ export const houseData = [
   {
     name: 'Туфта перчатки',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -198,6 +226,7 @@ export const houseData = [
   {
     name: 'Боксы',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -205,6 +234,7 @@ export const houseData = [
   {
     name: 'Соусницы',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -212,6 +242,7 @@ export const houseData = [
   {
     name: 'Моющее для посуды',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',
@@ -219,6 +250,7 @@ export const houseData = [
   {
     name: 'Моющее для полов',
     count: 0,
+    commented: false,
     counted: false,
     type: 'шт.',
     category: 'house',

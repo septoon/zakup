@@ -70,13 +70,14 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         handleOpenDialog();
         setItem({
           name: item.label,
-          count: selectedItem ? selectedItem.count : 0 && item.counted ? selectedItem.count : 1,
+          count: selectedItem ? selectedItem.count : item.counted ? 1 : 0,
           counted: item.counted,
           comment: selectedItem ? selectedItem.comment : '',
+          commented: item.commented,
           type: item.type,
           category: item.category
         });
-        setCount(selectedItem ? selectedItem.count : 0 && item.counted ? selectedItem.count : 1);
+        setCount(selectedItem ? selectedItem.count : item.counted ? 1 : 0);
         setComment(selectedItem ? selectedItem.comment : '');
       }}>
         <span className={`mx-2 cursor-pointer ${item.items && 'font-semibold'}`}>
@@ -93,7 +94,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         {
           header: 'Хоз товары',
           content: houseData.map((house) =>
-            itemRenderer({ label: house.name, comment: house.comment || '', counted: house.counted, type: house.type, category: house.category })
+            itemRenderer({ label: house.name, commented: house.commented, counted: house.counted, type: house.type, category: house.category })
           ),
         },
       ]
@@ -102,7 +103,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         {
           header: 'Мясо',
           content: mangalData.map((meat) =>
-            itemRenderer({ label: meat.name, comment: meat.comment || '', counted: meat.counted, type: meat.type, category: meat.category })
+            itemRenderer({ label: meat.name, commented: meat.commented, counted: meat.counted, type: meat.type, category: meat.category })
           ),
         },
       ]
@@ -110,13 +111,13 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         {
           header: 'Овощи',
           content: vegetablesData.map((vegetable) =>
-            itemRenderer({ label: vegetable.name, comment: vegetable.comment || '', counted: vegetable.counted, type: vegetable.type, category: vegetable.category })
+            itemRenderer({ label: vegetable.name, commented: vegetable.commented, counted: vegetable.counted, type: vegetable.type, category: vegetable.category })
           ),
         },
         {
           header: 'Дюжина',
           content: duzinaData.map((duzina) =>
-            itemRenderer({ label: duzina.name, comment: duzina.comment || '', counted: duzina.counted, type: duzina.type, category: duzina.category }))
+            itemRenderer({ label: duzina.name, commented: duzina.commented, counted: duzina.counted, type: duzina.type, category: duzina.category }))
         },
       ];
 
@@ -147,10 +148,10 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         <div className="w-full flex justify-between">
           <div>
             <span>{item.name}</span>
-            {item.comment !== undefined && (
+            {item.commented && (
               <input 
                 placeholder='вкус сока, сиропа и т.д..' 
-                value={comment}
+                value={comment} 
                 className="border-1 bg-silver rounded-md w-auto ml-2"
                 onChange={(e) => {
                   const newComment = e.target.value;

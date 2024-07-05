@@ -2,6 +2,7 @@ export const vegetablesDataBar = [
   {
     name: 'Апельсины',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'vegetables',
@@ -9,6 +10,7 @@ export const vegetablesDataBar = [
   {
     name: 'Лимоны',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'vegetables',
@@ -16,6 +18,7 @@ export const vegetablesDataBar = [
   {
     name: 'Лайм',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'vegetables',
@@ -23,6 +26,7 @@ export const vegetablesDataBar = [
   {
     name: 'Мята',
     count: 0,
+    commented: false,
     counted: true,
     type: 'пуч.',
     category: 'vegetables',
@@ -30,6 +34,7 @@ export const vegetablesDataBar = [
   {
     name: 'Грейпфрут',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'vegetables',
@@ -37,6 +42,7 @@ export const vegetablesDataBar = [
   {
     name: 'Имбирь',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'vegetables',
@@ -44,6 +50,7 @@ export const vegetablesDataBar = [
   {
     name: 'Яблоки',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'vegetables',
@@ -51,6 +58,7 @@ export const vegetablesDataBar = [
   {
     name: 'Груша',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'vegetables',
@@ -58,6 +66,7 @@ export const vegetablesDataBar = [
   {
     name: 'Персик',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'vegetables',
@@ -65,6 +74,7 @@ export const vegetablesDataBar = [
   {
     name: 'Киви',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'vegetables',

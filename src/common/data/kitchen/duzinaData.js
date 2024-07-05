@@ -2,6 +2,7 @@ export const duzinaData = [
   {
     name: 'Бекон',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -9,6 +10,7 @@ export const duzinaData = [
   {
     name: 'Масло фритюрное',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -16,6 +18,7 @@ export const duzinaData = [
   {
     name: 'Сливки',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -23,6 +26,7 @@ export const duzinaData = [
   {
     name: 'Кефир',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -30,6 +34,7 @@ export const duzinaData = [
   {
     name: 'Спагетти №7',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -37,6 +42,7 @@ export const duzinaData = [
   {
     name: 'Соевый соус',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',

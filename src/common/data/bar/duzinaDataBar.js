@@ -2,6 +2,7 @@ export const duzinaDataBar = [
   {
     name: 'Мёд',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -9,6 +10,7 @@ export const duzinaDataBar = [
   {
     name: 'Сыр косичка',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -16,6 +18,7 @@ export const duzinaDataBar = [
   {
     name: 'Парварда',
     count: 0,
+    commented: false,
     counted: true,
     type: 'пач.',
     category: 'duzina',
@@ -23,6 +26,7 @@ export const duzinaDataBar = [
   {
     name: 'Облепиха',
     count: 0,
+    commented: false,
     counted: true,
     type: 'пач.',
     category: 'duzina',
@@ -30,22 +34,23 @@ export const duzinaDataBar = [
   {
     name: 'Сироп',
     count: 0,
+    commented: true,
     counted: true,
-    comment: '',
     type: 'шт.',
     category: 'duzina',
   },
   {
     name: 'Сок',
     count: 0,
+    commented: true,
     counted: true,
-    comment: '',
     type: 'шт.',
     category: 'duzina',
   },
   {
     name: 'Пломбир',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -53,6 +58,7 @@ export const duzinaDataBar = [
   {
     name: 'Вода газ. 1л.',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -60,6 +66,7 @@ export const duzinaDataBar = [
   {
     name: 'Пепси (пластик)',
     count: 0,
+    commented: false,
     counted: true,
     type: 'пак',
     category: 'duzina',
@@ -67,6 +74,7 @@ export const duzinaDataBar = [
   {
     name: 'Боржоми',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -74,6 +82,7 @@ export const duzinaDataBar = [
   {
     name: 'Сахар стик',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -81,6 +90,7 @@ export const duzinaDataBar = [
   {
     name: 'Сахар кубики',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -88,6 +98,7 @@ export const duzinaDataBar = [
   {
     name: 'Чай',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -95,6 +106,7 @@ export const duzinaDataBar = [
   {
     name: 'Фильтрпакетики для чая',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -102,6 +114,7 @@ export const duzinaDataBar = [
   {
     name: 'Корица (палочки)',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -109,6 +122,7 @@ export const duzinaDataBar = [
   {
     name: 'Бадьян',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -116,6 +130,7 @@ export const duzinaDataBar = [
   {
     name: 'Гвоздика',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -123,6 +138,7 @@ export const duzinaDataBar = [
   {
     name: 'Орешки',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -130,6 +146,7 @@ export const duzinaDataBar = [
   {
     name: 'Фисташки',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -137,6 +154,7 @@ export const duzinaDataBar = [
   {
     name: 'Чипсы',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',
@@ -144,6 +162,7 @@ export const duzinaDataBar = [
   {
     name: 'Сухарики',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'duzina',

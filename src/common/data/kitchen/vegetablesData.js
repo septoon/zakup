@@ -2,6 +2,7 @@ export const vegetablesData = [
   {
     name: 'Лола',
     count: 0,
+    commented: false,
     counted: true,
     type: 'шт.',
     category: 'vegetables',
@@ -9,6 +10,7 @@ export const vegetablesData = [
   {
     name: 'Помидоры',
     count: 0,
+    commented: false,
     counted: true,
     type: 'кг.',
     category: 'vegetables',
@@ -16,6 +18,7 @@ export const vegetablesData = [
   {
     name: 'Огурцы',
     count: 0,
+    commented: false,
     counted: true,
     type: 'кг.',
     category: 'vegetables',
@@ -23,6 +26,7 @@ export const vegetablesData = [
   {
     name: 'Баклажаны',
     count: 0,
+    commented: false,
     counted: true,
     type: 'кг.',
     category: 'vegetables',
@@ -30,6 +34,7 @@ export const vegetablesData = [
   {
     name: 'Грибы',
     count: 0,
+    commented: false,
     counted: true,
     type: 'кг.',
     category: 'vegetables',
@@ -37,6 +42,7 @@ export const vegetablesData = [
   {
     name: 'Петрушка',
     count: 0,
+    commented: false,
     counted: true,
     type: 'пуч.',
     category: 'vegetables',
