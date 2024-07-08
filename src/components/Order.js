@@ -86,7 +86,7 @@ const Order = ({ visible, setVisible }) => {
   return (
     <div className="card">
       <Dialog
-        header="Итог"
+        header={`Кафе "${address}" | Итог:`}
         visible={visible}
         position={'bottom'}
         style={{ width: '95vw' }}
