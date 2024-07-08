@@ -21,6 +21,8 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     return savedItems ? JSON.parse(savedItems) : [];
   });
 
+  const handleFocus = (event) => event.target.select();
+
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -166,6 +168,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
               <input
                 ref={inputRef}
                 type="number"
+                onFocus={handleFocus}
                 value={count > 0 ? count : ''}
                 onChange={(e) => {
                   const newCount = parseInt(e.target.value, 10);
