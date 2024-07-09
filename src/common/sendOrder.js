@@ -4,7 +4,7 @@ export const sendOrder = async (type, goods, address) => {
   let message = `
   ${address}
 
-  ${type}
+  ***${type}***
 
   ${goods.toString()}
   `
