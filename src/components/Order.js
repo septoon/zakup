@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dialog } from 'primereact/dialog';
-import { sendOrder } from '../common/data/sendOrder';
+import { sendOrder } from '../common/sendOrder';
 import { Button } from 'primereact/button';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearItems } from '../Redux/vegetSlice';
