@@ -33,6 +33,12 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
   }, [selectedItems]);
 
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isOpen]);
+
   const handleOpenDialog = () => {
     setIsOpen(true);
   };
@@ -126,7 +132,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
   const footerContent = (
     <div className="flex justify-between">
       <Button label={item.count > 0 && "Удалить"} icon={item.count > 0 && "pi pi-times"} className="p-button-danger" onClick={() => removeVegets(item.name)} />
-      <Button label="Добавить" icon="pi pi-check" onClick={() => count > 0 && addVegets({ ...item, count, comment })} autoFocus />
+      <Button label="Добавить" icon="pi pi-check" onClick={() => item.counted ? count > 0 && addVegets({ ...item, count, comment }) : addVegets({ ...item, count: 1, comment })} autoFocus />
     </div>
   );
 
