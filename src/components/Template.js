@@ -71,10 +71,10 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     setActiveIndexes(e.index);
   };
 
-  const itemRenderer = (item) => {
+  const itemRenderer = (item, index) => {
     const selectedItem = selectedItems.find(i => i.name === item.label);
     return (
-      <div className="flex items-center px-3 py-2" onClick={() => {
+      <div key={item.label + index} className="flex items-center px-3 py-2" onClick={() => {
         handleOpenDialog();
         setItem({
           name: item.label,
@@ -101,8 +101,8 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     ? [
         {
           header: 'Хоз товары',
-          content: houseData.map((house) =>
-            itemRenderer({ label: house.name, commented: house.commented, counted: house.counted, type: house.type, category: house.category })
+          content: houseData.map((house, index) =>
+            itemRenderer({ label: house.name, commented: house.commented, counted: house.counted, type: house.type, category: house.category }, index)
           ),
         },
       ]
@@ -110,22 +110,22 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     ? [
         {
           header: 'Мясо',
-          content: mangalData.map((meat) =>
-            itemRenderer({ label: meat.name, commented: meat.commented, counted: meat.counted, type: meat.type, category: meat.category })
+          content: mangalData.map((meat, index) =>
+            itemRenderer({ label: meat.name, commented: meat.commented, counted: meat.counted, type: meat.type, category: meat.category }, index)
           ),
         },
       ]
     : [
         {
           header: 'Овощи',
-          content: vegetablesData.map((vegetable) =>
-            itemRenderer({ label: vegetable.name, commented: vegetable.commented, counted: vegetable.counted, type: vegetable.type, category: vegetable.category })
+          content: vegetablesData.map((vegetable, index) =>
+            itemRenderer({ label: vegetable.name, commented: vegetable.commented, counted: vegetable.counted, type: vegetable.type, category: vegetable.category }, index)
           ),
         },
         {
           header: 'Дюжина',
-          content: duzinaData.map((duzina) =>
-            itemRenderer({ label: duzina.name, commented: duzina.commented, counted: duzina.counted, type: duzina.type, category: duzina.category }))
+          content: duzinaData.map((duzina, index) =>
+            itemRenderer({ label: duzina.name, commented: duzina.commented, counted: duzina.counted, type: duzina.type, category: duzina.category }, index))
         },
       ];
 
