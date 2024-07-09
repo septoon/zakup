@@ -25,8 +25,8 @@ const Order = ({ visible, setVisible }) => {
         {data.map((i, index) => (
           <span key={index}>
             {i.counted
-              ? `${i.name} ${i.comment ? `(${i.comment})` : ''} - ${i.count}${i.type},`
-              : `${i.name} ${i.comment ? `(${i.comment})` : ''},`}
+              ? `${i.name}${i.comment ? `( ${i.comment})` : ''} - ${i.count}${i.type}${data.length > 1 ? ',' : ''}`
+              : `${i.name}${i.comment ? ` (${i.comment})` : ''}${data.length > 1 ? ',' : ''}`}
           </span>
         ))}
       </div>
