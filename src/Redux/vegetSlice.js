@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { createSelector } from 'reselect';
 
 const isBrowser = typeof window !== 'undefined';
 
@@ -39,3 +40,6 @@ export const {
 } = vegetSlice.actions;
 
 export default vegetSlice.reducer;
+
+// Селектор для получения items
+export const selectVegetablesItems = (state) => state.vegetables.items;

@@ -3,15 +3,23 @@ import { Dialog } from 'primereact/dialog';
 import { sendOrder } from '../common/sendOrder';
 import { Button } from 'primereact/button';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearItems } from '../Redux/vegetSlice';
+import { clearItems, selectVegetablesItems } from '../Redux/vegetSlice';
+import { selectAddress } from '../Redux/addressSlice';
+import { createSelector } from 'reselect';
+
+// Мемоизированный селектор
+const selectOrderData = createSelector(
+  [selectVegetablesItems, selectAddress],
+  (items, address) => ({
+    items,
+    address,
+  })
+);
 
 const Order = ({ visible, setVisible }) => {
   const dispatch = useDispatch();
 
-  const { items, address } = useSelector(({ vegetables, addressSelection }) => ({
-    items: vegetables.items,
-    address: addressSelection.address,
-  }));
+  const { items, address } = useSelector(selectOrderData);
 
   const vegets = items.filter((item) => item.category === 'vegetables');
   const duzina = items.filter((item) => item.category === 'duzina');

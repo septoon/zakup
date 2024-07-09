@@ -24,3 +24,6 @@ export const {
 } = addressSlice.actions;
 
 export default addressSlice.reducer;
+
+// Селектор для получения address
+export const selectAddress = (state) => state.addressSelection.address;
