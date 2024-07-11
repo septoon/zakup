@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearItems, selectVegetablesItems } from '../Redux/vegetSlice';
 import { selectAddress } from '../Redux/addressSlice';
 import { createSelector } from 'reselect';
+import '../custom.css'
+
 
 // Мемоизированный селектор
 const selectOrderData = createSelector(
@@ -94,6 +96,7 @@ const Order = ({ visible, setVisible }) => {
   return (
     <div className="card">
       <Dialog
+        className='dialog'
         header={`Кафе "${address}" | Итог:`}
         visible={visible}
         position={'bottom'}

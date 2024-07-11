@@ -120,6 +120,22 @@ export const houseData = [
     category: 'house',
   },
   {
+    name: 'Губка на швабру',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
+    name: 'Полироль',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
     name: 'Жтдкое мыло в туалет',
     count: 0,
     commented: false,
