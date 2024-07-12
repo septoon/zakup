@@ -104,6 +104,14 @@ export const duzinaDataBar = [
     category: 'duzina',
   },
   {
+    name: 'Сахар песок',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'кг.',
+    category: 'duzina',
+  },
+  {
     name: 'Чай',
     count: 0,
     commented: false,
