@@ -32,11 +32,11 @@ export const vegetablesData = [
     category: 'vegetables',
   },
   {
-    name: 'Грибы',
+    name: 'Шампиньоны',
     count: 0,
     commented: false,
     counted: true,
-    type: 'кг.',
+    type: 'ящ.',
     category: 'vegetables',
   },
   {

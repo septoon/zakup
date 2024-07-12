@@ -68,7 +68,7 @@ export const duzinaDataBar = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'шт.',
+    type: 'пак.',
     category: 'duzina',
   },
   {
@@ -84,7 +84,7 @@ export const duzinaDataBar = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'шт.',
+    type: 'пак.',
     category: 'duzina',
   },
   {
@@ -92,7 +92,7 @@ export const duzinaDataBar = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'шт.',
+    type: 'уп.',
     category: 'duzina',
   },
   {
@@ -100,7 +100,7 @@ export const duzinaDataBar = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'шт.',
+    type: 'пач.',
     category: 'duzina',
   },
   {
@@ -124,7 +124,7 @@ export const duzinaDataBar = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'шт.',
+    type: 'пач.',
     category: 'duzina',
   },
   {
@@ -132,7 +132,7 @@ export const duzinaDataBar = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'шт.',
+    type: 'пач.',
     category: 'duzina',
   },
   {
@@ -140,7 +140,7 @@ export const duzinaDataBar = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'шт.',
+    type: 'пач.',
     category: 'duzina',
   },
   {

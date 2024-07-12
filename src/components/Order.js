@@ -18,7 +18,7 @@ const selectOrderData = createSelector(
   })
 );
 
-const Order = ({ visible, setVisible }) => {
+const Order = ({ totalVisible, isVisible }) => {
   const dispatch = useDispatch();
 
   const { items, address } = useSelector(selectOrderData);
@@ -73,7 +73,7 @@ const Order = ({ visible, setVisible }) => {
 
   const Load = () => {
     if (address !== '') {
-      setVisible(false);
+      isVisible(false);
       sendOrder('Овощи', vegetsList.toString(), address);
       sendOrder('Дюжина', duzinaList.toString(), address);
       sendOrder('Мангал', mangalList.toString(), address);
@@ -98,12 +98,12 @@ const Order = ({ visible, setVisible }) => {
       <Dialog
         className='dialog'
         header={`Кафе "${address}" | Итог:`}
-        visible={visible}
+        visible={totalVisible}
         position={'bottom'}
         style={{ width: '95vw' }}
         onHide={() => {
-          if (!visible) return;
-          setVisible(false);
+          if (!totalVisible) return;
+          isVisible(false);
         }}
         footer={footerContent}
         draggable={false}
