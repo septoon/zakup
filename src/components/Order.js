@@ -7,6 +7,7 @@ import { clearItems, selectVegetablesItems } from '../Redux/vegetSlice';
 import { selectAddress } from '../Redux/addressSlice';
 import { createSelector } from 'reselect';
 import '../custom.css'
+import { MainButton } from '@twa-dev/sdk/react';
 
 
 // Мемоизированный селектор
@@ -85,13 +86,9 @@ const Order = ({ totalVisible, isVisible }) => {
   };
 
   const footerContent = (
-    <div>
-      <Button
-        label={address === '' ? 'Выберите адрес кафе' : 'Отправить'}
-        onClick={Load}
-        className="bg-blue w-full text-white py-3 rounded-lg"
-      />
-    </div>
+    <>
+      <MainButton text={address === '' ? 'Выберите адрес кафе' : 'Отправить'} onClick={Load} />
+    </>
   );
   return (
     <div className="card">

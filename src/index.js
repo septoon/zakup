@@ -42,18 +42,16 @@ const router = createBrowserRouter([
     path: '/house',
     element: <House/>
   },
-
-
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <PrimeReactProvider>
-          <RouterProvider router={router} />
-      </PrimeReactProvider>
-    </Provider>
+      <Provider store={store}>
+        <PrimeReactProvider>
+            <RouterProvider router={router} />
+        </PrimeReactProvider>
+      </Provider>
   </React.StrictMode>
 );
 

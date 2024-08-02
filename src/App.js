@@ -11,7 +11,7 @@ import { addAddress } from './Redux/addressSlice';
 import Order from './components/Order';
 import { selectTotalVisible, setTotalVisible } from './Redux/totalBtnSlice';
 import { createSelector } from 'reselect';
-import TotalButton from './components/TotalButton';
+import { MainButton } from '@twa-dev/sdk/react';
 
 // Мемоизированный селектор
 const selectIsTotalVisible = createSelector(
@@ -28,6 +28,10 @@ function App() {
   const isVisible = (bool) => {
     dispatch(setTotalVisible(bool))
 };
+
+  const show = () => {
+    dispatch(setTotalVisible(true))
+  };
 
   const [selectCafe, setSelectCafe] = useState(false)
 
@@ -62,7 +66,7 @@ function App() {
         <img src={House} className='h-5 mr-3' alt='household'/>
         <span className='dark:text-white'>Хоз товары</span>
       </Link>
-      <TotalButton />
+      {/* <TotalButton /> */}
       <Dialog header="Выберите кафе:"
         visible={selectCafe}
         position={'bottom'}
@@ -76,6 +80,7 @@ function App() {
           </div>
         </Dialog>
         <Order totalVisible={totalVisible} isVisible={isVisible} />
+        {!totalVisible && (<MainButton text='Итог' onClick={() => show('bottom')} />)}
     </div>
   );
 }
