@@ -216,7 +216,15 @@ export const houseData = [
     category: 'house',
   },
   {
-    name: 'Фасовочные пакеты',
+    name: 'Фасовочные пакеты (мал.)',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
+    name: 'Фасовочные пакеты (большие)',
     count: 0,
     commented: false,
     counted: false,

@@ -79,4 +79,12 @@ export const vegetablesDataBar = [
     type: 'шт.',
     category: 'vegetables',
   },
+  {
+    name: 'Парварда',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'пач.',
+    category: 'vegetables',
+  },
 ];

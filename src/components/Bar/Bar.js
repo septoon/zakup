@@ -21,7 +21,7 @@ const Bar = ({ totalVisible, onHide }) => {
     <div className="flex flex-col relative overflow-y-hidden">
 
       <Template vegetablesData={vegetablesDataBar} duzinaData={duzinaDataBar} />
-      {!totalVisible && (<MainButton text='Итог' onClick={() => show('bottom')} />)}
+      <MainButton text='Итог' isVisible={true} onClick={() => show('bottom')} />
       <Order totalVisible={totalVisible} isVisible={onHide} />
       <BackButton onClick={() => navigate('/zakup')} />
     </div>

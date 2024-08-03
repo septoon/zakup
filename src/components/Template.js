@@ -131,7 +131,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
       ];
 
   const footerContent = (
-    <div className="flex justify-between">
+    <div className="flex justify-between items-center">
       <Button label={item.count > 0 && "Удалить"} icon={item.count > 0 && "pi pi-times"} className="p-button-danger" onClick={() => {
         WebApp.HapticFeedback.impactOccurred('heavy')
         removeVegets(item.name)
@@ -144,7 +144,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
   );
 
   return (
-    <div className="card flex w-full justify-center overflow-y-scroll">
+    <div className="card flex w-full justify-center overflow-y-scroll pt-5">
       <Accordion activeIndex={activeIndexes} className="w-full pb-12" onTabChange={onTabChange}>
         {items.map((item, index) => (
           <AccordionTab contentClassName='accord' onClick={() => WebApp.HapticFeedback.impactOccurred('soft')} headerClassName='accord' key={index} header={item.header}>
@@ -160,14 +160,14 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         onHide={() => setIsOpen(false)}
         onShow={handleDialogOpened}
       >
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between mt-2">
           <div>
             <span>{item.name}</span>
             {item.commented && (
               <input 
                 placeholder='дополнение...' 
                 value={comment} 
-                className="border-1 bg-silver rounded-md w-auto mx-2 dark:bg-dark"
+                className="border-1 bg-silver rounded-md w-[45%] mx-2 dark:bg-dark"
                 onChange={(e) => {
                   const newComment = e.target.value;
                   setComment(newComment);
@@ -176,7 +176,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
               />
             )}
           </div>
-          <div>
+          <div className={item.counted ? 'w-24 flex justify-end' : 'w-auto'}>
             {item.counted ? (
               <input
                 ref={inputRef}
@@ -190,7 +190,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
                 }}
                 inputMode="numeric"
                 pattern="[0-9]*"
-                className="border-1 bg-silver rounded-md w-12 mr-2 dark:bg-dark"
+                className="border-1 bg-silver rounded-md w-10 mr-2 dark:bg-dark"
               />
             ) : (
               <span>1</span>

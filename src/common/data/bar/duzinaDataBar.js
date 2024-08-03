@@ -24,14 +24,6 @@ export const duzinaDataBar = [
     category: 'duzina',
   },
   {
-    name: 'Парварда',
-    count: 0,
-    commented: false,
-    counted: true,
-    type: 'пач.',
-    category: 'duzina',
-  },
-  {
     name: 'Облепиха',
     count: 0,
     commented: false,
