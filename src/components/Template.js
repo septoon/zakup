@@ -5,6 +5,7 @@ import { Button } from 'primereact/button';
 import { useDispatch } from 'react-redux';
 import '../custom.css';
 import { addVegetablesToItems, removeVegetableByName } from '../Redux/vegetSlice';
+import WebApp from '@twa-dev/sdk';
 
 const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
   const dispatch = useDispatch();
@@ -131,8 +132,14 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
 
   const footerContent = (
     <div className="flex justify-between">
-      <Button label={item.count > 0 && "Удалить"} icon={item.count > 0 && "pi pi-times"} className="p-button-danger" onClick={() => removeVegets(item.name)} />
-      <Button label="Добавить" icon="pi pi-check" onClick={() => item.counted ? count > 0 && addVegets({ ...item, count, comment }) : addVegets({ ...item, count: 1, comment })} autoFocus />
+      <Button label={item.count > 0 && "Удалить"} icon={item.count > 0 && "pi pi-times"} className="p-button-danger" onClick={() => {
+        WebApp.HapticFeedback.impactOccurred('heavy')
+        removeVegets(item.name)
+      }} />
+      <Button label="Добавить" icon="pi pi-check" onClick={() => {
+        WebApp.HapticFeedback.impactOccurred('heavy')
+        item.counted ? count > 0 && addVegets({ ...item, count, comment }) : addVegets({ ...item, count: 1, comment })
+      }} autoFocus />
     </div>
   );
 
@@ -140,7 +147,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     <div className="card flex w-full justify-center overflow-y-scroll">
       <Accordion activeIndex={activeIndexes} className="w-full pb-12" onTabChange={onTabChange}>
         {items.map((item, index) => (
-          <AccordionTab contentClassName='accord' headerClassName='accord' key={index} header={item.header}>
+          <AccordionTab contentClassName='accord' onClick={() => WebApp.HapticFeedback.impactOccurred('soft')} headerClassName='accord' key={index} header={item.header}>
             {item.content}
           </AccordionTab>
         ))}
@@ -158,9 +165,9 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
             <span>{item.name}</span>
             {item.commented && (
               <input 
-                placeholder='вкус сока, сиропа и т.д..' 
+                placeholder='дополнение...' 
                 value={comment} 
-                className="border-1 bg-silver rounded-md w-auto ml-2"
+                className="border-1 bg-silver rounded-md w-auto mx-2 dark:bg-dark"
                 onChange={(e) => {
                   const newComment = e.target.value;
                   setComment(newComment);
@@ -183,7 +190,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
                 }}
                 inputMode="numeric"
                 pattern="[0-9]*"
-                className="border-1 bg-silver rounded-md w-12 mr-2"
+                className="border-1 bg-silver rounded-md w-12 mr-2 dark:bg-dark"
               />
             ) : (
               <span>1</span>

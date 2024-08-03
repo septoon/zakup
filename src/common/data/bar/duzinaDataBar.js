@@ -80,6 +80,14 @@ export const duzinaDataBar = [
     category: 'duzina',
   },
   {
+    name: 'Манго сушеный',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'п.',
+    category: 'duzina',
+  },
+  {
     name: 'Боржоми',
     count: 0,
     commented: false,

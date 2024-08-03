@@ -1,5 +1,21 @@
 export const houseData = [
   {
+    name: 'Кофе',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
+    name: 'Стелла 0',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
     name: 'Корм для рыбок',
     count: 0,
     commented: false,
@@ -136,7 +152,7 @@ export const houseData = [
     category: 'house',
   },
   {
-    name: 'Жтдкое мыло в туалет',
+    name: 'Жидкое мыло в туалет',
     count: 0,
     commented: false,
     counted: false,

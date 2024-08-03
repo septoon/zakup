@@ -12,17 +12,19 @@ import Order from './components/Order';
 import { selectTotalVisible, setTotalVisible } from './Redux/totalBtnSlice';
 import { createSelector } from 'reselect';
 import { MainButton } from '@twa-dev/sdk/react';
+import { selectVegetablesItems } from './Redux/vegetSlice';
+import WebApp from '@twa-dev/sdk';
 
 // Мемоизированный селектор
 const selectIsTotalVisible = createSelector(
-  [selectTotalVisible],
-  (totalVisible) => ({
-    totalVisible
+  [selectTotalVisible, selectVegetablesItems],
+  (totalVisible, items) => ({
+    totalVisible, items
   })
 );
 
 function App() {
-  const { totalVisible } = useSelector(selectIsTotalVisible);
+  const { totalVisible, items } = useSelector(selectIsTotalVisible);
   const dispatch = useDispatch()
 
   const isVisible = (bool) => {
@@ -46,7 +48,10 @@ function App() {
 
   return (
     <div className="flex flex-col justify-start items-center pt-10 w-screen h-screen relative">
-      <div onClick={() => setSelectCafe(true)} className='w-[80%] h-20 flex justify-between px-5 items-center mb-5 bg-silver dark:bg-darkGray rounded-lg'>
+      <div onClick={() => {
+        setSelectCafe(true)
+        WebApp.HapticFeedback.impactOccurred('soft')
+      }} className='w-[80%] h-20 flex justify-between px-5 items-center mb-5 bg-silver dark:bg-darkGray rounded-lg'>
         <span className='dark:text-white'>Закуп для кафе: </span>
         <span className='dark:text-white font-bold underline cursor-pointer'>{address ? address : 'Не выбрано'}</span>
       </div>
@@ -80,7 +85,7 @@ function App() {
           </div>
         </Dialog>
         <Order totalVisible={totalVisible} isVisible={isVisible} />
-        {!totalVisible && (<MainButton text='Итог' onClick={() => show('bottom')} />)}
+        {items.length ? (<MainButton text='Итог' onClick={() => show('bottom')} />) : ''}
     </div>
   );
 }
