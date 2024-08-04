@@ -46,6 +46,13 @@ function App() {
     setSelectCafe(false)
   }
 
+  const onLinkClick = () => {
+    WebApp.HapticFeedback.impactOccurred('medium')
+    address === '' ? setSelectCafe(true) : setSelectCafe(false)
+  }
+
+  const linkClassName = 'w-[80%] h-20 flex justify-start pl-5 items-center mb-5 bg-silver dark:bg-darkGray rounded-lg'
+
   return (
     <div className="flex flex-col justify-start items-center pt-10 w-screen h-screen relative">
       <div onClick={() => {
@@ -55,19 +62,19 @@ function App() {
         <span className='dark:text-white'>Закуп для кафе: </span>
         <span className='dark:text-white font-bold underline cursor-pointer'>{address ? address : 'Не выбрано'}</span>
       </div>
-      <Link to='/kitchen' onClick={() => address === '' ? setSelectCafe(true) : setSelectCafe(false)} className='w-[80%] h-20 flex justify-start pl-5 items-center mb-5 bg-silver dark:bg-darkGray rounded-lg'>
+      <Link to='/kitchen' onClick={onLinkClick} className={linkClassName}>
         <img src={Chef} className='h-5 mr-3' alt='kitchen'/>
         <span className='dark:text-white'>Кухня</span>
       </Link>
-      <Link to='/bar' onClick={() => address === '' ? setSelectCafe(true) : setSelectCafe(false)} className='w-[80%] h-20 flex justify-start pl-5 items-center mb-5 bg-silver dark:bg-darkGray rounded-lg'>
+      <Link to='/bar' onClick={onLinkClick} className={linkClassName}>
         <img src={Bar} className='h-5 mr-3' alt='bar'/>
         <span className='dark:text-white'>Бар</span>
       </Link>
-      <Link to='/mangal' onClick={() => address === '' ? setSelectCafe(true) : setSelectCafe(false)} className='w-[80%] h-20 flex justify-start pl-5 items-center mb-5 bg-silver dark:bg-darkGray rounded-lg'>
+      <Link to='/mangal' onClick={onLinkClick} className={linkClassName}>
         <img src={Grill} className='h-5 mr-3' alt='grill'/>
         <span className='dark:text-white'>Мангал</span>
       </Link>
-      <Link to='/house' onClick={() => address === '' ? setSelectCafe(true) : setSelectCafe(false)} className='w-[80%] h-20 flex justify-start pl-5 items-center bg-silver dark:bg-darkGray rounded-lg'>
+      <Link to='/house' onClick={onLinkClick} className={linkClassName}>
         <img src={House} className='h-5 mr-3' alt='household'/>
         <span className='dark:text-white'>Хоз товары</span>
       </Link>

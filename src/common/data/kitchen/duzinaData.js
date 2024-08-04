@@ -200,6 +200,14 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
+    name: 'Сметана 25%',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'шт.',
+    category: 'duzina',
+  },
+  {
     name: 'Спагетти №7',
     count: 0,
     commented: false,

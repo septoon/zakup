@@ -232,6 +232,22 @@ export const houseData = [
     category: 'house',
   },
   {
+    name: 'Мусорные пакеты 30л.',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
+    name: 'Мусорные пакеты 160л.',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
     name: 'Перчатки (S)',
     count: 0,
     commented: false,

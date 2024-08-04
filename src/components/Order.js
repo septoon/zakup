@@ -7,6 +7,7 @@ import { selectAddress } from '../Redux/addressSlice';
 import { createSelector } from 'reselect';
 import '../custom.css'
 import { MainButton } from '@twa-dev/sdk/react';
+import WebApp from '@twa-dev/sdk';
 
 
 // Мемоизированный селектор
@@ -73,14 +74,22 @@ const Order = ({ totalVisible, isVisible }) => {
 
   const Load = () => {
     if (address !== '') {
-      isVisible(false);
-      sendOrder('Овощи', vegetsList.toString(), address);
-      sendOrder('Дюжина', duzinaList.toString(), address);
-      sendOrder('Мангал', mangalList.toString(), address);
-      sendOrder('Хоз товары', houseList.toString(), address);
-      dispatch(clearItems());
-      localStorage.removeItem('selectedItem');
-      localStorage.removeItem('selectedItems');
+      WebApp.HapticFeedback.notificationOccurred('success')
+      WebApp.MainButton.showProgress(true)
+      setTimeout(() => {
+        WebApp.MainButton.hideProgress()
+        isVisible(false);
+        sendOrder('Овощи', vegetsList.toString(), address);
+        sendOrder('Дюжина', duzinaList.toString(), address);
+        sendOrder('Мангал', mangalList.toString(), address);
+        sendOrder('Хоз товары', houseList.toString(), address);
+        dispatch(clearItems());
+        localStorage.removeItem('selectedItem');
+        localStorage.removeItem('selectedItems');
+      }, 1000)
+      setTimeout(() => {
+        WebApp.close()
+      }, 1400)
     }
   };
 
