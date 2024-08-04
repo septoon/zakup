@@ -16,7 +16,7 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
-    name: 'Масло фритюрное',
+    name: 'Масло фритюрное 5л.',
     count: 0,
     commented: false,
     counted: true,
@@ -24,7 +24,7 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
-    name: 'Масло подсолнечное',
+    name: 'Масло подсолнечное 5л.',
     count: 0,
     commented: false,
     counted: true,
@@ -296,7 +296,7 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
-    name: 'Лосось',
+    name: 'Форель пласт.',
     count: 0,
     commented: false,
     counted: true,

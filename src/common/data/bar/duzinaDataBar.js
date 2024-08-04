@@ -16,7 +16,7 @@ export const duzinaDataBar = [
     category: 'duzina',
   },
   {
-    name: 'Сыр косичка',
+    name: 'Сыр косичка (копченый)',
     count: 0,
     commented: false,
     counted: true,
@@ -114,7 +114,7 @@ export const duzinaDataBar = [
   {
     name: 'Чай',
     count: 0,
-    commented: false,
+    commented: true,
     counted: true,
     type: 'шт.',
     category: 'duzina',

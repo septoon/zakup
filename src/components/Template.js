@@ -167,7 +167,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
               <input 
                 placeholder='дополнение...' 
                 value={comment} 
-                className="border-1 bg-silver rounded-md w-[45%] mx-2 dark:bg-dark"
+                className="border-1 bg-silver rounded-md w-[50%] pl-2 mx-2 dark:bg-dark"
                 onChange={(e) => {
                   const newComment = e.target.value;
                   setComment(newComment);
