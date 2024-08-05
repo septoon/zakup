@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Chef from './common/images/chef.png'
 import Bar from './common/images/bar.png'
 import Grill from './common/images/grill.png'
@@ -26,6 +26,10 @@ const selectIsTotalVisible = createSelector(
 function App() {
   const { totalVisible, items } = useSelector(selectIsTotalVisible);
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    WebApp.ready()
+  }, [])
 
   const isVisible = (bool) => {
     dispatch(setTotalVisible(bool))
@@ -54,7 +58,7 @@ function App() {
   const linkClassName = 'w-[80%] h-20 flex justify-start pl-5 items-center mb-5 bg-silver dark:bg-darkGray rounded-lg'
 
   return (
-    <div className="flex flex-col justify-start items-center pt-10 w-screen h-screen relative">
+    <div className="flex flex-col justify-start items-center pt-10 w-screen h-screen overflow-hidden">
       <div onClick={() => {
         setSelectCafe(true)
         WebApp.HapticFeedback.impactOccurred('soft')

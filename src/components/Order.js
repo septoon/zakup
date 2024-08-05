@@ -76,23 +76,18 @@ const Order = ({ totalVisible, isVisible }) => {
     if (address !== '') {
       WebApp.HapticFeedback.notificationOccurred('success')
       WebApp.MainButton.showProgress(true)
-      setTimeout(() => {
-        WebApp.MainButton.hideProgress()
-        isVisible(false);
-        sendOrder('Овощи', vegetsList.toString(), address);
-        sendOrder('Дюжина', duzinaList.toString(), address);
-        sendOrder('Мангал', mangalList.toString(), address);
-        sendOrder('Хоз товары', houseList.toString(), address);
-        dispatch(clearItems());
-        localStorage.removeItem('selectedItem');
-        localStorage.removeItem('selectedItems');
-      }, 1000)
-      setTimeout(() => {
-        WebApp.close()
-      }, 1400)
+      WebApp.MainButton.hideProgress()
+      isVisible(false);
+      sendOrder('Овощи', vegetsList.toString(), address);
+      sendOrder('Дюжина', duzinaList.toString(), address);
+      sendOrder('Мангал', mangalList.toString(), address);
+      sendOrder('Хоз товары', houseList.toString(), address);
+      dispatch(clearItems());
+      localStorage.removeItem('selectedItem');
+      localStorage.removeItem('selectedItems');
     }
   };
-
+  
   const footerContent = (
     <>
       <MainButton text={address === '' ? 'Выберите адрес кафе' : 'Отправить'} onClick={Load} />
