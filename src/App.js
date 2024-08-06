@@ -30,6 +30,7 @@ function App() {
 
   const onLinkClick = () => {
     WebApp.HapticFeedback.impactOccurred('medium');
+    WebApp.expand()
     address === '' ? setSelectCafe(true) : setSelectCafe(false);
   };
 

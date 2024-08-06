@@ -77,6 +77,7 @@ const houseList = house
         localStorage.removeItem('selectedItems');
       }
     } else {
+      WebApp.expand()
       show();
     }
   };
