@@ -32,6 +32,22 @@ export const mangalData = [
     category: 'mangal',
   },
   {
+    name: 'Набор для солянки',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'mangal',
+  },
+  {
+    name: 'Баранина для шурпы',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'mangal',
+  },
+  {
     name: 'Цыплёнок',
     count: 0,
     commented: false,

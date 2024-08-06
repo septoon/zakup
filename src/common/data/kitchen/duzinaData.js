@@ -176,14 +176,6 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
-    name: 'Набор для солянки',
-    count: 0,
-    commented: false,
-    counted: true,
-    type: 'шт.',
-    category: 'duzina',
-  },
-  {
     name: 'Сливки 20%',
     count: 0,
     commented: false,

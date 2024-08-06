@@ -200,6 +200,14 @@ export const houseData = [
     category: 'house',
   },
   {
+    name: 'Лента от насекомых',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
     name: 'Черные пакеты',
     count: 0,
     commented: false,
@@ -305,6 +313,14 @@ export const houseData = [
   },
   {
     name: 'Моющее для полов',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
+    name: 'Металлич. щетка для посуды',
     count: 0,
     commented: false,
     counted: false,
