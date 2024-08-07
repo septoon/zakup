@@ -9,3 +9,8 @@
     color: #fff;
   }
 }
+
+.section-separator {
+  border-bottom: .5px solid #CECECF; /* Убедитесь, что переменная цвета определена */
+  margin: 8px 0; /* Настройте отступы по своему усмотрению */
+}

@@ -75,7 +75,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
   const itemRenderer = (item, index) => {
     const selectedItem = selectedItems.find(i => i.name === item.label);
     return (
-      <div key={item.label + index} className="flex items-center px-3 py-2" onClick={() => {
+      <div key={item.label + index} className="flex items-center pr-3 py-2 section-separator" onClick={() => {
         handleOpenDialog();
         setItem({
           name: item.label,
@@ -89,7 +89,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         setCount(selectedItem ? selectedItem.count : item.counted ? 1 : 0);
         setComment(selectedItem ? selectedItem.comment : '');
       }}>
-        <span className={`mx-2 cursor-pointer ${item.items && 'font-semibold'}`}>
+        <span className={`cursor-pointer ${item.items && 'font-semibold'}`}>
           {item.label}
         </span>
         {selectedItem && <span className="ml-2">{selectedItem.count > 0 && `(${selectedItem.count} ${selectedItem.type})`}</span>}
