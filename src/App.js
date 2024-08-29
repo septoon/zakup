@@ -68,7 +68,7 @@ function App() {
         <img src={House} className="h-5 mr-3" alt="household" />
         <span className="dark:text-white">Хоз товары</span>
       </Link>
-      <OrderButton />
+      {/* <OrderButton /> */}
       <Dialog
         header="Выберите кафе:"
         visible={selectCafe}

@@ -14,7 +14,7 @@ const selectOrderData = createSelector(
   })
 );
 
-const Order = ({ totalVisible, vegets, duzina, mangal, house }) => {
+const Order = ({ totalVisible, date, vegets, duzina, mangal, house }) => {
   const dispatch = useDispatch();
 
   const { address } = useSelector(selectOrderData);
@@ -48,6 +48,7 @@ const Order = ({ totalVisible, vegets, duzina, mangal, house }) => {
         resizable={false}
       >
         <div className="w-full h-full">
+          <h2>на {date}</h2>
           {renderSection('Овощи', vegets)}
           {renderSection('Дюжина', duzina)}
           {renderSection('Мангал', mangal)}

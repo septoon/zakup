@@ -63,15 +63,21 @@ const houseList = house
     dispatch(setTotalVisible(true));
   };
 
+  const date = new Date().toLocaleDateString('ru-RU', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  });
+
   const handleButtonClick = () => {
     if (totalVisible) {
       if (address !== '') {
         WebApp.HapticFeedback.notificationOccurred('success');
         dispatch(setTotalVisible(false));
-        sendOrder('Овощи', vegetsList.toString(), address);
-        sendOrder('Дюжина', duzinaList.toString(), address);
-        sendOrder('Мангал', mangalList.toString(), address);
-        sendOrder('Хоз товары', houseList.toString(), address);
+        sendOrder('Овощи', date, vegetsList.toString(), address);
+        sendOrder('Дюжина', date, duzinaList.toString(), address);
+        sendOrder('Мангал', date, mangalList.toString(), address);
+        sendOrder('Хоз товары', date, houseList.toString(), address);
         dispatch(clearItems());
         localStorage.removeItem('selectedItem');
         localStorage.removeItem('selectedItems');
@@ -85,7 +91,7 @@ const houseList = house
   return (
     <div className="flex flex-col justify-start items-center pt-10 w-screen h-screen overflow-hidden">
       <Outlet />
-      <Order totalVisible={totalVisible} vegets={vegets} duzina={duzina} mangal={mangal} house={house} />
+      <Order totalVisible={totalVisible} date={date} vegets={vegets} duzina={duzina} mangal={mangal} house={house} />
       <MainButton text={totalVisible ? (address === '' ? 'Выберите адрес кафе' : 'Отправить') : 'Итог'} onClick={handleButtonClick} />
     </div>
   );
