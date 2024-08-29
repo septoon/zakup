@@ -48,6 +48,14 @@ export const mangalData = [
     category: 'mangal',
   },
   {
+    name: 'Косточки для супа',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'mangal',
+  },
+  {
     name: 'Цыплёнок',
     count: 0,
     commented: false,
@@ -73,6 +81,14 @@ export const mangalData = [
   },
   {
     name: 'Телятина',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'кг.',
+    category: 'mangal',
+  },
+  {
+    name: 'Антрекот',
     count: 0,
     commented: false,
     counted: false,
@@ -129,6 +145,14 @@ export const mangalData = [
   },
   {
     name: 'Для люли',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'mangal',
+  },
+  {
+    name: 'Набор для солянки',
     count: 0,
     commented: false,
     counted: false,

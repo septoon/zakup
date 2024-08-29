@@ -1,6 +1,6 @@
 @media (prefers-color-scheme: dark) {
-  .accord a,  /* Header */
-  .accord .p-accordion-content { /* Content */
+  .accord a,
+  .accord .p-accordion-content {
     color: #f9fafb  !important;
     background-color: #141616  !important;
   }
@@ -11,6 +11,6 @@
 }
 
 .section-separator {
-  border-bottom: .5px solid #CECECF; /* Убедитесь, что переменная цвета определена */
-  margin: 8px 0; /* Настройте отступы по своему усмотрению */
+  border-bottom: .5px groove #CECECF;
+  margin: 8px 0;
 }

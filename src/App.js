@@ -9,8 +9,8 @@ import { Dialog } from 'primereact/dialog';
 import { useDispatch, useSelector } from 'react-redux';
 import { addAddress } from './Redux/addressSlice';
 import WebApp from '@twa-dev/sdk';
-import { Button } from 'primereact/button';
-import { setTotalVisible } from './Redux/totalBtnSlice';
+import OrderButton from './components/OrderButton';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -68,7 +68,7 @@ function App() {
         <img src={House} className="h-5 mr-3" alt="household" />
         <span className="dark:text-white">Хоз товары</span>
       </Link>
-      {/* <Button label='Open' onClick={() => dispatch(setTotalVisible(true))}/> */}
+      <OrderButton />
       <Dialog
         header="Выберите кафе:"
         visible={selectCafe}

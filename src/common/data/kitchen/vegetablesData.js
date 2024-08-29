@@ -112,6 +112,14 @@ export const vegetablesData = [
     category: 'vegetables',
   },
   {
+    name: 'Редиска',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'пуч.',
+    category: 'vegetables',
+  },
+  {
     name: 'Чеснок',
     count: 0,
     commented: false,
@@ -137,6 +145,14 @@ export const vegetablesData = [
   },
   {
     name: 'Перец острый',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'шт.',
+    category: 'vegetables',
+  },
+  {
+    name: 'Гранат',
     count: 0,
     commented: false,
     counted: true,

@@ -216,6 +216,14 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
+    name: 'Лапша Ролтон',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'шт.',
+    category: 'duzina',
+  },
+  {
     name: 'Соевый соус',
     count: 0,
     commented: false,
@@ -257,6 +265,14 @@ export const duzinaData = [
   },
   {
     name: 'Зернистая горчица',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'шт.',
+    category: 'duzina',
+  },
+  {
+    name: 'Горчица',
     count: 0,
     commented: false,
     counted: true,
@@ -345,6 +361,14 @@ export const duzinaData = [
   },
   {
     name: 'Креветки',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'пач.',
+    category: 'duzina',
+  },
+  {
+    name: 'Кальмары',
     count: 0,
     commented: false,
     counted: true,
