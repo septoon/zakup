@@ -37,7 +37,8 @@ const Order = ({ totalVisible, date, vegets, duzina, mangal, house }) => {
     <div className="card">
       <Dialog
         className="dialog"
-        header={`Кафе "${address}" | Итог:`}
+        // header={`Кафе "${address}" | Итог:`}
+        header="Итог:"
         visible={totalVisible}
         position={'bottom'}
         style={{ width: '95vw' }}

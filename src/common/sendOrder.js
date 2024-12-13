@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const sendOrder = async (type, date, goods, address) => {
   let message = `
-  ${address} | ${date}\n\n${type}:\n\n${goods.toString()}
+  ${date}\n\n${type}:\n\n${goods.toString()}
   `
   if(goods.length > 0) {
     

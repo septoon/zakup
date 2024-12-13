@@ -89,7 +89,7 @@ const houseList = house
   };
 
   return (
-    <div className="flex flex-col justify-start items-center pt-10 w-screen h-screen overflow-hidden">
+    <div className="flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
       <Outlet />
       <Order totalVisible={totalVisible} date={date} vegets={vegets} duzina={duzina} mangal={mangal} house={house} />
       <MainButton text={totalVisible ? (address === '' ? 'Выберите адрес кафе' : 'Отправить') : 'Итог'} onClick={handleButtonClick} />

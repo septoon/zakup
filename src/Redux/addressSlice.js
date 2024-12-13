@@ -9,7 +9,8 @@ const setItemFunc = (adr) => {
 const addressSlice = createSlice({
   name: 'addressSelection',
   initialState: {
-    address: isBrowser ? (localStorage.getItem('addressSelection') ? JSON.parse(localStorage.getItem('addressSelection')) : '') : '',
+    // address: isBrowser ? (localStorage.getItem('addressSelection') ? JSON.parse(localStorage.getItem('addressSelection')) : '') : '',
+    address: 'Парковая'
   },
   reducers: {
     addAddress: (state, action) => {

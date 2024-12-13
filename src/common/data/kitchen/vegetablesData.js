@@ -132,7 +132,7 @@ export const vegetablesData = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'кг.',
+    type: 'шт.',
     category: 'vegetables',
   },
   {
@@ -140,7 +140,15 @@ export const vegetablesData = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'кг.',
+    type: 'шт.',
+    category: 'vegetables',
+  },
+  {
+    name: 'Перец белый (на персонал)',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'шт.',
     category: 'vegetables',
   },
   {
@@ -164,7 +172,7 @@ export const vegetablesData = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'кг.',
+    type: 'шт.',
     category: 'vegetables',
   },
   {

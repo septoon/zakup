@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createSelector } from 'reselect';
 
 const isBrowser = typeof window !== 'undefined';
 
