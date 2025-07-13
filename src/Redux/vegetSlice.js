@@ -3,19 +3,20 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 /* ─────── 0. Константы ─────── */
-const BASE_URL = process.env.REACT_APP_URL || '';  // .env.local
-const FILE     = 'zakup.json';
-const DATA_URL = `${BASE_URL}/api/data/${FILE}`;   // GET
-const SAVE_URL = `${BASE_URL}/api/save/${FILE}`;   // PUT
+const BASE_URL   = process.env.REACT_APP_URL || '';          // https://api.shashlichny-dom.ru
+const FILE       = 'zakup.json';
+const GET_URL    = `${BASE_URL}/${FILE}`;                    // ➜ https://.../zakup.json
+const SAVE_URL   = `${BASE_URL}/api/save/${FILE}`;           // ➜ https://.../api/save/zakup.json
 
 /* ─────── 1. Async-thunks ─────── */
 
-/* GET из zakup.json */
+/** GET /zakup.json?t=timestamp  (Nginx отдаёт статический файл + CORS-заголовки) */
 export const fetchVegetables = createAsyncThunk(
   'vegetables/fetch',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get(DATA_URL, { cache: 'no-store' });
+      const url = `${GET_URL}?t=${Date.now()}`;               // ⛔️ обходим кеш уровня CDN/WKWebView
+      const { data } = await axios.get(url);
       return data.items ?? [];
     } catch (err) {
       return rejectWithValue(err.response?.data || err.message);
@@ -23,7 +24,7 @@ export const fetchVegetables = createAsyncThunk(
   }
 );
 
-/* PUT в zakup.json */
+/** PUT /api/save/zakup.json  (Express сохраняет + Nginx проксирует) */
 export const saveVegetables = createAsyncThunk(
   'vegetables/save',
   async (items, { rejectWithValue }) => {
@@ -40,8 +41,8 @@ export const saveVegetables = createAsyncThunk(
 const vegetSlice = createSlice({
   name: 'vegetables',
   initialState: {
-    items: [],           // источник правды — сервер
-    status: 'idle',      // idle | loading | succeeded | failed
+    items: [],
+    status: 'idle',        // idle | loading | succeeded | failed
     error:  null,
   },
   reducers: {
@@ -71,11 +72,11 @@ const vegetSlice = createSlice({
       .addCase(fetchVegetables.fulfilled, (s, a) => { s.status = 'succeeded'; s.items = a.payload; })
       .addCase(fetchVegetables.rejected,  (s, a) => { s.status = 'failed'; s.error = a.payload; })
 
-      /* save — только логируем ошибку */
+      /* save (ошибку просто логируем) */
       .addCase(saveVegetables.rejected,   (s, a) => { s.error = a.payload; }),
 });
 
-/* ─────── 3. Комбо-thunks (persist → refetch) ─────── */
+/* ─────── 3. Комбо-thunks: persist → refetch ─────── */
 
 export const addVegetableAndPersist = (item) => async (dispatch, getState) => {
   dispatch(vegetSlice.actions.addVegetablesToItems(item));
@@ -83,7 +84,7 @@ export const addVegetableAndPersist = (item) => async (dispatch, getState) => {
   try {
     await dispatch(saveVegetables(items)).unwrap();
   } finally {
-    dispatch(fetchVegetables());          // мгновенно подтягиваем свежий JSON
+    dispatch(fetchVegetables());      // берём свежее, как в «Available»
   }
 };
 
