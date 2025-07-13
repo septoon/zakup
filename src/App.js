@@ -9,12 +9,14 @@ import { Dialog } from 'primereact/dialog';
 import { useDispatch, useSelector } from 'react-redux';
 import { addAddress } from './Redux/addressSlice';
 import WebApp from '@twa-dev/sdk';
+import { fetchVegetables } from './Redux/vegetSlice';
 
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(fetchVegetables())
     WebApp.ready();
     WebApp.expand()
   }, []);
