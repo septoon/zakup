@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 /* ─────── 0. Константы ─────── */
-const BASE_URL   = process.env.REACT_APP_URL || '';          // https://api.shashlichny-dom.ru
+const BASE_URL   = process.env.REACT_APP_URL;
 const FILE       = 'zakup.json';
 const GET_URL    = `${BASE_URL}/${FILE}`;                    // ➜ https://.../zakup.json
 const SAVE_URL   = `${BASE_URL}/api/save/${FILE}`;           // ➜ https://.../api/save/zakup.json
