@@ -1,5 +1,5 @@
 // src/Layout.js
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { Outlet } from 'react-router-dom';
 import { MainButton } from '@twa-dev/sdk/react';
 import WebApp from '@twa-dev/sdk';
@@ -32,8 +32,29 @@ const selectOrderData = createSelector(
 const Layout = () => {
   const dispatch = useDispatch();
 
-  const totalVisible      = useSelector(selectTotalVisible);
-  const { items, address} = useSelector(selectOrderData);
+  const totalVisible       = useSelector(selectTotalVisible);
+  const { items, address } = useSelector(selectOrderData);
+
+  /* ────────── авто-скрытие MainButton при клавиатуре ────────── */
+  const prevVh = useRef(WebApp.viewportHeight);      // процентов (0-100)
+
+  useEffect(() => {
+    const THRESHOLD = 90;                            // < 90 % → считаем «клавиатура»
+
+    const handler = () => {
+      const vh = WebApp.viewportHeight;
+      const wasOpen = prevVh.current < THRESHOLD;
+      const isOpen  = vh < THRESHOLD;
+
+      if (isOpen && !wasOpen)    WebApp.MainButton.hide();
+      if (!isOpen && wasOpen)    WebApp.MainButton.show();
+
+      prevVh.current = vh;
+    };
+
+    WebApp.onEvent('viewportChanged', handler);
+    return () => WebApp.offEvent('viewportChanged', handler);
+  }, []);
 
   /* ─────── разбор по категориям ─────── */
   const vegets = useMemo(() => items.filter(i => i.category === 'vegetables'), [items]);
@@ -67,7 +88,7 @@ const Layout = () => {
 
   /* ─────── кнопка «Отправить/Итог» ─────── */
   const handleButtonClick = () => {
-    const userId = WebApp?.initDataUnsafe?.user?.id;   // ID текущего пользователя TG
+    const userId = WebApp?.initDataUnsafe?.user?.id;
 
     if (totalVisible) {
       const canSend = address !== '' && ALLOWED_IDS.includes(userId);
