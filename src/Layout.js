@@ -68,20 +68,21 @@ const Layout = () => {
   /* ─────── кнопка «Отправить/Итог» ─────── */
   const userId = WebApp?.initDataUnsafe?.user?.id;
 
+  
   const handleButtonClick = () => {
-
+    
     if (totalVisible) {
       const canSend = address !== '' && ALLOWED_IDS.includes(userId);
-
+      
       if (canSend) {
         WebApp.HapticFeedback.notificationOccurred('success');
         dispatch(setTotalVisible(false));
-
+        
         sendOrder('Овощи',     date, vegetsList, address);
         sendOrder('Дюжина',    date, duzinaList, address);
         sendOrder('Мангал',    date, mangalList, address);
         sendOrder('Хоз товары',date, houseList,  address);
-
+        
         dispatch(clearItemsAndPersist());
       } else {
         WebApp.HapticFeedback.notificationOccurred('warning');
@@ -92,17 +93,19 @@ const Layout = () => {
       dispatch(setTotalVisible(true));
     }
   };
-
+  
   const buttonLabel = totalVisible
-    ? address === '' ? 'Выберите адрес кафе' : 'Отправить'
-    : 'Итог';
+  ? address === '' ? 'Выберите адрес кафе' : 'Отправить'
+  : 'Итог';
+  
+  const cannotSend = ALLOWED_IDS.includes(userId) && buttonLabel === "Отправить"
 
   /* ─────── UI ─────── */
   return (
     <div className="flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
       <Outlet />
       <Order totalVisible={totalVisible} />
-      <MainButton text={buttonLabel} disabled={ALLOWED_IDS.includes(userId) ? false : true} onClick={handleButtonClick} />
+      <MainButton text={buttonLabel} color={cannotSend && "9E9E9E"} onClick={handleButtonClick} />
     </div>
   );
 };
