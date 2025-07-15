@@ -66,8 +66,9 @@ const Layout = () => {
   );
 
   /* ─────── кнопка «Отправить/Итог» ─────── */
+  const userId = WebApp?.initDataUnsafe?.user?.id;
+
   const handleButtonClick = () => {
-    const userId = WebApp?.initDataUnsafe?.user?.id;
 
     if (totalVisible) {
       const canSend = address !== '' && ALLOWED_IDS.includes(userId);
@@ -101,7 +102,7 @@ const Layout = () => {
     <div className="flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
       <Outlet />
       <Order totalVisible={totalVisible} />
-      <MainButton text={buttonLabel} onClick={handleButtonClick} />
+      <MainButton text={buttonLabel} disabled={ALLOWED_IDS.includes(userId) ? false : true} onClick={handleButtonClick} />
     </div>
   );
 };
