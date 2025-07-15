@@ -12,8 +12,7 @@ import {
   clearItemsAndPersist,
 } from './Redux/vegetSlice';
 import Order from './components/Order';
-import { sendOrder } from './common/sendOrder';
-import { Button } from 'primereact/button';
+import { sendOrder } from './common/sendOrder'
 
 /* ────────── Разрешённые Telegram-ID ────────── */
 const ALLOWED_IDS = [
@@ -99,7 +98,7 @@ const Layout = () => {
   ? address === '' ? 'Выберите адрес кафе' : 'Отправить'
   : 'Итог';
   
-  const cannotSend = ALLOWED_IDS.includes(userId) && buttonLabel === "Отправить"
+  const cannotSend = ALLOWED_IDS.includes(userId) && buttonLabel === "Итог"
 
   /* ─────── UI ─────── */
   return (
