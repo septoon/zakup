@@ -13,6 +13,7 @@ import {
 } from './Redux/vegetSlice';
 import Order from './components/Order';
 import { sendOrder } from './common/sendOrder';
+import { Button } from 'primereact/button';
 
 /* ────────── Разрешённые Telegram-ID ────────── */
 const ALLOWED_IDS = [
@@ -105,7 +106,7 @@ const Layout = () => {
     <div className="flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
       <Outlet />
       <Order totalVisible={totalVisible} />
-      <MainButton text={buttonLabel} color={cannotSend && "9E9E9E"} onClick={handleButtonClick} />
+      <MainButton text={buttonLabel} color={cannotSend ? '#9E9E9E' : undefined} onClick={handleButtonClick} />
     </div>
   );
 };
