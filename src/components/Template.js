@@ -34,6 +34,14 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     if (isOpen && inputRef.current) inputRef.current.focus();
   }, [isOpen]);
 
+  useEffect(() => {
+    if (isOpen) {
+      WebApp.MainButton.hide();
+    } else {
+      WebApp.MainButton.show();
+    }
+  }, [isOpen]);
+
   /* ────────── CRUD через Redux ────────── */
   const addVegets = (obj) => {
     setIsOpen(false);

@@ -35,27 +35,6 @@ const Layout = () => {
   const totalVisible       = useSelector(selectTotalVisible);
   const { items, address } = useSelector(selectOrderData);
 
-  /* ────────── авто-скрытие MainButton при клавиатуре ────────── */
-  const prevVh = useRef(WebApp.viewportHeight);      // процентов (0-100)
-
-  useEffect(() => {
-    const THRESHOLD = 90;                            // < 90 % → считаем «клавиатура»
-
-    const handler = () => {
-      const vh = WebApp.viewportHeight;
-      const wasOpen = prevVh.current < THRESHOLD;
-      const isOpen  = vh < THRESHOLD;
-
-      if (isOpen && !wasOpen)    WebApp.MainButton.hide();
-      if (!isOpen && wasOpen)    WebApp.MainButton.show();
-
-      prevVh.current = vh;
-    };
-
-    WebApp.onEvent('viewportChanged', handler);
-    return () => WebApp.offEvent('viewportChanged', handler);
-  }, []);
-
   /* ─────── разбор по категориям ─────── */
   const vegets = useMemo(() => items.filter(i => i.category === 'vegetables'), [items]);
   const duzina = useMemo(() => items.filter(i => i.category === 'duzina'),     [items]);
