@@ -98,14 +98,18 @@ const Layout = () => {
   ? address === '' ? 'Выберите адрес кафе' : 'Отправить'
   : 'Итог';
   
-  const cannotSend = ALLOWED_IDS.includes(userId) && buttonLabel === "Итог"
+  const btnDisabled = buttonLabel === 'Отправить' && !ALLOWED_IDS.includes(userId);
 
   /* ─────── UI ─────── */
   return (
     <div className="flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
       <Outlet />
       <Order totalVisible={totalVisible} />
-      <MainButton text={buttonLabel} color={cannotSend ? undefined : '#9E9E9E'} onClick={handleButtonClick} />
+      <MainButton
+       text={buttonLabel}
+       color={btnDisabled ? '#9E9E9E' : undefined}
+       onClick={handleButtonClick}
+      />
     </div>
   );
 };
