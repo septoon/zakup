@@ -46,7 +46,7 @@ function App() {
         //   setSelectCafe(true);
         //   WebApp.HapticFeedback.impactOccurred('soft');
         // }}
-        className="w-full h-14 flex justify-between px-5 items-center mb-16 bg-silver dark:bg-darkGray rounded-b-lg mt-30"
+        className="w-full h-14 flex justify-between px-5 items-center mb-16 bg-silver dark:bg-darkGray rounded-b-lg mt-28"
       >
         <span className="dark:text-white">Закуп</span>
         <span className="dark:text-white font-bold">
