@@ -189,7 +189,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
   const handleFocus = (e) => e.target.select();
 
   return (
-    <div className="card flex w-full justify-center overflow-y-scroll pt-5">
+    <div className="card flex w-full justify-center overflow-y-scroll pt-50">
       <Accordion
         activeIndex={activeIndexes}
         className="w-full pb-12"
