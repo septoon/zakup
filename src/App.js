@@ -6,7 +6,7 @@ import Grill from './common/images/grill.png';
 import House from './common/images/household.png';
 import { Link } from 'react-router-dom';
 import { Dialog } from 'primereact/dialog';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addAddress } from './Redux/addressSlice';
 import WebApp from '@twa-dev/sdk';
 import { fetchVegetables } from './Redux/vegetSlice';
@@ -40,13 +40,13 @@ function App() {
   const linkClassName = 'w-[80%] h-20 flex justify-start pl-5 items-center mb-5 bg-silver dark:bg-darkGray rounded-lg';
 
   return (
-    <div className="flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
+    <div className="safe-area flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
       <div
         // onClick={() => {
         //   setSelectCafe(true);
         //   WebApp.HapticFeedback.impactOccurred('soft');
         // }}
-        className="w-full h-14 flex justify-between px-5 items-center mb-16 bg-silver dark:bg-darkGray rounded-b-lg mt-28"
+        className="w-full h-14 flex justify-between px-5 items-center mb-16 bg-silver dark:bg-darkGray rounded-b-lg"
       >
         <span className="dark:text-white">Закуп</span>
         <span className="dark:text-white font-bold">
