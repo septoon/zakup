@@ -101,7 +101,7 @@ const Layout = () => {
 
   /* ─────── UI ─────── */
   return (
-    <div className="safe-area flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
+    <div className="flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
       <Outlet />
       <Order totalVisible={totalVisible} />
       <BottomBar>

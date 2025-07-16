@@ -19,7 +19,7 @@ function App() {
     dispatch(fetchVegetables())
     WebApp.ready();
     WebApp.expand()
-    WebApp.requestFullscreen()
+    // WebApp.requestFullscreen()
   }, []);
 
   const [selectCafe, setSelectCafe] = useState(false);
@@ -40,7 +40,7 @@ function App() {
   const linkClassName = 'w-[80%] h-20 flex justify-start pl-5 items-center mb-5 bg-silver dark:bg-darkGray rounded-lg';
 
   return (
-    <div className="safe-area flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
+    <div className="flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
       <div
         // onClick={() => {
         //   setSelectCafe(true);
