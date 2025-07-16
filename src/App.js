@@ -40,13 +40,13 @@ function App() {
   const linkClassName = 'w-[80%] h-20 flex justify-start pl-5 items-center mb-5 bg-silver dark:bg-darkGray rounded-lg';
 
   return (
-    <div className="flex flex-col justify-start items-center w-screen h-screen overflow-hidden pt-50">
+    <div className="flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
       <div
         // onClick={() => {
         //   setSelectCafe(true);
         //   WebApp.HapticFeedback.impactOccurred('soft');
         // }}
-        className="w-full h-14 flex justify-between px-5 items-center mb-16 bg-silver dark:bg-darkGray rounded-b-lg"
+        className="w-full h-14 flex justify-between px-5 items-center mb-16 bg-silver dark:bg-darkGray rounded-b-lg mt-30"
       >
         <span className="dark:text-white">Закуп</span>
         <span className="dark:text-white font-bold">
