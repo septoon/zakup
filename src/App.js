@@ -20,6 +20,9 @@ function App() {
     WebApp.ready();
     WebApp.expand()
     WebApp.requestFullscreen()
+    WebApp?.onEvent('fullscreenChanged', ({ isFullscreen }) => {
+      document.body.classList.toggle('safe-area', isFullscreen);
+    });
   }, []);
 
   const [selectCafe, setSelectCafe] = useState(false);
