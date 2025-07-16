@@ -19,13 +19,7 @@ function App() {
     dispatch(fetchVegetables())
     WebApp.ready();
     WebApp.expand()
-    (async () => {
-      if (WebApp.requestFullscreen) {
-        try {
-          await WebApp.requestFullscreen();
-        } catch { /* может быть UNSUPPORTED или ALREADY_FULLSCREEN */ }
-      }
-    })();
+    WebApp.requestFullscreen()
   }, []);
 
   const [selectCafe, setSelectCafe] = useState(false);

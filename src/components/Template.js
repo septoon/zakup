@@ -1,4 +1,3 @@
-// src/components/Template.js
 import React, { useState, useEffect, useRef } from 'react';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Dialog } from 'primereact/dialog';

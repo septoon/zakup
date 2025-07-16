@@ -1,7 +1,6 @@
-// src/Layout.js
 import React, { useEffect, useMemo, useRef } from 'react';
 import { Outlet } from 'react-router-dom';
-import { MainButton } from '@twa-dev/sdk/react';
+import { MainButton, SecondaryButton, BottomBar } from '@twa-dev/sdk/react';
 import WebApp from '@twa-dev/sdk';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTotalVisible, selectTotalVisible } from './Redux/totalBtnSlice';
@@ -105,11 +104,31 @@ const Layout = () => {
     <div className="flex flex-col justify-start items-center w-screen h-screen overflow-hidden">
       <Outlet />
       <Order totalVisible={totalVisible} />
-      <MainButton
-       text={buttonLabel}
-       color={btnDisabled ? '#9E9E9E' : undefined}
-       onClick={handleButtonClick}
-      />
+      <BottomBar>
+        {totalVisible ? (
+          <>
+            <MainButton
+              text={buttonLabel}
+              color={btnDisabled ? '#9E9E9E' : undefined}
+              onClick={handleButtonClick}
+            />
+            <SecondaryButton
+              text="Свернуть"
+              position="left"
+              onClick={() => {
+                WebApp.HapticFeedback.impactOccurred('medium');
+                dispatch(setTotalVisible(false));
+              }}
+            />
+          </>
+        ) : (
+          <MainButton
+            text={buttonLabel}
+            color={btnDisabled ? '#9E9E9E' : undefined}
+            onClick={handleButtonClick}
+          />
+        )}
+      </BottomBar>
     </div>
   );
 };
