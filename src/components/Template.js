@@ -26,6 +26,11 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
   const [comment, setComment] = useState('');
   const [activeIndexes, setActiveIndexes] = useState([0, 1]);
 
+  /* поиск */
+  const [search, setSearch] = useState('');
+  const matchesSearch = (str) =>
+    str.toLowerCase().includes(search.toLowerCase().trim());
+
   const inputRef = useRef(null);
 
   /* Фокус на инпуте после открытия модалки */
@@ -95,7 +100,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     ? [
         {
           header: 'Хоз товары',
-          content: houseData.map((house, idx) =>
+          content: houseData.filter((house) => matchesSearch(house.name)).map((house, idx) =>
             itemRenderer(
               {
                 label: house.name,
@@ -113,7 +118,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     ? [
         {
           header: 'Мясо',
-          content: mangalData.map((meat, idx) =>
+          content: mangalData.filter((meat) => matchesSearch(meat.name)).map((meat, idx) =>
             itemRenderer(
               {
                 label: meat.name,
@@ -130,7 +135,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     : [
         {
           header: 'Овощи',
-          content: vegetablesData.map((veg, idx) =>
+          content: vegetablesData.filter((veg) => matchesSearch(veg.name)).map((veg, idx) =>
             itemRenderer(
               {
                 label: veg.name,
@@ -145,7 +150,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         },
         {
           header: 'Дюжина',
-          content: duzinaData.map((dz, idx) =>
+          content: duzinaData.filter((dz) => matchesSearch(dz.name)).map((dz, idx) =>
             itemRenderer(
               {
                 label: dz.name,
@@ -189,7 +194,14 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
   const handleFocus = (e) => e.target.select();
 
   return (
-    <div className="card flex w-full justify-center overflow-y-scroll pt-5">
+    <div className="card flex flex-col w-full justify-start items-center overflow-y-scroll pt-5">
+      <input
+        type="text"
+        placeholder="Поиск..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="w-full mb-4 p-2 pl-4 border rounded-md dark:bg-dark dark:text-white"
+      />
       <Accordion
         activeIndex={activeIndexes}
         className="w-full pb-12"
