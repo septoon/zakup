@@ -48,7 +48,7 @@ export const houseData = [
     category: 'house',
   },
   {
-    name: 'Стканчики кофе (180мл)',
+    name: 'Стаканчики кофе (180мл)',
     count: 0,
     commented: false,
     counted: false,
@@ -56,7 +56,7 @@ export const houseData = [
     category: 'house',
   },
   {
-    name: 'Стканчики кофе (330мл)',
+    name: 'Стаканчики кофе (330мл)',
     count: 0,
     commented: false,
     counted: false,
@@ -64,7 +64,7 @@ export const houseData = [
     category: 'house',
   },
   {
-    name: 'Стканчики пивные (0.5)',
+    name: 'Стаканчики пивные (0.5)',
     count: 0,
     commented: false,
     counted: false,
