@@ -200,7 +200,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         placeholder="Поиск..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="w-full mb-4 p-2 pl-4 border rounded-md dark:bg-dark dark:text-white"
+        className="w-full mb-4 p-3 pl-4 border rounded-md dark:bg-dark dark:text-white"
       />
       <Accordion
         activeIndex={activeIndexes}
