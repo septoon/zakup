@@ -35,15 +35,15 @@ const Order = ({ totalVisible }) => {
   const mangal = useMemo(() => items.filter((i) => i.category === 'mangal'), [items]);
   const house  = useMemo(() => items.filter((i) => i.category === 'house'),  [items]);
 
-  const date = useMemo(() => {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    return tomorrow.toLocaleDateString('ru-RU', {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    });
-  }, []);
+ const date = useMemo(
+    () =>
+      new Date().toLocaleDateString('ru-RU', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      }),
+    []
+  );
 
   const renderSection = (title, data) =>
     data.length > 0 && (
