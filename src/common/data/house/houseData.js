@@ -215,6 +215,7 @@ export const houseData = [
     type: 'шт.',
     category: 'house',
   },
+  {
     name: 'Бумаж. полотенца в туалет',
     count: 0,
     commented: false,
