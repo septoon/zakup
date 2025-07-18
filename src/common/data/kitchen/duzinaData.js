@@ -31,7 +31,14 @@ export const duzinaData = [
     type: 'шт.',
     category: 'duzina',
   },
-
+  {
+    name: 'Крыло кур. копч.',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'пач.',
+    category: 'duzina',
+  },
   {
     name: 'Индейка на кухню (для салата)',
     count: 0,
@@ -95,6 +102,14 @@ export const duzinaData = [
     commented: false,
     counted: false,
     type: 'шт.',
+    category: 'mangal',
+  },
+  {
+    name: 'Паста Том Ям',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'б.',
     category: 'mangal',
   },
   {
@@ -202,7 +217,7 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
-    name: 'Наггенсы',
+    name: 'Наггетсы',
     count: 0,
     commented: false,
     counted: true,
@@ -219,6 +234,22 @@ export const duzinaData = [
   },
   {
     name: 'Пармезан',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'кг.',
+    category: 'duzina',
+  },
+  {
+    name: 'Маасдам',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'кг.',
+    category: 'duzina',
+  },
+  {
+    name: 'Камамбер',
     count: 0,
     commented: false,
     counted: true,
@@ -255,6 +286,14 @@ export const duzinaData = [
     commented: false,
     counted: true,
     type: 'шт.',
+    category: 'duzina',
+  },
+  {
+    name: 'Соль',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'кг.',
     category: 'duzina',
   },
   {
@@ -338,7 +377,7 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
-    name: 'Сметана 25%',
+    name: 'Сметана горянка 25%',
     count: 0,
     commented: false,
     counted: true,
@@ -410,6 +449,14 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
+    name: 'Уксус',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'шт.',
+    category: 'duzina',
+  },
+  {
     name: 'Брусничный соус',
     count: 0,
     commented: false,
@@ -459,6 +506,14 @@ export const duzinaData = [
   },
   {
     name: 'Аджика',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'шт.',
+    category: 'duzina',
+  },
+  {
+    name: 'Паприка молотая сладк.',
     count: 0,
     commented: false,
     counted: true,
@@ -599,6 +654,22 @@ export const duzinaData = [
     commented: false,
     counted: true,
     type: 'кг.',
+    category: 'duzina',
+  },
+  {
+    name: 'Арахис',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'пач.',
+    category: 'duzina',
+  },
+  {
+    name: 'Фисташки',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'пач.',
     category: 'duzina',
   },
 ];

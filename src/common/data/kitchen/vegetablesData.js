@@ -124,7 +124,7 @@ export const vegetablesData = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'кг.',
+    type: 'г.',
     category: 'vegetables',
   },
   {

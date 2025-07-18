@@ -95,4 +95,12 @@ export const mangalData = [
     type: 'шт.',
     category: 'mangal',
   },
+  {
+    name: 'Внутренний жир (говядина)',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'mangal',
+  },
 ];
