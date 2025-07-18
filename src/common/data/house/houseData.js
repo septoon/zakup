@@ -224,7 +224,7 @@ export const houseData = [
     category: 'house',
   },
   {
-    name: 'Бумаж. полотенца',
+    name: 'Бумаж. полотенца рулон',
     count: 0,
     commented: false,
     counted: false,

@@ -353,6 +353,14 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
+    name: 'Дикий рис',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'кг.',
+    category: 'duzina',
+  },
+  {
     name: 'Киноа',
     count: 0,
     commented: false,
@@ -489,6 +497,14 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
+    name: 'Свит чили',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'шт.',
+    category: 'duzina',
+  },
+  {
     name: 'Томатная паста',
     count: 0,
     commented: false,
@@ -541,7 +557,7 @@ export const duzinaData = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'пач.',
+    type: 'кг.',
     category: 'duzina',
   },
   {
@@ -549,7 +565,7 @@ export const duzinaData = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'пач.',
+    type: 'кг.',
     category: 'duzina',
   },
   {
@@ -557,7 +573,7 @@ export const duzinaData = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'пач.',
+    type: 'кг.',
     category: 'duzina',
   },
   {
@@ -565,7 +581,7 @@ export const duzinaData = [
     count: 0,
     commented: false,
     counted: true,
-    type: 'пач.',
+    type: 'кг.',
     category: 'duzina',
   },
   {
@@ -633,11 +649,27 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
+    name: 'Хлеб Тарту',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'шт.',
+    category: 'duzina',
+  },
+  {
     name: 'Кукурузный крахмал',
     count: 0,
     commented: false,
     counted: true,
     type: 'шт.',
+    category: 'duzina',
+  },
+  {
+    name: 'Фасоль спаржнвая',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'кг.',
     category: 'duzina',
   },
   {
