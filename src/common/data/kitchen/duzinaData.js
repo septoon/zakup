@@ -641,6 +641,14 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
+    name: 'Кокосовое молоко',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'б.',
+    category: 'duzina',
+  },
+  {
     name: 'Кукурузная мука',
     count: 0,
     commented: false,

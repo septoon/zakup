@@ -200,6 +200,14 @@ export const vegetablesData = [
     category: 'vegetables',
   },
   {
+    name: 'Базилик зеленый',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'пуч.',
+    category: 'vegetables',
+  },
+  {
     name: 'Маринованые',
     count: 0,
     commented: true,
