@@ -24,6 +24,14 @@ export const vegetablesDataBar = [
     category: 'vegetables',
   },
   {
+    name: 'Мята',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'пуч.',
+    category: 'vegetables',
+  },
+  {
     name: 'Мята перечная',
     count: 0,
     commented: false,
