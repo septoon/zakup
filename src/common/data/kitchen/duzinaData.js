@@ -313,7 +313,7 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
-    name: 'Маслины',
+    name: 'Маслины без косточки',
     count: 0,
     commented: false,
     counted: true,
@@ -593,6 +593,14 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
+    name: 'Креветки тигровые',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
     name: 'Кальмары',
     count: 0,
     commented: false,
@@ -639,6 +647,14 @@ export const duzinaData = [
     counted: true,
     type: 'шт.',
     category: 'duzina',
+  },
+  {
+    name: 'Кукурузный батон',
+    count: 0,
+    commented: false,
+    counted: true,
+    type: 'шт.',
+    category: 'house',
   },
   {
     name: 'Тостерный хлеб',

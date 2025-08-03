@@ -32,22 +32,6 @@ export const houseData = [
     category: 'house',
   },
   {
-    name: 'Кукурузный батон',
-    count: 0,
-    commented: false,
-    counted: false,
-    type: 'шт.',
-    category: 'house',
-  },
-  {
-    name: 'Креветки тигровые',
-    count: 0,
-    commented: false,
-    counted: false,
-    type: 'шт.',
-    category: 'house',
-  },
-  {
     name: 'Тряпки для столов',
     count: 0,
     commented: false,
@@ -145,6 +129,14 @@ export const houseData = [
   },
   {
     name: 'Приборы одноразовые',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
+    name: 'Пергамент бумага',
     count: 0,
     commented: false,
     counted: false,
