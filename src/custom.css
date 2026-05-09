@@ -1,0 +1,51 @@
+.p-dialog {
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.p-dialog .p-dialog-header,
+.p-dialog .p-dialog-content,
+.p-dialog .p-dialog-footer {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.p-dialog .p-dialog-header {
+  padding: 18px 18px 8px;
+}
+
+.p-dialog .p-dialog-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.p-dialog .p-dialog-content {
+  padding: 12px 18px 18px;
+}
+
+.p-dialog .p-dialog-footer {
+  padding: 12px 18px 18px;
+}
+
+.p-accordion .p-accordion-header .p-accordion-header-link {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 800;
+}
+
+.p-accordion .p-accordion-content {
+  margin: 8px 0 12px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+  color: var(--text);
+}
+
+.p-button {
+  min-height: 44px;
+  border-radius: 8px;
+  font-weight: 800;
+}
