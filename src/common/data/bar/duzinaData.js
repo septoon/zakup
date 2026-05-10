@@ -1,4 +1,4 @@
-export const duzinaDataBar = [
+export const duzinaData = [
   {
     name: 'Мёд',
     count: 0,

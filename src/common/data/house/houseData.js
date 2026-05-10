@@ -264,7 +264,7 @@ export const houseData = [
     category: 'house',
   },
   {
-    name: 'Черные пакеты',
+    name: 'Чёрные пакеты',
     count: 0,
     commented: false,
     counted: false,

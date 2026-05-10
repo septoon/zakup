@@ -17,7 +17,7 @@ const House = () => {
           <h1>Хоз товары</h1>
         </div>
       </header>
-      <Template houseData={houseData} />
+      <Template sectionSource="house" houseData={houseData} />
     </div>
   );
 };

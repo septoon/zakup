@@ -1,4 +1,4 @@
-export const vegetablesDataBar = [
+export const vegetablesData = [
   {
     name: 'Апельсины',
     count: 0,

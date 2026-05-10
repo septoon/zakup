@@ -1,13 +1,5 @@
 export const mangalData = [
   {
-    name: 'Шея',
-    count: 0,
-    commented: false,
-    counted: true,
-    type: 'уп.',
-    category: 'mangal',
-  },
-  {
     name: 'Ребра',
     count: 0,
     commented: false,

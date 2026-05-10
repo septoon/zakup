@@ -40,11 +40,27 @@ export const duzinaData = [
     category: 'mangal',
   },
   {
+    name: 'Телятина на кухню (для салата)',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'кг.',
+    category: 'mangal',
+  },
+  {
     name: 'Телятина на кухню (для супа)',
     count: 0,
     commented: false,
     counted: false,
     type: 'кг.',
+    category: 'mangal',
+  },
+  {
+    name: 'Набор для солянки',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
     category: 'mangal',
   },
   {
@@ -392,11 +408,11 @@ export const duzinaData = [
     category: 'duzina',
   },
   {
-    name: 'Аджика сух.',
+    name: 'Аджика',
     count: 0,
     commented: false,
     counted: true,
-    type: 'пач.',
+    type: 'шт.',
     category: 'duzina',
   },
   {

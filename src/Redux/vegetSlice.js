@@ -66,6 +66,29 @@ const setCurrentItems = (state, items) => {
   };
 };
 
+const getItemKey = (item) => [item.category, item.name, item.type, item.counted].join('|');
+
+const getSourceKey = (item) =>
+  item.sourceKey || ['legacy', item.category, item.name, item.type, item.counted].join('|');
+
+const normalizeSourceSelections = (item) => {
+  if (item?.sourceSelections && typeof item.sourceSelections === 'object') {
+    return item.sourceSelections;
+  }
+
+  return {
+    [getSourceKey(item)]: {
+      count: item.count || 1,
+      comment: item.comment || '',
+    },
+  };
+};
+
+const getTotalCount = (sourceSelections) =>
+  Object.values(sourceSelections).reduce((total, sourceItem) => {
+    return total + (Number(sourceItem.count) || 0);
+  }, 0);
+
 /* ─────── 1. Async-thunks ─────── */
 
 /** GET /zakup.json?t=timestamp  (Nginx отдаёт статический файл + CORS-заголовки) */
@@ -120,20 +143,74 @@ const vegetSlice = createSlice({
   reducers: {
     addVegetablesToItems(state, { payload }) {
       const currentItems = getCurrentItems(state);
-      const idx = currentItems.findIndex((i) => i.name === payload.name);
+      const payloadKey = getItemKey(payload);
+      const sourceKey = getSourceKey(payload);
+      const idx = currentItems.findIndex((i) => getItemKey(i) === payloadKey);
+
       if (idx !== -1) {
+        const sourceSelections = normalizeSourceSelections(currentItems[idx]);
+        const currentSource = sourceSelections[sourceKey] || { count: 0, comment: '' };
+        const nextSourceSelections = {
+          ...sourceSelections,
+          [sourceKey]: {
+            count: (Number(currentSource.count) || 0) + (payload.count || 1),
+            comment: payload.comment || currentSource.comment || '',
+          },
+        };
+
         currentItems[idx] = {
           ...currentItems[idx],
           ...payload,
-          count: (currentItems[idx].count || 0) + (payload.count || 1),
+          count: getTotalCount(nextSourceSelections),
+          sourceSelections: nextSourceSelections,
         };
       } else {
-        currentItems.push({ ...payload, count: payload.count || 1 });
+        const sourceSelections = {
+          [sourceKey]: {
+            count: payload.count || 1,
+            comment: payload.comment || '',
+          },
+        };
+
+        currentItems.push({
+          ...payload,
+          count: getTotalCount(sourceSelections),
+          sourceSelections,
+        });
       }
       setCurrentItems(state, currentItems);
     },
-    removeVegetableByName(state, { payload: name }) {
-      setCurrentItems(state, getCurrentItems(state).filter((i) => i.name !== name));
+    removeVegetableByName(state, { payload }) {
+      if (typeof payload === 'string') {
+        setCurrentItems(state, getCurrentItems(state).filter((i) => i.name !== payload));
+        return;
+      }
+
+      const currentItems = getCurrentItems(state);
+      const sourceKey = getSourceKey(payload);
+      const nextItems = currentItems.reduce((acc, currentItem) => {
+        if (getItemKey(currentItem) !== getItemKey(payload)) {
+          return [...acc, currentItem];
+        }
+
+        const sourceSelections = { ...normalizeSourceSelections(currentItem) };
+        delete sourceSelections[sourceKey];
+
+        if (!Object.keys(sourceSelections).length) {
+          return acc;
+        }
+
+        return [
+          ...acc,
+          {
+            ...currentItem,
+            count: getTotalCount(sourceSelections),
+            sourceSelections,
+          },
+        ];
+      }, []);
+
+      setCurrentItems(state, nextItems);
     },
     clearItems(state) {
       setCurrentItems(state, []);
@@ -184,8 +261,8 @@ export const addVegetableAndPersist = (item) => async (dispatch, getState) => {
   }
 };
 
-export const removeVegetableAndPersist = (name) => async (dispatch, getState) => {
-  dispatch(vegetSlice.actions.removeVegetableByName(name));
+export const removeVegetableAndPersist = (item) => async (dispatch, getState) => {
+  dispatch(vegetSlice.actions.removeVegetableByName(item));
   const { purchases } = getState().vegetables;
   try {
     await dispatch(saveVegetables(purchases)).unwrap();

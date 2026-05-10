@@ -179,7 +179,7 @@ function App() {
         <Link to="/purchases" className="all-purchases-tab" onClick={onLinkClick}>
           <span>
             <i className="pi pi-list-check" aria-hidden="true" />
-            Все закупы
+            Общий закуп
           </span>
           <i className="pi pi-chevron-right" aria-hidden="true" />
         </Link>

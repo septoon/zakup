@@ -13,7 +13,7 @@ import {
 
 import { impact } from '../common/device';
 
-const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
+const Template = ({ sectionSource, mangalData, vegetablesData, duzinaData, lyudaData, houseData }) => {
   const dispatch = useDispatch();
 
   const selectedItems = useSelector(selectVegetablesItems);
@@ -45,9 +45,9 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     dispatch(addVegetableAndPersist(obj));
   };
 
-  const removeVegets = (name) => {
+  const removeVegets = (obj) => {
     setIsOpen(false);
-    dispatch(removeVegetableAndPersist(name));
+    dispatch(removeVegetableAndPersist(obj));
   };
 
   const onTabChange = (e) => setActiveIndexes(e.index);
@@ -62,8 +62,35 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     keyboardPrimerRef.current?.focus({ preventScroll: true });
   };
 
+  const getCatalogSourceKey = (nextItem) =>
+    [sectionSource, nextItem.category, nextItem.label, nextItem.type, nextItem.counted].join('|');
+
+  const getSelectedSourceItem = (nextItem) => {
+    const sourceKey = getCatalogSourceKey(nextItem);
+    const selectedItem = selectedItems.find((selected) => {
+      return (
+        selected.category === nextItem.category &&
+        selected.name === nextItem.label &&
+        selected.type === nextItem.type &&
+        selected.counted === nextItem.counted &&
+        selected.sourceSelections?.[sourceKey]
+      );
+    });
+
+    if (!selectedItem) {
+      return null;
+    }
+
+    return {
+      ...selectedItem,
+      ...selectedItem.sourceSelections[sourceKey],
+      sourceKey,
+    };
+  };
+
   const itemRenderer = (item, index) => {
-    const selectedItem = selectedItems.find((i) => i.name === item.label);
+    const sourceKey = getCatalogSourceKey(item);
+    const selectedItem = getSelectedSourceItem(item);
 
     return (
       <button
@@ -82,6 +109,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
             commented: item.commented,
             type: item.type,
             category: item.category,
+            sourceKey,
           });
           setCount(selectedItem ? selectedItem.count : item.counted ? 1 : 0);
           setComment(selectedItem ? selectedItem.comment : '');
@@ -99,74 +127,30 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     );
   };
 
-  const items = houseData
-    ? [
-        {
-          header: 'Хоз товары',
-          content: houseData.filter((house) => matchesSearch(house.name)).map((house, idx) =>
-            itemRenderer(
-              {
-                label: house.name,
-                commented: house.commented,
-                counted: house.counted,
-                type: house.type,
-                category: house.category,
-              },
-              idx
-            )
-          ),
-        },
-      ]
-    : mangalData
-    ? [
-        {
-          header: 'Мясо',
-          content: mangalData.filter((meat) => matchesSearch(meat.name)).map((meat, idx) =>
-            itemRenderer(
-              {
-                label: meat.name,
-                commented: meat.commented,
-                counted: meat.counted,
-                type: meat.type,
-                category: meat.category,
-              },
-              idx
-            )
-          ),
-        },
-      ]
+  const sourceSections = houseData
+    ? [{ header: 'Хоз товары', data: houseData }]
     : [
+        mangalData && { header: 'Мясо', data: mangalData },
+        vegetablesData && { header: 'Овощи', data: vegetablesData },
+        duzinaData && { header: 'Дюжина', data: duzinaData },
+        lyudaData && { header: 'Люда', data: lyudaData },
+      ].filter(Boolean);
+
+  const items = sourceSections.map((section) => ({
+    header: section.header,
+    content: section.data.filter((sourceItem) => matchesSearch(sourceItem.name)).map((sourceItem, idx) =>
+      itemRenderer(
         {
-          header: 'Овощи',
-          content: vegetablesData.filter((veg) => matchesSearch(veg.name)).map((veg, idx) =>
-            itemRenderer(
-              {
-                label: veg.name,
-                commented: veg.commented,
-                counted: veg.counted,
-                type: veg.type,
-                category: veg.category,
-              },
-              idx
-            )
-          ),
+          label: sourceItem.name,
+          commented: sourceItem.commented,
+          counted: sourceItem.counted,
+          type: sourceItem.type,
+          category: sourceItem.category,
         },
-        {
-          header: 'Дюжина',
-          content: duzinaData.filter((dz) => matchesSearch(dz.name)).map((dz, idx) =>
-            itemRenderer(
-              {
-                label: dz.name,
-                commented: dz.commented,
-                counted: dz.counted,
-                type: dz.type,
-                category: dz.category,
-              },
-              idx
-            )
-          ),
-        },
-      ];
+        idx
+      )
+    ),
+  }));
 
   const getSearchActiveIndexes = (nextSearch) => {
     const query = nextSearch.toLowerCase().trim();
@@ -175,14 +159,8 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
       return items.map((_, index) => index);
     }
 
-    const sections = houseData
-      ? [houseData]
-      : mangalData
-      ? [mangalData]
-      : [vegetablesData, duzinaData];
-
-    return sections.reduce((acc, section, index) => {
-      const hasMatches = section.some((sectionItem) =>
+    return sourceSections.reduce((acc, section, index) => {
+      const hasMatches = section.data.some((sectionItem) =>
         sectionItem.name.toLowerCase().includes(query)
       );
       return hasMatches ? [...acc, index] : acc;
@@ -195,10 +173,10 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         label="Удалить"
         icon="pi pi-times"
         className="p-button-danger"
-        disabled={!selectedItems.some((selectedItem) => selectedItem.name === item.name)}
+        disabled={!selectedItems.some((selectedItem) => selectedItem.sourceSelections?.[item.sourceKey])}
         onClick={() => {
           impact([20, 20, 20]);
-          removeVegets(item.name);
+          removeVegets(item);
         }}
       />
       <Button
@@ -240,6 +218,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         />
       </label>
       <Accordion
+        multiple
         activeIndex={activeIndexes}
         className="catalog-accordion"
         onTabChange={onTabChange}

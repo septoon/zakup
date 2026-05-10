@@ -33,6 +33,7 @@ const Order = ({ totalVisible }) => {
   /* Категории хранится в стейте → распределяем локально */
   const vegets = useMemo(() => items.filter((i) => i.category === 'vegetables'), [items]);
   const duzina = useMemo(() => items.filter((i) => i.category === 'duzina'), [items]);
+  const lyuda = useMemo(() => items.filter((i) => i.category === 'lyuda'), [items]);
   const mangal = useMemo(() => items.filter((i) => i.category === 'mangal'), [items]);
   const house  = useMemo(() => items.filter((i) => i.category === 'house'),  [items]);
 
@@ -76,6 +77,7 @@ const Order = ({ totalVisible }) => {
             <p className="order-date">на {date}</p>
             {renderSection('Овощи', vegets)}
             {renderSection('Дюжина', duzina)}
+            {renderSection('Люда', lyuda)}
             {renderSection('Мангал', mangal)}
             {renderSection('Хоз товары', house)}
             {items.length === 0 && <p className="empty-state">В заявке пока нет позиций</p>}

@@ -1,6 +1,7 @@
 export const PURCHASE_SECTIONS = [
   { category: 'vegetables', title: 'Овощи' },
   { category: 'duzina', title: 'Дюжина' },
+  { category: 'lyuda', title: 'Люда' },
   { category: 'mangal', title: 'Мангал' },
   { category: 'house', title: 'Хоз товары' },
 ];

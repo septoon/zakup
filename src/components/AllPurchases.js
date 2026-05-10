@@ -172,7 +172,7 @@ const AllPurchases = () => {
           </button>
           <div>
             <span>Архив</span>
-            <h1>Все закупы</h1>
+            <h1>Общий закуп</h1>
           </div>
         </header>
         <p className="empty-state">Нужны админ-права</p>
@@ -188,7 +188,7 @@ const AllPurchases = () => {
         </button>
         <div>
           <span>Архив</span>
-          <h1>Все закупы</h1>
+          <h1>Общий закуп</h1>
         </div>
       </header>
 

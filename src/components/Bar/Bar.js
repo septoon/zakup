@@ -1,7 +1,7 @@
 import React from 'react';
 import Template from '../Template';
-import { vegetablesDataBar } from '../../common/data/bar/vegetablesDataBar';
-import { duzinaDataBar } from '../../common/data/bar/duzinaDataBar';
+import { vegetablesData } from '../../common/data/bar/vegetablesData';
+import { duzinaData } from '../../common/data/bar/duzinaData';
 import withOrderProps from '../withOrderProps';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ const Bar = () => {
           <h1>Бар</h1>
         </div>
       </header>
-      <Template vegetablesData={vegetablesDataBar} duzinaData={duzinaDataBar} />
+      <Template sectionSource="bar" vegetablesData={vegetablesData} duzinaData={duzinaData} />
     </div>
   );
 };

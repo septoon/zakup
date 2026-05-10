@@ -1,6 +1,9 @@
 import React from 'react';
 import Template from '../Template';
 import { mangalData } from '../../common/data/mangal/mangalData';
+import { vegetablesData } from '../../common/data/mangal/vegetablesData';
+import { duzinaData } from '../../common/data/mangal/duzinaData';
+import { lyudaData } from '../../common/data/mangal/lyudaData';
 import withOrderProps from '../withOrderProps';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,7 +20,13 @@ const Mangal = () => {
           <h1>Мангал</h1>
         </div>
       </header>
-      <Template mangalData={mangalData} />
+      <Template
+        sectionSource="mangal"
+        mangalData={mangalData}
+        vegetablesData={vegetablesData}
+        duzinaData={duzinaData}
+        lyudaData={lyudaData}
+      />
     </div>
   );
 };
