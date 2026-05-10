@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -30,7 +30,6 @@ const AllPurchases = () => {
   const [copyErrorSection, setCopyErrorSection] = useState('');
   const [savedSection, setSavedSection] = useState('');
   const [editedSections, setEditedSections] = useState({});
-  const dateInputRef = useRef(null);
 
   const dates = useMemo(
     () => Object.keys(purchases).sort((a, b) => b.localeCompare(a)),
@@ -196,23 +195,15 @@ const AllPurchases = () => {
       {status === 'failed' && <p className="empty-state">Ошибка: {String(error)}</p>}
 
       <div className="date-picker">
-        <button
-          type="button"
-          onClick={() => {
-            const input = dateInputRef.current;
-            if (!input) return;
-
-            if (input.showPicker) {
-              input.showPicker();
-            } else {
-              input.focus();
-              input.click();
-            }
-          }}
-        >
+        <button type="button" tabIndex={-1} aria-hidden="true">
           {selectedDate ? formatDateLabel(selectedDate) : 'Выберите дату'}
         </button>
-        <input ref={dateInputRef} type="date" value={selectedDate} onChange={handleDateChange} />
+        <input
+          type="date"
+          value={selectedDate}
+          onChange={handleDateChange}
+          aria-label="Выбрать дату закупа"
+        />
       </div>
 
       {!dates.length && <p className="empty-state">Закупов пока нет</p>}

@@ -697,14 +697,27 @@ button:disabled {
   color: var(--success-text);
   font-weight: 800;
   box-shadow: var(--shadow);
+  pointer-events: none;
 }
 
 .date-picker input {
   position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  opacity: 0;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.keyboard-primer {
+  position: fixed;
   left: 0;
-  top: 100%;
+  bottom: 0;
   width: 1px;
   height: 1px;
+  padding: 0;
   border: 0;
   opacity: 0;
   pointer-events: none;

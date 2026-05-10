@@ -29,11 +29,14 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
     str.toLowerCase().includes(search.toLowerCase().trim());
 
   const inputRef = useRef(null);
+  const keyboardPrimerRef = useRef(null);
 
   useEffect(() => {
     if (isOpen && inputRef.current) {
-      inputRef.current.focus();
-      inputRef.current.select();
+      window.requestAnimationFrame(() => {
+        inputRef.current?.focus();
+        inputRef.current?.select();
+      });
     }
   }, [isOpen]);
 
@@ -51,6 +54,14 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
 
   const handleOpenDialog = () => setIsOpen(true);
 
+  const primeKeyboard = (nextItem) => {
+    if (!nextItem.counted) {
+      return;
+    }
+
+    keyboardPrimerRef.current?.focus({ preventScroll: true });
+  };
+
   const itemRenderer = (item, index) => {
     const selectedItem = selectedItems.find((i) => i.name === item.label);
 
@@ -60,6 +71,7 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         key={item.label + index}
         className={`catalog-row ${selectedItem ? 'catalog-row--selected' : ''}`}
         onClick={() => {
+          primeKeyboard(item);
           impact();
           handleOpenDialog();
           setItem({
@@ -198,7 +210,6 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
             ? count > 0 && addVegets({ ...item, count, comment })
             : addVegets({ ...item, count: 1, comment });
         }}
-        autoFocus
       />
     </div>
   );
@@ -207,6 +218,14 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
 
   return (
     <div className="catalog-screen">
+      <input
+        ref={keyboardPrimerRef}
+        className="keyboard-primer"
+        type="text"
+        inputMode="numeric"
+        aria-hidden="true"
+        tabIndex={-1}
+      />
       <label className="search-field">
         <i className="pi pi-search" aria-hidden="true" />
         <input
@@ -248,8 +267,10 @@ const Template = ({ mangalData, vegetablesData, duzinaData, houseData }) => {
         dismissableMask
         onShow={() => {
           if (inputRef.current) {
-            inputRef.current.focus();
-            inputRef.current.select();
+            window.requestAnimationFrame(() => {
+              inputRef.current?.focus();
+              inputRef.current?.select();
+            });
           }
         }}
       >
