@@ -32,28 +32,13 @@ function isIosStandalonePwa() {
   return isIosDevice && isStandalone;
 }
 
-function resolveIosStandaloneScale() {
-  const shortSide = Math.min(window.screen.width, window.screen.height);
-
-  if (shortSide <= 390) {
-    return 0.68;
-  }
-
-  if (shortSide <= 480) {
-    return 0.72;
-  }
-
-  return 0.8;
-}
-
 if (isIosStandalonePwa()) {
-  const scale = resolveIosStandaloneScale();
   const viewportMeta = document.querySelector('meta[name="viewport"]');
 
   if (viewportMeta) {
     viewportMeta.setAttribute(
       'content',
-      `width=device-width, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no, viewport-fit=cover`
+      'width=device-width, initial-scale=1, viewport-fit=cover'
     );
   }
 
