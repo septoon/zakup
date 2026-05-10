@@ -19,10 +19,10 @@ export function registerServiceWorker() {
     const serviceWorkerUrl = `${process.env.PUBLIC_URL}/sw.js`;
 
     if (isLocalhost) {
-      navigator.serviceWorker.register(serviceWorkerUrl).catch(() => {});
+      navigator.serviceWorker.register(serviceWorkerUrl, { updateViaCache: 'none' }).catch(() => {});
       return;
     }
 
-    navigator.serviceWorker.register(serviceWorkerUrl).catch(() => {});
+    navigator.serviceWorker.register(serviceWorkerUrl, { updateViaCache: 'none' }).catch(() => {});
   });
 }
