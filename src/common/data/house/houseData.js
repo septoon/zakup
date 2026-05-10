@@ -384,6 +384,22 @@ export const houseData = [
     category: 'house',
   },
   {
+    name: 'Фольга',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
+    name: 'Стрейч пленка',
+    count: 0,
+    commented: false,
+    counted: false,
+    type: 'шт.',
+    category: 'house',
+  },
+  {
     name: 'Соусницы',
     count: 0,
     commented: false,
