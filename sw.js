@@ -1,4 +1,4 @@
-const CACHE_NAME = 'zakup-pwa-v1';
+const CACHE_NAME = 'zakup-pwa-v2';
 const APP_SHELL = [
   './',
   './index.html',
@@ -30,6 +30,28 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  const requestUrl = new URL(event.request.url);
+  const isSameOrigin = requestUrl.origin === self.location.origin;
+  const isNavigation = event.request.mode === 'navigate';
+
+  if (isNavigation) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response.ok && isSameOrigin) {
+            const responseClone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
+          }
+
+          return response;
+        })
+        .catch(() =>
+          caches.match(event.request).then((cachedResponse) => cachedResponse || caches.match('./index.html'))
+        )
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
@@ -39,7 +61,7 @@ self.addEventListener('fetch', (event) => {
       return fetch(event.request).then((response) => {
         const responseClone = response.clone();
 
-        if (response.ok && new URL(event.request.url).origin === self.location.origin) {
+        if (response.ok && isSameOrigin) {
           caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
         }
 
