@@ -22,6 +22,44 @@ import store from './store';
 import Layout from './Layout';
 import { registerServiceWorker } from './pwaRegistration';
 
+function isIosStandalonePwa() {
+  const ua = window.navigator.userAgent;
+  const isIosDevice = /iPhone|iPad|iPod/i.test(ua);
+  const isStandalone =
+    window.matchMedia('(display-mode: standalone)').matches ||
+    window.navigator.standalone === true;
+
+  return isIosDevice && isStandalone;
+}
+
+function resolveIosStandaloneScale() {
+  const shortSide = Math.min(window.screen.width, window.screen.height);
+
+  if (shortSide <= 390) {
+    return 0.68;
+  }
+
+  if (shortSide <= 480) {
+    return 0.72;
+  }
+
+  return 0.8;
+}
+
+if (isIosStandalonePwa()) {
+  const scale = resolveIosStandaloneScale();
+  const viewportMeta = document.querySelector('meta[name="viewport"]');
+
+  if (viewportMeta) {
+    viewportMeta.setAttribute(
+      'content',
+      `width=device-width, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no, viewport-fit=cover`
+    );
+  }
+
+  document.documentElement.setAttribute('data-ios-standalone-pwa', 'true');
+}
+
 const basename = new URL(process.env.PUBLIC_URL || '/', window.location.origin).pathname;
 
 const router = createBrowserRouter([
