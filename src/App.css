@@ -84,8 +84,8 @@
 
 @media (display-mode: standalone) {
   :root {
-    --pwa-bottom-fill: max(var(--safe-bottom), 72px);
-    --bottom-bar-reserve: calc(var(--bottom-bar-height) + var(--pwa-bottom-fill) + 16px);
+    --pwa-bottom-fill: 0px;
+    --bottom-bar-reserve: calc(var(--bottom-bar-height) + var(--safe-bottom) + 32px);
   }
 }
 
@@ -646,14 +646,22 @@ button:disabled {
 
 @media (display-mode: standalone) {
   .bottom-action-bar {
-    background: var(--surface-strong);
+    bottom: calc(var(--safe-bottom) + 12px);
+    border-top: 0;
+    background: transparent;
+    backdrop-filter: none;
+    pointer-events: none;
+  }
+
+  .bottom-action-bar::after {
+    content: none;
   }
 
   .primary-action {
-    min-height: calc(52px + var(--pwa-bottom-fill));
-    padding-bottom: var(--pwa-bottom-fill);
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    min-height: 52px;
+    padding-bottom: 0;
+    border-radius: var(--radius);
+    pointer-events: auto;
   }
 }
 
