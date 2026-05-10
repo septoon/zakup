@@ -170,7 +170,7 @@ function App() {
           <p>позиций в заявке</p>
         </div>
         <div>
-          <span>{formatDateLabel(currentDate).replace(/\sг\.$/, '')}</span>
+          <span>на {formatDateLabel(currentDate).replace(/\sг\.$/, '')}</span>
           <p>дата закупа</p>
         </div>
       </section>
