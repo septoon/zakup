@@ -21,7 +21,7 @@
   "start_url": "/zakup",
   "scope": "/zakup/",
   "id": "/zakup",
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "portrait",
   "theme_color": "#0f172a",
   "background_color": "#0f172a",
