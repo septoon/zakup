@@ -1,8 +1,5 @@
 import React from 'react';
 import Template from '../Template';
-import { vegetablesData } from '../../common/data/kitchen/vegetablesData';
-import { duzinaData } from '../../common/data/kitchen/duzinaData';
-import { lyudaData } from '../../common/data/kitchen/lyudaData';
 import withOrderProps from '../withOrderProps';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,12 +16,7 @@ const Kitchen = () => {
           <h1>Кухня</h1>
         </div>
       </header>
-      <Template
-        sectionSource="kitchen"
-        vegetablesData={vegetablesData}
-        duzinaData={duzinaData}
-        lyudaData={lyudaData}
-      />
+      <Template sectionSource="kitchen" />
     </div>
   );
 };

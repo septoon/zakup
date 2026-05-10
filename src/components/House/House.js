@@ -1,6 +1,5 @@
 import React from 'react';
 import Template from '../Template';
-import { houseData } from '../../common/data/house/houseData';
 import withOrderProps from '../withOrderProps';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,7 +16,7 @@ const House = () => {
           <h1>Хоз товары</h1>
         </div>
       </header>
-      <Template sectionSource="house" houseData={houseData} />
+      <Template sectionSource="house" />
     </div>
   );
 };
