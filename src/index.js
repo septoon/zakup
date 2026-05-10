@@ -8,6 +8,7 @@ import Kitchen from './components/Kitchen/Kitchen';
 import Bar from './components/Bar/Bar';
 import Mangal from './components/Mangal/Mangal';
 import House from './components/House/House';
+import Other from './components/Other/Other';
 import AllPurchases from './components/AllPurchases';
 
 import { PrimeReactProvider } from 'primereact/api';
@@ -59,6 +60,7 @@ const router = createBrowserRouter([
       { path: 'bar', element: <Bar /> },
       { path: 'mangal', element: <Mangal /> },
       { path: 'house', element: <House /> },
+      { path: 'other', element: <Other /> },
       { path: 'purchases', element: <AllPurchases /> },
       { path: '*', element: <Navigate to="/" replace /> },
     ]

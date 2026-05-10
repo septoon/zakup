@@ -55,6 +55,13 @@ const categories = [
     image: House,
     accent: 'category-card--amber',
   },
+  {
+    to: '/other',
+    title: 'Иное',
+    description: 'Ручная позиция в нужный магазин',
+    icon: 'pi pi-plus',
+    accent: 'category-card--violet',
+  },
 ];
 
 function App() {
@@ -194,7 +201,11 @@ function App() {
             className={`category-card ${category.accent}`}
           >
             <span className="category-icon">
-              <img src={category.image} alt="" />
+              {category.image ? (
+                <img src={category.image} alt="" />
+              ) : (
+                <i className={category.icon} aria-hidden="true" />
+              )}
             </span>
             <span className="category-copy">
               <strong>{category.title}</strong>

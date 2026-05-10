@@ -31,6 +31,7 @@ const Order = ({ totalVisible }) => {
   const { items, status, error, currentDate } = useSelector(selectOrderData);
 
   /* Категории хранится в стейте → распределяем локально */
+  const other = useMemo(() => items.filter((i) => i.category === 'other'), [items]);
   const vegets = useMemo(() => items.filter((i) => i.category === 'vegetables'), [items]);
   const duzina = useMemo(() => items.filter((i) => i.category === 'duzina'), [items]);
   const lyuda = useMemo(() => items.filter((i) => i.category === 'lyuda'), [items]);
@@ -75,10 +76,11 @@ const Order = ({ totalVisible }) => {
         ) : (
           <div className="order-summary">
             <p className="order-date">на {date}</p>
+            {renderSection('Иное', other)}
             {renderSection('Овощи', vegets)}
             {renderSection('Дюжина', duzina)}
             {renderSection('Люда', lyuda)}
-            {renderSection('Мангал', mangal)}
+            {renderSection('Мясо', mangal)}
             {renderSection('Хоз товары', house)}
             {items.length === 0 && <p className="empty-state">В заявке пока нет позиций</p>}
           </div>
