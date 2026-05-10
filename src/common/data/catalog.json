@@ -1,0 +1,2499 @@
+{
+  "version": 1,
+  "sections": {
+    "kitchen": {
+      "vegetables": [
+        {
+          "name": "Айсберг",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Авокадо",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Лола по",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Цветная капуста",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Капуста",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Свекла",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Помидоры",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Черри",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Огурцы",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Морковка",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Картошка",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Лук репчатый",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Лук ялта",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Лук зеленый",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Редиска",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Чеснок",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "г.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Перец желтый",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Перец красный",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Перец белый (на персонал)",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Перец острый",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Гранат",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Баклажаны",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Шампиньоны",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "ящ.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Петрушка",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Укроп",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Базилик зеленый",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Маринованые",
+          "count": 0,
+          "commented": true,
+          "counted": true,
+          "type": "г.",
+          "category": "vegetables"
+        }
+      ],
+      "duzina": [
+        {
+          "name": "Крыло кур. копч.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Колбаски на пив. набор",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "",
+          "category": "duzina"
+        },
+        {
+          "name": "Бастурма",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Свин. ушки",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Ребра копч. свин.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "duzina"
+        },
+        {
+          "name": "Индейка на кухню (для салата)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "кг.",
+          "category": "mangal"
+        },
+        {
+          "name": "Курица на кухню (для супа)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "кг.",
+          "category": "mangal"
+        },
+        {
+          "name": "Набор для солянки",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "mangal"
+        },
+        {
+          "name": "Телятина на кухню (для супа)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "кг.",
+          "category": "mangal"
+        },
+        {
+          "name": "Паста Том Ям",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "б.",
+          "category": "mangal"
+        },
+        {
+          "name": "Сосиски (на персонал)",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Гречка (на персонал)",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Вермишель (на персонал)",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Горох (на персонал)",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Майонез (на персонал)",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Бекон",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Масло оливковое",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Масло фритюрное 5л.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Масло подсолнечное 5л.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Масло сливочное",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "г.",
+          "category": "duzina"
+        },
+        {
+          "name": "Пармезан",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "duzina"
+        },
+        {
+          "name": "Маасдам",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "duzina"
+        },
+        {
+          "name": "Камамбер",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "duzina"
+        },
+        {
+          "name": "Сыр творожный",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "б.",
+          "category": "duzina"
+        },
+        {
+          "name": "Сыр брынза",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "г.",
+          "category": "duzina"
+        },
+        {
+          "name": "Сыр косичка",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Соль",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "duzina"
+        },
+        {
+          "name": "Грецкий орех",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "г.",
+          "category": "duzina"
+        },
+        {
+          "name": "Оливки",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Маслины без косточки",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Фасоль красная",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "б.",
+          "category": "duzina"
+        },
+        {
+          "name": "Кукуруза",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "б.",
+          "category": "duzina"
+        },
+        {
+          "name": "Рис",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "duzina"
+        },
+        {
+          "name": "Рис Басматик",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "duzina"
+        },
+        {
+          "name": "Сливки 20%",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Кефир",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Сметана горянка 25%",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Спагетти №7",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Лапша Ролтон",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Соевый соус",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Устричный соус",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Сырный соус",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Уксус",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Брусничный соус",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Зернистая горчица",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Горчица",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Свит чили",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Томатная паста",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "б.",
+          "category": "duzina"
+        },
+        {
+          "name": "Кетчуп 5кг.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Аджика сух.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Паприка молотая сладк.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Яйца куриные",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Яйца перепелиные",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Марин. огурцы",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "б.",
+          "category": "duzina"
+        },
+        {
+          "name": "Марин. помидоры",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "б.",
+          "category": "duzina"
+        },
+        {
+          "name": "Багет",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Кукурузный батон",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Тостерный хлеб",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Хлеб Тарту",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Кукурузный крахмал",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Кокосовое молоко",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "б.",
+          "category": "duzina"
+        },
+        {
+          "name": "Кукурузная мука",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Мука",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "duzina"
+        },
+        {
+          "name": "Арахис",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Фисташки",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        }
+      ],
+      "lyuda": [
+        {
+          "name": "По деревенски",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Фри",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Наггетсы",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Сырные палочки",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Форель пласт.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Рапаны",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Мидии",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Мидии в створках",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Осьминог",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Креветки",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Кальмары",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Кольца Кальмара",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "lyuda"
+        }
+      ]
+    },
+    "bar": {
+      "vegetables": [
+        {
+          "name": "Апельсины",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Лимоны",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Лайм",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Мята",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Мята перечная",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Мята Мелисса",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Розмарин",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Грейпфрут",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Имбирь",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Яблоки",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Груша",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Персик",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Киви",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Парварда",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "vegetables"
+        }
+      ],
+      "duzina": [
+        {
+          "name": "Мёд",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Молоко",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Сыр косичка (копченый)",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Облепиха заморож.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Клубника заморож.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Малина заморож.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Ежевика заморож.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Сироп",
+          "count": 0,
+          "commented": true,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Топинг",
+          "count": 0,
+          "commented": true,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Сок",
+          "count": 0,
+          "commented": true,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Пломбир",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Вода газ. 1л.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пак.",
+          "category": "duzina"
+        },
+        {
+          "name": "Пепси (пластик)",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пак",
+          "category": "duzina"
+        },
+        {
+          "name": "Манго сушеный",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "п.",
+          "category": "duzina"
+        },
+        {
+          "name": "Боржоми",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пак.",
+          "category": "duzina"
+        },
+        {
+          "name": "Вода газ",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пак.",
+          "category": "duzina"
+        },
+        {
+          "name": "Вода негаз",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пак.",
+          "category": "duzina"
+        },
+        {
+          "name": "Крым лимонад",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пак.",
+          "category": "duzina"
+        },
+        {
+          "name": "Сахар стик",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "уп.",
+          "category": "duzina"
+        },
+        {
+          "name": "Сахар кубики",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Сахар песок",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "duzina"
+        },
+        {
+          "name": "Чай",
+          "count": 0,
+          "commented": true,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Фильтрпакетики для чая",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Корица (палочки)",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Бадьян",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Гвоздика",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        }
+      ],
+      "house": [
+        {
+          "name": "Кофе",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Стелла 0",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Корм для рыбок",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Тряпки для столов",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Туфта тряпки",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Стаканчики кофе (180мл)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Стаканчики кофе (330мл)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Стаканчики пивные (0.5)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Купольные стаканы (0.5)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Купольные стаканы (0.3)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Трубочки короткие",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Трубочки тонкие длинные",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Трубочки широкие",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Трубочки в упаковке",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Палочки в упаковке",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Приборы одноразовые",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Пергамент бумага",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Салфетки барные",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Салфетки для хлеба",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Влажные салфетки",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Зубочистки",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Блокноты для официантов",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Освежитель воздуха",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Губка на швабру",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Полироль",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Жидкое мыло в туалет",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Бумаж. полотенца рулон",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Бумаж. полотенца в туалет",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Тулетная бумага",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Лента на кипер (широкая)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Лента на терминал (маленькая)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Лента от насекомых",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Чёрные пакеты",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Пакеты майка",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Крафтовые пакеты (мал.)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Крафтовые пакеты (большие)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Фасовочные пакеты (мал.)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Фасовочные пакеты (большие)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Мусорные пакеты 30л.",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Мусорные пакеты 160л.",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Перчатки (S)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Перчатки (M)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Перчатки (L)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Перчатки (XL)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Туфта перчатки",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Боксы (мал.)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Боксы (большие)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Фольга",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Стрейч пленка",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Соусницы",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Губки для посуды",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Моющее для посуды",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Моющее для полов",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Белизна",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Доместос",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Азелит",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Металлич. щетка для посуды",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        }
+      ]
+    },
+    "mangal": {
+      "mangal": [
+        {
+          "name": "Ребра",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "полос.",
+          "category": "mangal"
+        },
+        {
+          "name": "Курица",
+          "count": 0,
+          "commented": true,
+          "counted": false,
+          "type": "кг.",
+          "category": "mangal"
+        },
+        {
+          "name": "Цыплёнок",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "mangal"
+        },
+        {
+          "name": "Перепелка",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "mangal"
+        },
+        {
+          "name": "Каре",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "кг.",
+          "category": "mangal"
+        },
+        {
+          "name": "Телятина",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "кг.",
+          "category": "mangal"
+        },
+        {
+          "name": "Антрекот",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "кг.",
+          "category": "mangal"
+        }
+      ],
+      "vegetables": [
+        {
+          "name": "Айсберг",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Авокадо",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Лола по",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Цветная капуста",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Капуста",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Свекла",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Помидоры",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Черри",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Огурцы",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Морковка",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Картошка",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Лук репчатый",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Лук ялта",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Лук зеленый",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Редиска",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Чеснок",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "г.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Перец желтый",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Перец красный",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Перец белый (на персонал)",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Перец острый",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Гранат",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Баклажаны",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Шампиньоны",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "ящ.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Петрушка",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Укроп",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Базилик зеленый",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пуч.",
+          "category": "vegetables"
+        },
+        {
+          "name": "Маринованые",
+          "count": 0,
+          "commented": true,
+          "counted": true,
+          "type": "г.",
+          "category": "vegetables"
+        }
+      ],
+      "duzina": [
+        {
+          "name": "Соль",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "кг.",
+          "category": "duzina"
+        },
+        {
+          "name": "Соевый соус",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Уксус",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Зернистая горчица",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Горчица",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Кетчуп",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Томатная паста",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "б.",
+          "category": "duzina"
+        },
+        {
+          "name": "Кетчуп 5кг.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        },
+        {
+          "name": "Аджика сух.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "пач.",
+          "category": "duzina"
+        },
+        {
+          "name": "Паприка молотая сладк.",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "duzina"
+        }
+      ],
+      "lyuda": [
+        {
+          "name": "Шея",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "уп.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Дорадо",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Скумбрия",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Сибас",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "lyuda"
+        },
+        {
+          "name": "Семга стейк",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "lyuda"
+        }
+      ]
+    },
+    "house": {
+      "house": [
+        {
+          "name": "Кофе",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Стелла 0",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Уголь",
+          "count": 0,
+          "commented": false,
+          "counted": true,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Корм для рыбок",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Тряпки для столов",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Туфта тряпки",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Стаканчики кофе (180мл)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Стаканчики кофе (330мл)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Стаканчики пивные (0.5)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Купольные стаканы (0.5)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Купольные стаканы (0.3)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Трубочки короткие",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Трубочки тонкие длинные",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Трубочки широкие",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Трубочки в упаковке",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Палочки в упаковке",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Приборы одноразовые",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Пергамент бумага",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Салфетки барные",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Салфетки для хлеба",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Влажные салфетки",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Зубочистки",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Блокноты для официантов",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Освежитель воздуха",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Губка на швабру",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Полироль",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Жидкое мыло в туалет",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Бумаж. полотенца рулон",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Бумаж. полотенца в туалет",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Тулетная бумага",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Лента на кипер (широкая)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Лента на терминал (маленькая)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Лента от насекомых",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Чёрные пакеты",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Пакеты майка",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Крафтовые пакеты (мал.)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Крафтовые пакеты (большие)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Фасовочные пакеты (мал.)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Фасовочные пакеты (большие)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Мусорные пакеты 30л.",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Мусорные пакеты 160л.",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Перчатки (S)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Перчатки (M)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Перчатки (L)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Перчатки (XL)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Туфта перчатки",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Боксы (мал.)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Боксы (большие)",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Фольга",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Стрейч пленка",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Соусницы",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Губки для посуды",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Моющее для посуды",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Моющее для полов",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Белизна",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Доместос",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Азелит",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        },
+        {
+          "name": "Металлич. щетка для посуды",
+          "count": 0,
+          "commented": false,
+          "counted": false,
+          "type": "шт.",
+          "category": "house"
+        }
+      ]
+    }
+  }
+}

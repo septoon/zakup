@@ -127,14 +127,13 @@ const Template = ({ sectionSource, mangalData, vegetablesData, duzinaData, lyuda
     );
   };
 
-  const sourceSections = houseData
-    ? [{ header: 'Хоз товары', data: houseData }]
-    : [
-        mangalData && { header: 'Мясо', data: mangalData },
-        vegetablesData && { header: 'Овощи', data: vegetablesData },
-        duzinaData && { header: 'Дюжина', data: duzinaData },
-        lyudaData && { header: 'Люда', data: lyudaData },
-      ].filter(Boolean);
+  const sourceSections = [
+    mangalData && { header: 'Мясо', data: mangalData },
+    vegetablesData && { header: 'Овощи', data: vegetablesData },
+    duzinaData && { header: 'Дюжина', data: duzinaData },
+    lyudaData && { header: 'Люда', data: lyudaData },
+    houseData && { header: 'Хоз товары', data: houseData },
+  ].filter(Boolean);
 
   const items = sourceSections.map((section) => ({
     header: section.header,

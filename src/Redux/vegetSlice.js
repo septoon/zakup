@@ -149,12 +149,11 @@ const vegetSlice = createSlice({
 
       if (idx !== -1) {
         const sourceSelections = normalizeSourceSelections(currentItems[idx]);
-        const currentSource = sourceSelections[sourceKey] || { count: 0, comment: '' };
         const nextSourceSelections = {
           ...sourceSelections,
           [sourceKey]: {
-            count: (Number(currentSource.count) || 0) + (payload.count || 1),
-            comment: payload.comment || currentSource.comment || '',
+            count: payload.count || 1,
+            comment: payload.comment || '',
           },
         };
 
