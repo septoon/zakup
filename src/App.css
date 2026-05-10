@@ -85,7 +85,7 @@
 @media (display-mode: standalone) {
   :root {
     --pwa-bottom-fill: 0px;
-    --bottom-bar-reserve: calc(var(--bottom-bar-height) + var(--safe-bottom) + 32px);
+    --bottom-bar-reserve: calc(var(--bottom-bar-height) + var(--safe-bottom) + 18px);
   }
 }
 
@@ -210,7 +210,7 @@ button:disabled {
 }
 
 .home-hero {
-  padding: calc(44px + var(--safe-top-ui)) 0 18px;
+  padding: calc(64px + var(--safe-top-ui)) 0 18px;
 }
 
 .home-hero-copy {
@@ -679,6 +679,7 @@ button:disabled {
 .ghost-action {
   width: min(100%, 760px);
   min-height: 52px;
+  padding: 16px 18px;
   border-radius: var(--radius);
   border: 0;
   font-weight: 800;
@@ -687,7 +688,7 @@ button:disabled {
 @media (display-mode: standalone) {
   .bottom-action-bar {
     bottom: 0;
-    padding-bottom: calc(var(--safe-bottom) + 8px);
+    padding-bottom: max(8px, calc(var(--safe-bottom) - 24px));
     border-top: 0;
     background: var(--app-bg-end);
     backdrop-filter: none;
@@ -700,7 +701,7 @@ button:disabled {
 
   .primary-action {
     min-height: 52px;
-    padding-bottom: 0;
+    padding-block: 16px;
     border-radius: var(--radius);
     pointer-events: auto;
   }
