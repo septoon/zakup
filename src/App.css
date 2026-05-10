@@ -19,6 +19,7 @@
   --safe-left: env(safe-area-inset-left, 0px);
   --safe-top-ui: min(var(--safe-top), 24px);
   --safe-bottom-ui: 0px;
+  --pwa-bottom-fill: 0px;
   --bottom-bar-height: 76px;
   --bottom-bar-reserve: calc(var(--bottom-bar-height) + var(--safe-bottom-ui) + 16px);
   --app-bg: #f8fafc;
@@ -78,6 +79,13 @@
     --header-bg: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.86));
     --bottom-bar-bg: rgba(15, 23, 42, 0.92);
     --bottom-bar-border: rgba(39, 52, 73, 0.9);
+  }
+}
+
+@media (display-mode: standalone) {
+  :root {
+    --pwa-bottom-fill: max(var(--safe-bottom), 72px);
+    --bottom-bar-reserve: calc(var(--bottom-bar-height) + var(--pwa-bottom-fill) + 16px);
   }
 }
 
@@ -594,7 +602,7 @@ button:disabled {
 .bottom-action-bar {
   position: fixed;
   right: 0;
-  bottom: calc(-1 * var(--safe-bottom));
+  bottom: 0;
   left: 0;
   z-index: 10;
   display: flex;
@@ -603,7 +611,7 @@ button:disabled {
   padding:
     12px
     calc(clamp(14px, 4vw, 28px) + var(--safe-right))
-    var(--safe-bottom)
+    0
     calc(clamp(14px, 4vw, 28px) + var(--safe-left));
   border-top: 1px solid var(--bottom-bar-border);
   background: var(--bottom-bar-bg);
@@ -614,10 +622,11 @@ button:disabled {
   content: '';
   position: absolute;
   right: 0;
-  bottom: -96px;
+  bottom: 0;
   left: 0;
-  height: 96px;
+  height: var(--pwa-bottom-fill);
   background: var(--bottom-bar-bg);
+  transform: translateY(100%);
 }
 
 .bottom-action-bar > * {
@@ -633,6 +642,19 @@ button:disabled {
   border-radius: var(--radius);
   border: 0;
   font-weight: 800;
+}
+
+@media (display-mode: standalone) {
+  .bottom-action-bar {
+    background: var(--surface-strong);
+  }
+
+  .primary-action {
+    min-height: calc(52px + var(--pwa-bottom-fill));
+    padding-bottom: var(--pwa-bottom-fill);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
 
 .primary-action,
