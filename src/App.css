@@ -17,7 +17,10 @@
   --safe-right: env(safe-area-inset-right, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
-  --bottom-bar-height: calc(76px + var(--safe-bottom));
+  --safe-top-ui: min(var(--safe-top), 24px);
+  --safe-bottom-ui: min(var(--safe-bottom), 24px);
+  --bottom-bar-height: 76px;
+  --bottom-bar-reserve: calc(var(--bottom-bar-height) + var(--safe-bottom-ui) + 16px);
   --app-bg: #f8fafc;
   --app-bg-end: #eef2f7;
   --app-accent-glow: rgba(22, 163, 74, 0.12);
@@ -117,14 +120,16 @@ button:disabled {
 }
 
 .app-shell {
-  height: 100dvh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
   overflow-x: hidden;
   overflow-y: auto;
   padding:
-    calc(var(--safe-top))
+    0
     calc(clamp(14px, 4vw, 28px) + var(--safe-right))
-    calc(var(--bottom-bar-height) + 16px)
+    var(--bottom-bar-reserve)
     calc(clamp(14px, 4vw, 28px) + var(--safe-left));
   overscroll-behavior-y: contain;
   touch-action: pan-y;
@@ -132,7 +137,7 @@ button:disabled {
 }
 
 .app-shell:has(.purchases-screen) {
-  padding-bottom: calc(24px + var(--safe-bottom));
+  padding-bottom: calc(24px + var(--safe-bottom-ui));
 }
 
 .app-shell:has(.purchases-screen) .app-content {
@@ -141,7 +146,7 @@ button:disabled {
 
 .app-content {
   width: min(100%, 760px);
-  min-height: calc(100dvh - 112px);
+  min-height: calc(100svh - 112px);
   margin: 0 auto;
 }
 
@@ -151,10 +156,19 @@ button:disabled {
 }
 
 .home-hero {
+  padding: calc(26px + var(--safe-top-ui)) 0 18px;
+}
+
+.home-hero-copy {
+  min-width: 0;
+}
+
+.home-title-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
   gap: 14px;
-  padding: 26px 0 18px;
+  min-width: 0;
 }
 
 .admin-button {
@@ -162,7 +176,6 @@ button:disabled {
   flex: 0 0 auto;
   width: 46px;
   height: 46px;
-  margin-top: 4px;
   place-items: center;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -196,9 +209,11 @@ button:disabled {
 
 .home-hero h1 {
   margin: 0;
-  font-size: clamp(2.4rem, 12vw, 4.7rem);
+  min-width: 0;
+  font-size: clamp(2.25rem, 11vw, 4.7rem);
   line-height: 0.92;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .home-subtitle {
@@ -238,6 +253,12 @@ button:disabled {
   display: block;
   font-size: 1.45rem;
   font-weight: 800;
+}
+
+.home-summary div:nth-child(2) span {
+  font-size: clamp(1.05rem, 5vw, 1.35rem);
+  line-height: 1.12;
+  white-space: nowrap;
 }
 
 .home-summary p {
@@ -379,6 +400,10 @@ button:disabled {
   font-weight: 700;
 }
 
+.admin-form__status {
+  color: var(--success-text);
+}
+
 .admin-form button {
   min-height: 48px;
   border: 0;
@@ -406,19 +431,19 @@ button:disabled {
 
 .section-header {
   position: sticky;
-  top: var(--safe-top);
+  top: 0;
   z-index: 2;
   display: flex;
   align-items: center;
   gap: 12px;
   width: calc(100% + (clamp(14px, 4vw, 28px) * 2) + var(--safe-left) + var(--safe-right));
   margin:
-    calc(-12px - var(--safe-top))
+    0
     calc((clamp(14px, 4vw, 28px) + var(--safe-right)) * -1)
     16px
     calc((clamp(14px, 4vw, 28px) + var(--safe-left)) * -1);
   padding:
-    calc(12px + var(--safe-top))
+    calc(12px + var(--safe-top-ui))
     calc(clamp(14px, 4vw, 28px) + var(--safe-right))
     12px
     calc(clamp(14px, 4vw, 28px) + var(--safe-left));
@@ -454,7 +479,6 @@ button:disabled {
   align-items: center;
   gap: 10px;
   min-height: 48px;
-  margin-top: 16px;
   padding: 0 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -471,7 +495,7 @@ button:disabled {
 }
 
 .catalog-accordion {
-  padding-bottom: calc(var(--bottom-bar-height) + 24px);
+  padding-bottom: calc(var(--bottom-bar-reserve) + 8px);
 }
 
 .catalog-row {
@@ -570,11 +594,10 @@ button:disabled {
   display: flex;
   justify-content: center;
   gap: 10px;
-  min-height: var(--bottom-bar-height);
   padding:
     12px
     calc(clamp(14px, 4vw, 28px) + var(--safe-right))
-    calc(12px + var(--safe-bottom))
+    calc(12px + var(--safe-bottom-ui))
     calc(clamp(14px, 4vw, 28px) + var(--safe-left));
   border-top: 1px solid var(--bottom-bar-border);
   background: var(--bottom-bar-bg);
@@ -653,7 +676,7 @@ button:disabled {
   display: grid;
   gap: 14px;
   min-width: 0;
-  padding-bottom: calc(24px + var(--safe-bottom));
+  padding-bottom: calc(24px + var(--safe-bottom-ui));
   touch-action: pan-y;
 }
 
@@ -757,11 +780,5 @@ button:disabled {
   .category-card {
     min-height: 116px;
     align-items: flex-start;
-  }
-}
-
-@media (max-width: 430px) {
-  .home-hero {
-    display: grid;
   }
 }

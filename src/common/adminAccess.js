@@ -24,3 +24,8 @@ export const grantAdminAccess = () => {
   localStorage.setItem(ADMIN_ACCESS_STORAGE_KEY, token);
   window.dispatchEvent(new Event(ADMIN_ACCESS_EVENT));
 };
+
+export const revokeAdminAccess = () => {
+  localStorage.removeItem(ADMIN_ACCESS_STORAGE_KEY);
+  window.dispatchEvent(new Event(ADMIN_ACCESS_EVENT));
+};

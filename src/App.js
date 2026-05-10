@@ -14,7 +14,12 @@ import {
   setCurrentDate,
 } from './Redux/vegetSlice';
 import { impact, prepareWebApp } from './common/device';
-import { ADMIN_PIN_ENV, grantAdminAccess, hasAdminAccess } from './common/adminAccess';
+import {
+  ADMIN_PIN_ENV,
+  grantAdminAccess,
+  hasAdminAccess,
+  revokeAdminAccess,
+} from './common/adminAccess';
 import {
   formatDateLabel,
   getMsUntilNextPurchaseRollover,
@@ -108,6 +113,15 @@ function App() {
   const handleAdminSubmit = (event) => {
     event.preventDefault();
 
+    if (isAdmin) {
+      revokeAdminAccess();
+      setIsAdmin(false);
+      setAdminPin('');
+      setAdminError('');
+      setAdminVisible(false);
+      return;
+    }
+
     const expectedPin = process.env.REACT_APP_ADMIN_PIN;
 
     if (!expectedPin) {
@@ -129,24 +143,25 @@ function App() {
 
   return (
     <div className="home-screen">
-      <div className="home-hero">        
-        <div>
+      <div className="home-hero">
+        <div className="home-hero-copy">
           <p className="home-caption">Шашлычный дом</p>
-          <h1>Закуп</h1>
+          <div className="home-title-row">
+            <h1>Закуп</h1>
+            <button
+              className={`admin-button ${isAdmin ? 'admin-button--active' : ''}`}
+              type="button"
+              onClick={() => {
+                impact();
+                setAdminVisible(true);
+              }}
+              aria-label="Админ"
+            >
+              <i className="pi pi-user" aria-hidden="true" />
+            </button>
+          </div>
           <p className="home-subtitle">Соберите позиции по цехам и отправьте итоговый список.</p>
         </div>
-        <button
-          className={`admin-button ${isAdmin ? 'admin-button--active' : ''}`}
-          type="button"
-          onClick={() => {
-            impact();
-            setAdminVisible(true);
-          }}
-          aria-label="Админ"
-        >
-          <i className="pi pi-user" aria-hidden="true" />
-        </button>
-
       </div>
 
       <section className="home-summary" aria-label="Сводка">
@@ -212,23 +227,28 @@ function App() {
         resizable={false}
       >
         <form className="admin-form" onSubmit={handleAdminSubmit}>
-          <label>
-            <span>PIN код</span>
-            <input
-              type="password"
-              inputMode="numeric"
-              autoComplete="one-time-code"
-              value={adminPin}
-              onChange={(event) => {
-                setAdminPin(event.target.value);
-                setAdminError('');
-              }}
-              autoFocus
-            />
-          </label>
-          {adminError && <p>{adminError}</p>}
-          {isAdmin && !adminError && <p>Админ-доступ уже включен</p>}
-          <button type="submit">Войти</button>
+          {isAdmin ? (
+            <p className="admin-form__status">Админ-доступ уже включен</p>
+          ) : (
+            <>
+              <label>
+                <span>PIN код</span>
+                <input
+                  type="password"
+                  inputMode="numeric"
+                  autoComplete="one-time-code"
+                  value={adminPin}
+                  onChange={(event) => {
+                    setAdminPin(event.target.value);
+                    setAdminError('');
+                  }}
+                  autoFocus
+                />
+              </label>
+              {adminError && <p>{adminError}</p>}
+            </>
+          )}
+          <button type="submit">{isAdmin ? 'Выйти' : 'Войти'}</button>
         </form>
       </Dialog>
 
