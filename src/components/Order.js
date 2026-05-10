@@ -47,7 +47,7 @@ const Order = ({ totalVisible }) => {
         {data.map((i, idx) => (
           <div className="order-row" key={idx}>
             <span>{i.name}{i.comment ? ` (${i.comment})` : ''}</span>
-            <strong>{i.counted ? `${i.count}${i.type}` : '1'}</strong>
+            {i.counted && <strong>{`${i.count}${i.type}`}</strong>}
           </div>
         ))}
       </div>

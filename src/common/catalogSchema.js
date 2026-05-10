@@ -61,6 +61,6 @@ export const PURCHASE_CATEGORY_OPTIONS = [
   { value: 'other', label: 'Иное' },
 ];
 
-export const UNIT_OPTIONS = ['шт.', 'кг.', 'г.', 'пач.', 'уп.', 'б.', 'пуч.', ''];
+export const UNIT_OPTIONS = ['шт.', 'кг.', 'г.', 'пач.', 'уп.', 'б.', 'пуч.', 'пласт.', ''];
 
 export const getFirstCatalogGroup = (section) => CATALOG_SECTION_MAP[section]?.groups[0]?.value || '';

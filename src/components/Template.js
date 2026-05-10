@@ -32,7 +32,7 @@ const createCatalogDraft = (nextSection, nextGroup, sourceItem = {}) => ({
   section: nextSection,
   group: nextGroup || getFirstCatalogGroup(nextSection),
   name: sourceItem.name || '',
-  count: String(sourceItem.count ?? 0),
+  count: String(sourceItem.count ?? 1),
   commented: Boolean(sourceItem.commented),
   counted: sourceItem.counted ?? true,
   type: sourceItem.type || 'шт.',
@@ -67,6 +67,18 @@ const Template = ({ sectionSource }) => {
   const inputRef = useRef(null);
   const keyboardPrimerRef = useRef(null);
 
+  const dismissKeyboard = useCallback(() => {
+    const activeElement = document.activeElement;
+
+    if (activeElement && typeof activeElement.blur === 'function') {
+      activeElement.blur();
+    }
+
+    inputRef.current?.blur();
+    keyboardPrimerRef.current?.blur();
+    window.getSelection?.()?.removeAllRanges?.();
+  }, []);
+
   useEffect(() => {
     if (isOpen && inputRef.current) {
       window.requestAnimationFrame(() => {
@@ -96,13 +108,19 @@ const Template = ({ sectionSource }) => {
     return () => window.removeEventListener(CATALOG_ADD_EVENT, handleCatalogAdd);
   }, [openAddDialog, sectionSource]);
 
-  const addVegets = (obj) => {
+  const closeItemDialog = useCallback(() => {
+    dismissKeyboard();
     setIsOpen(false);
+    window.setTimeout(dismissKeyboard, 0);
+  }, [dismissKeyboard]);
+
+  const addVegets = (obj) => {
+    closeItemDialog();
     dispatch(addVegetableAndPersist(obj));
   };
 
   const removeVegets = (obj) => {
-    setIsOpen(false);
+    closeItemDialog();
     dispatch(removeVegetableAndPersist(obj));
   };
 
@@ -212,6 +230,13 @@ const Template = ({ sectionSource }) => {
   const itemRenderer = (item, index, sourceItem, group) => {
     const sourceKey = getCatalogSourceKey(item);
     const selectedItem = getSelectedSourceItem(item);
+    const metaText = selectedItem
+      ? item.counted && selectedItem.count > 0
+        ? `${selectedItem.count} ${selectedItem.type}`
+        : 'выбрано'
+      : item.counted
+      ? item.type
+      : '';
 
     return (
       <div
@@ -240,13 +265,7 @@ const Template = ({ sectionSource }) => {
           }}
         >
           <span className="catalog-row__name">{item.label}</span>
-          <span className="catalog-row__meta">
-            {selectedItem ? (
-              selectedItem.count > 0 ? `${selectedItem.count} ${selectedItem.type}` : 'выбрано'
-            ) : (
-              item.counted ? item.type : 'шт'
-            )}
-          </span>
+          {metaText && <span className="catalog-row__meta">{metaText}</span>}
         </button>
         {isAdmin && (
           <button
@@ -313,6 +332,9 @@ const Template = ({ sectionSource }) => {
         icon="pi pi-times"
         className="p-button-danger"
         disabled={!selectedItems.some((selectedItem) => selectedItem.sourceSelections?.[item.sourceKey])}
+        onPointerDown={dismissKeyboard}
+        onMouseDown={dismissKeyboard}
+        onTouchStart={dismissKeyboard}
         onClick={() => {
           impact([20, 20, 20]);
           removeVegets(item);
@@ -321,6 +343,9 @@ const Template = ({ sectionSource }) => {
       <Button
         label="Добавить"
         icon="pi pi-check"
+        onPointerDown={dismissKeyboard}
+        onMouseDown={dismissKeyboard}
+        onTouchStart={dismissKeyboard}
         onClick={() => {
           impact([20, 20, 20]);
           item.counted
@@ -396,7 +421,7 @@ const Template = ({ sectionSource }) => {
         visible={isOpen}
         style={{ width: 'min(90vw, 560px)' }}
         footer={footerContent}
-        onHide={() => setIsOpen(false)}
+        onHide={closeItemDialog}
         dismissableMask
         onShow={() => {
           if (inputRef.current) {

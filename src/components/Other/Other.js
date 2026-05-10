@@ -14,7 +14,7 @@ const OTHER_CATEGORIES = [
   { value: 'house', label: 'Хоз товары' },
 ];
 
-const UNIT_OPTIONS = ['шт.', 'кг.', 'г.', 'пач.', 'уп.', 'б.', 'пуч.'];
+const UNIT_OPTIONS = ['шт.', 'кг.', 'г.', 'пач.', 'уп.', 'б.', 'пуч.', 'пласт.'];
 
 const Other = () => {
   const dispatch = useDispatch();
