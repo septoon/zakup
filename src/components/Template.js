@@ -22,7 +22,7 @@ const Template = ({ sectionSource, mangalData, vegetablesData, duzinaData, lyuda
   const [item, setItem]       = useState({});
   const [count, setCount]     = useState(0);
   const [comment, setComment] = useState('');
-  const [activeIndexes, setActiveIndexes] = useState([0, 1]);
+  const [activeIndexes, setActiveIndexes] = useState([]);
 
   const [search, setSearch] = useState('');
   const matchesSearch = (str) =>
@@ -156,7 +156,7 @@ const Template = ({ sectionSource, mangalData, vegetablesData, duzinaData, lyuda
     const query = nextSearch.toLowerCase().trim();
 
     if (!query) {
-      return items.map((_, index) => index);
+      return [];
     }
 
     return sourceSections.reduce((acc, section, index) => {
