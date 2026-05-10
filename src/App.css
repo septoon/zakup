@@ -597,7 +597,7 @@ button:disabled {
   padding:
     12px
     calc(clamp(14px, 4vw, 28px) + var(--safe-right))
-    calc(12px + var(--safe-bottom-ui))
+    0
     calc(clamp(14px, 4vw, 28px) + var(--safe-left));
   border-top: 1px solid var(--bottom-bar-border);
   background: var(--bottom-bar-bg);
