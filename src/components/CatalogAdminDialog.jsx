@@ -8,6 +8,7 @@ import {
   UNIT_OPTIONS,
   getFirstCatalogGroup,
 } from '../common/catalogSchema';
+import { normalizeQuantityInput } from '../common/quantity';
 
 const getSectionGroups = (section) => CATALOG_SECTION_MAP[section]?.groups || [];
 
@@ -218,11 +219,11 @@ const CatalogAdminDialog = ({
           <span>Базовое значение</span>
           <input
             type="text"
-            inputMode="numeric"
-            pattern="[0-9]*"
+            inputMode="decimal"
+            pattern="[0-9]*[.,]?[0-9]*"
             value={draft.count}
             disabled={isDuplicate}
-            onChange={(event) => setDraft({ count: event.target.value.replace(/\D/g, '') })}
+            onChange={(event) => setDraft({ count: normalizeQuantityInput(event.target.value) })}
           />
         </label>
 

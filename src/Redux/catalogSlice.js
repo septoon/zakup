@@ -93,6 +93,26 @@ const insertCatalogItem = (sections, path, item, index) => {
   sections[section][group].push(nextItem);
 };
 
+const moveCatalogItem = (sections, from, to) => {
+  const items = sections[from.section]?.[from.group];
+
+  if (
+    !items ||
+    from.section !== to.section ||
+    from.group !== to.group ||
+    from.index === to.index ||
+    from.index < 0 ||
+    to.index < 0 ||
+    from.index >= items.length ||
+    to.index >= items.length
+  ) {
+    return;
+  }
+
+  const [moved] = items.splice(from.index, 1);
+  items.splice(to.index, 0, moved);
+};
+
 export const fetchCatalog = createAsyncThunk(
   'catalog/fetch',
   async (_, { rejectWithValue }) => {
@@ -152,6 +172,9 @@ const catalogSlice = createSlice({
     deleteCatalogItem(state, { payload }) {
       removeCatalogItem(state.sections, payload);
     },
+    reorderCatalogItem(state, { payload }) {
+      moveCatalogItem(state.sections, payload.from, payload.to);
+    },
   },
   extraReducers: (builder) =>
     builder
@@ -195,6 +218,12 @@ export const updateCatalogItemAndPersist = (payload) => async (dispatch, getStat
 
 export const deleteCatalogItemAndPersist = (payload) => async (dispatch, getState) => {
   dispatch(catalogSlice.actions.deleteCatalogItem(payload));
+  const catalog = getCatalogAfterMutation(getState().catalog);
+  await dispatch(saveCatalog(catalog)).unwrap();
+};
+
+export const reorderCatalogItemAndPersist = (payload) => async (dispatch, getState) => {
+  dispatch(catalogSlice.actions.reorderCatalogItem(payload));
   const catalog = getCatalogAfterMutation(getState().catalog);
   await dispatch(saveCatalog(catalog)).unwrap();
 };

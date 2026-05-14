@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { addVegetableAndPersist } from '../../Redux/vegetSlice';
 import withOrderProps from '../withOrderProps';
 import { impact } from '../../common/device';
+import { normalizeQuantityInput, parseQuantity } from '../../common/quantity';
 
 const OTHER_CATEGORIES = [
   { value: 'other', label: 'Иное' },
@@ -26,7 +27,7 @@ const Other = () => {
   const [saved, setSaved] = useState(false);
 
   const normalizedName = name.trim();
-  const normalizedCount = Number(count) || 1;
+  const normalizedCount = parseQuantity(count, 1);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -102,11 +103,11 @@ const Other = () => {
             <span>Количество</span>
             <input
               type="text"
-              inputMode="numeric"
-              pattern="[0-9]*"
+              inputMode="decimal"
+              pattern="[0-9]*[.,]?[0-9]*"
               value={count}
               onChange={(event) => {
-                setCount(event.target.value.replace(/\D/g, ''));
+                setCount(normalizeQuantityInput(event.target.value));
                 setSaved(false);
               }}
             />

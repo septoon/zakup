@@ -13,6 +13,7 @@ import {
 import {
   addCatalogItemAndPersist,
   deleteCatalogItemAndPersist,
+  reorderCatalogItemAndPersist,
   selectCatalogError,
   selectCatalogSection,
   selectCatalogStatus,
@@ -26,6 +27,7 @@ import {
   getFirstCatalogGroup,
 } from '../common/catalogSchema';
 import { useAdminAccess } from '../common/useAdminAccess';
+import { normalizeQuantityInput, parseQuantity } from '../common/quantity';
 import CatalogAdminDialog from './CatalogAdminDialog';
 
 const createCatalogDraft = (nextSection, nextGroup, sourceItem = {}) => ({
@@ -50,7 +52,7 @@ const Template = ({ sectionSource }) => {
 
   const [isOpen, setIsOpen]   = useState(false);
   const [item, setItem]       = useState({});
-  const [count, setCount]     = useState(0);
+  const [count, setCount]     = useState('0');
   const [comment, setComment] = useState('');
   const [activeIndexes, setActiveIndexes] = useState([]);
   const [adminVisible, setAdminVisible] = useState(false);
@@ -59,6 +61,9 @@ const Template = ({ sectionSource }) => {
   const [adminDraft, setAdminDraft] = useState(null);
   const [adminSaving, setAdminSaving] = useState(false);
   const [adminError, setAdminError] = useState('');
+  const [reorderError, setReorderError] = useState('');
+  const [dragPath, setDragPath] = useState(null);
+  const [dropPath, setDropPath] = useState(null);
 
   const [search, setSearch] = useState('');
   const matchesSearch = (str) =>
@@ -66,6 +71,7 @@ const Template = ({ sectionSource }) => {
 
   const inputRef = useRef(null);
   const keyboardPrimerRef = useRef(null);
+  const reorderDragRef = useRef({ path: null, pointerId: null });
 
   const dismissKeyboard = useCallback(() => {
     const activeElement = document.activeElement;
@@ -175,6 +181,93 @@ const Template = ({ sectionSource }) => {
     setAdminError('');
   };
 
+  const isSameCatalogPath = (first, second) =>
+    first?.section === second?.section &&
+    first?.group === second?.group &&
+    first?.index === second?.index;
+
+  const canDropCatalogItem = (from, to) =>
+    from?.section === to?.section &&
+    from?.group === to?.group &&
+    Number.isInteger(from?.index) &&
+    Number.isInteger(to?.index) &&
+    from.index !== to.index;
+
+  const resetCatalogDrag = () => {
+    reorderDragRef.current = { path: null, pointerId: null };
+    setDragPath(null);
+    setDropPath(null);
+  };
+
+  const getCatalogPathFromPoint = (clientX, clientY) => {
+    const row = document
+      .elementFromPoint(clientX, clientY)
+      ?.closest('[data-catalog-row="true"]');
+
+    if (!row) {
+      return null;
+    }
+
+    return {
+      section: row.dataset.catalogSection,
+      group: row.dataset.catalogGroup,
+      index: Number(row.dataset.catalogIndex),
+    };
+  };
+
+  const moveCatalogItem = async (from, to) => {
+    if (!canDropCatalogItem(from, to)) {
+      return;
+    }
+
+    setReorderError('');
+
+    try {
+      await dispatch(reorderCatalogItemAndPersist({ from, to }));
+      impact([12, 24]);
+    } catch (err) {
+      setReorderError(err?.message || err || 'Не удалось сохранить порядок');
+    }
+  };
+
+  const startCatalogDrag = (event, path) => {
+    if (!isAdmin) {
+      return;
+    }
+
+    reorderDragRef.current = { path, pointerId: event.pointerId };
+    setDragPath(path);
+    setDropPath(null);
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+    event.preventDefault();
+    impact(8);
+  };
+
+  const updateCatalogDrag = (event) => {
+    const { path, pointerId } = reorderDragRef.current;
+
+    if (!path || pointerId !== event.pointerId) {
+      return;
+    }
+
+    const nextDropPath = getCatalogPathFromPoint(event.clientX, event.clientY);
+    setDropPath(canDropCatalogItem(path, nextDropPath) ? nextDropPath : null);
+    event.preventDefault();
+  };
+
+  const finishCatalogDrag = (event) => {
+    const { path, pointerId } = reorderDragRef.current;
+
+    if (!path || pointerId !== event.pointerId) {
+      return;
+    }
+
+    const nextDropPath = getCatalogPathFromPoint(event.clientX, event.clientY);
+    event.currentTarget.releasePointerCapture?.(event.pointerId);
+    resetCatalogDrag();
+    void moveCatalogItem(path, nextDropPath);
+  };
+
   const getAdminPayload = () => ({
     to: {
       section: adminDraft.section,
@@ -228,6 +321,7 @@ const Template = ({ sectionSource }) => {
   };
 
   const itemRenderer = (item, index, sourceItem, group) => {
+    const path = { section: sectionSource, group, index };
     const sourceKey = getCatalogSourceKey(item);
     const selectedItem = getSelectedSourceItem(item);
     const metaText = selectedItem
@@ -241,8 +335,33 @@ const Template = ({ sectionSource }) => {
     return (
       <div
         key={item.label + index}
-        className={`catalog-row ${selectedItem ? 'catalog-row--selected' : ''}`}
+        className={[
+          'catalog-row',
+          isAdmin ? 'catalog-row--admin' : '',
+          selectedItem ? 'catalog-row--selected' : '',
+          isSameCatalogPath(dragPath, path) ? 'catalog-row--dragging' : '',
+          isSameCatalogPath(dropPath, path) ? 'catalog-row--drop-target' : '',
+        ]
+          .filter(Boolean)
+          .join(' ')}
+        data-catalog-row="true"
+        data-catalog-section={sectionSource}
+        data-catalog-group={group}
+        data-catalog-index={index}
       >
+        {isAdmin && (
+          <button
+            type="button"
+            className="catalog-row__drag"
+            aria-label={`Переместить ${item.label}`}
+            onPointerDown={(event) => startCatalogDrag(event, path)}
+            onPointerMove={updateCatalogDrag}
+            onPointerUp={finishCatalogDrag}
+            onPointerCancel={resetCatalogDrag}
+          >
+            <i className="pi pi-bars" aria-hidden="true" />
+          </button>
+        )}
         <button
           type="button"
           className="catalog-row__select"
@@ -260,7 +379,7 @@ const Template = ({ sectionSource }) => {
               category: item.category,
               sourceKey,
             });
-            setCount(selectedItem ? selectedItem.count : item.counted ? 1 : 0);
+            setCount(String(selectedItem ? selectedItem.count : item.counted ? 1 : 0));
             setComment(selectedItem ? selectedItem.comment : '');
           }}
         >
@@ -294,20 +413,23 @@ const Template = ({ sectionSource }) => {
 
   const items = sourceSections.map((section) => ({
     header: section.header,
-    content: section.data.filter((sourceItem) => matchesSearch(sourceItem.name)).map((sourceItem, idx) =>
-      itemRenderer(
-        {
-          label: sourceItem.name,
-          commented: sourceItem.commented,
-          counted: sourceItem.counted,
-          type: sourceItem.type,
-          category: sourceItem.category,
-        },
-        idx,
-        sourceItem,
-        section.group
-      )
-    ),
+    content: section.data
+      .map((sourceItem, idx) => ({ sourceItem, idx }))
+      .filter(({ sourceItem }) => matchesSearch(sourceItem.name))
+      .map(({ sourceItem, idx }) =>
+        itemRenderer(
+          {
+            label: sourceItem.name,
+            commented: sourceItem.commented,
+            counted: sourceItem.counted,
+            type: sourceItem.type,
+            category: sourceItem.category,
+          },
+          idx,
+          sourceItem,
+          section.group
+        )
+      ),
   }));
 
   const getSearchActiveIndexes = (nextSearch) => {
@@ -324,6 +446,8 @@ const Template = ({ sectionSource }) => {
       return hasMatches ? [...acc, index] : acc;
     }, []);
   };
+
+  const quantityCount = parseQuantity(count);
 
   const footerContent = (
     <div className="dialog-actions">
@@ -349,7 +473,7 @@ const Template = ({ sectionSource }) => {
         onClick={() => {
           impact([20, 20, 20]);
           item.counted
-            ? count > 0 && addVegets({ ...item, count, comment })
+            ? quantityCount > 0 && addVegets({ ...item, count: quantityCount, comment })
             : addVegets({ ...item, count: 1, comment });
         }}
       />
@@ -364,7 +488,7 @@ const Template = ({ sectionSource }) => {
         ref={keyboardPrimerRef}
         className="keyboard-primer"
         type="text"
-        inputMode="numeric"
+        inputMode="decimal"
         aria-hidden="true"
         tabIndex={-1}
       />
@@ -396,6 +520,7 @@ const Template = ({ sectionSource }) => {
       {catalogError && catalogStatus === 'failed' && (
         <p className="catalog-error">{String(catalogError)}</p>
       )}
+      {reorderError && <p className="catalog-error">{String(reorderError)}</p>}
       <Accordion
         multiple
         activeIndex={activeIndexes}
@@ -435,40 +560,36 @@ const Template = ({ sectionSource }) => {
         <div className="item-form">
           <div className="item-form__title">
             <span>{item.name}</span>
-            {item.commented && (
-              <input
-                placeholder="дополнение..."
-                value={comment}
-                onChange={(e) => {
-                  const newComment = e.target.value;
-                  setComment(newComment);
-                  setItem((prev) => ({ ...prev, comment: newComment }));
-                }}
-              />
-            )}
+            <input
+              placeholder="комментарий..."
+              value={comment}
+              onChange={(e) => {
+                const newComment = e.target.value;
+                setComment(newComment);
+                setItem((prev) => ({ ...prev, comment: newComment }));
+              }}
+            />
           </div>
 
-          <div className="quantity-field">
-            {item.counted ? (
+          {item.counted && (
+            <div className="quantity-field">
               <input
                 ref={inputRef}
                 type="text"
-                value={count > 0 ? count : ''}
+                value={count}
                 onFocus={handleFocus}
                 onClick={handleFocus}
                 onChange={(e) => {
-                  const newCount = parseInt(e.target.value.replace(/\D/g, ''), 10) || 0;
+                  const newCount = normalizeQuantityInput(e.target.value);
                   setCount(newCount);
-                  setItem((prev) => ({ ...prev, count: newCount }));
+                  setItem((prev) => ({ ...prev, count: parseQuantity(newCount) }));
                 }}
-                inputMode="numeric"
-                pattern="[0-9]*"
+                inputMode="decimal"
+                pattern="[0-9]*[.,]?[0-9]*"
               />
-            ) : (
-              <span>1</span>
+              <span>{item.type}</span>
+            </div>
             )}
-            <span>{item.type}</span>
-          </div>
         </div>
       </Dialog>
       <CatalogAdminDialog
